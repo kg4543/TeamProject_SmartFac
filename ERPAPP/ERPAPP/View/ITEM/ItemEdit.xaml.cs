@@ -1,6 +1,9 @@
 ﻿using ERPAPP.Helper;
 using ERPAPP.Logic;
+using ERPAPP.Model;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+using System;
 using System.Windows;
 
 namespace ERPAPP.View.ITEM
@@ -42,9 +45,21 @@ namespace ERPAPP.View.ITEM
             TxtDesc.Text = selectedItem.ItemDescription.ToString();
         }
 
-        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        private async void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
+            var selectedItem = Common.SELECT_ITEM;
 
+            selectedItem.ItemName = TxtName.Text;
+            selectedItem.BrandCode = CmbBrand.Text;
+            selectedItem.ICateCode = CmbCate.Text;
+            selectedItem.ItemDescription = TxtDesc.Text;
+            selectedItem.ModDate = DateTime.Now.Date;
+            selectedItem.ModID = Common.LOGINED_USER.UserId.ToString();
+
+            DataAcess.SetItems(selectedItem);
+
+            await this.ShowMessageAsync("아이템 수정", "아이템정보가 수정되었습니다.");
+            Close();
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)

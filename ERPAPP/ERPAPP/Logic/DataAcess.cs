@@ -14,10 +14,12 @@ namespace ERPAPP.Logic
         {
             List<tblUser> users;
 
+            //using : 범위 이외에는 자동으로 dispose하여 용량에 문제가 없도록 한다.
+            //ERPEntities()의 유저테이블 리스트를 전달 받음
             using(var ctx = new ERPEntities())
             {
                 users = ctx.tblUser.ToList();
-            }
+            } 
 
             return users;
         }

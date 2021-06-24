@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ERPModelStoreContainer" CdmEntityContainer="ERPEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ERPModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBOM">
+      <EntityTypeMapping TypeName="ERPModel.tblBOM">
+        <MappingFragment StoreEntitySet="tblBOM">
+          <ScalarProperty Name="BOMId" ColumnName="BOMId" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="PartCode" ColumnName="PartCode" />
+          <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBrand">
+      <EntityTypeMapping TypeName="ERPModel.tblBrand">
+        <MappingFragment StoreEntitySet="tblBrand">
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="RegID" ColumnName="RegID" />
+          <ScalarProperty Name="ModDate" ColumnName="ModDate" />
+          <ScalarProperty Name="ModID" ColumnName="ModID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDCate">
+      <EntityTypeMapping TypeName="ERPModel.tblDCate">
+        <MappingFragment StoreEntitySet="tblDCate">
+          <ScalarProperty Name="DcateId" ColumnName="DcateId" />
+          <ScalarProperty Name="DcateCode" ColumnName="DcateCode" />
+          <ScalarProperty Name="DcateName" ColumnName="DcateName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFactory">
+      <EntityTypeMapping TypeName="ERPModel.tblFactory">
+        <MappingFragment StoreEntitySet="tblFactory">
+          <ScalarProperty Name="FactoryId" ColumnName="FactoryId" />
+          <ScalarProperty Name="FactoryCode" ColumnName="FactoryCode" />
+          <ScalarProperty Name="FactoryName" ColumnName="FactoryName" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="RegID" ColumnName="RegID" />
+          <ScalarProperty Name="ModDate" ColumnName="ModDate" />
+          <ScalarProperty Name="ModID" ColumnName="ModID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblICate">
+      <EntityTypeMapping TypeName="ERPModel.tblICate">
+        <MappingFragment StoreEntitySet="tblICate">
+          <ScalarProperty Name="IcateID" ColumnName="IcateID" />
+          <ScalarProperty Name="IcateCode" ColumnName="IcateCode" />
+          <ScalarProperty Name="IcategName" ColumnName="IcategName" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="RegID" ColumnName="RegID" />
+          <ScalarProperty Name="ModDate" ColumnName="ModDate" />
+          <ScalarProperty Name="ModID" ColumnName="ModID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblItem">
+      <EntityTypeMapping TypeName="ERPModel.tblItem">
+        <MappingFragment StoreEntitySet="tblItem">
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+          <ScalarProperty Name="ICateCode" ColumnName="ICateCode" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+          <ScalarProperty Name="ItemImage" ColumnName="ItemImage" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="RegID" ColumnName="RegID" />
+          <ScalarProperty Name="ModDate" ColumnName="ModDate" />
+          <ScalarProperty Name="ModID" ColumnName="ModID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLine">
+      <EntityTypeMapping TypeName="ERPModel.tblLine">
+        <MappingFragment StoreEntitySet="tblLine">
+          <ScalarProperty Name="LineId" ColumnName="LineId" />
+          <ScalarProperty Name="LineCode" ColumnName="LineCode" />
+          <ScalarProperty Name="FactoryCode" ColumnName="FactoryCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMachine">
+      <EntityTypeMapping TypeName="ERPModel.tblMachine">
+        <MappingFragment StoreEntitySet="tblMachine">
+          <ScalarProperty Name="MachineId" ColumnName="MachineId" />
+          <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
+          <ScalarProperty Name="MCateCode" ColumnName="MCateCode" />
+          <ScalarProperty Name="FactoryCode" ColumnName="FactoryCode" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="IoTConnect" ColumnName="IoTConnect" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="RegID" ColumnName="RegID" />
+          <ScalarProperty Name="ModDate" ColumnName="ModDate" />
+          <ScalarProperty Name="ModID" ColumnName="ModID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMaterial">
+      <EntityTypeMapping TypeName="ERPModel.tblMaterial">
+        <MappingFragment StoreEntitySet="tblMaterial">
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMcCate">
+      <EntityTypeMapping TypeName="ERPModel.tblMcCate">
+        <MappingFragment StoreEntitySet="tblMcCate">
+          <ScalarProperty Name="McateId" ColumnName="McateId" />
+          <ScalarProperty Name="McateCode" ColumnName="McateCode" />
+          <ScalarProperty Name="McateName" ColumnName="McateName" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="RegID" ColumnName="RegID" />
+          <ScalarProperty Name="ModDate" ColumnName="ModDate" />
+          <ScalarProperty Name="ModID" ColumnName="ModID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMES">
+      <EntityTypeMapping TypeName="ERPModel.tblMES">
+        <MappingFragment StoreEntitySet="tblMES">
+          <ScalarProperty Name="MESId" ColumnName="MESId" />
+          <ScalarProperty Name="ProductionCode" ColumnName="ProductionCode" />
+          <ScalarProperty Name="OpId" ColumnName="OpId" />
+          <ScalarProperty Name="WorkingTime" ColumnName="WorkingTime" />
+          <ScalarProperty Name="PowerOnTime" ColumnName="PowerOnTime" />
+          <ScalarProperty Name="Defect" ColumnName="Defect" />
+          <ScalarProperty Name="DefectQty" ColumnName="DefectQty" />
+          <ScalarProperty Name="IoTConnect" ColumnName="IoTConnect" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMRP">
+      <EntityTypeMapping TypeName="ERPModel.tblMRP">
+        <MappingFragment StoreEntitySet="tblMRP">
+          <ScalarProperty Name="MRPId" ColumnName="MRPId" />
+          <ScalarProperty Name="MRPCode" ColumnName="MRPCode" />
+          <ScalarProperty Name="ProductionCode" ColumnName="ProductionCode" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+          <ScalarProperty Name="SupplyCode" ColumnName="SupplyCode" />
+          <ScalarProperty Name="ShipDate" ColumnName="ShipDate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="RegID" ColumnName="RegID" />
+          <ScalarProperty Name="ModDate" ColumnName="ModDate" />
+          <ScalarProperty Name="ModID" ColumnName="ModID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOperation">
+      <EntityTypeMapping TypeName="ERPModel.tblOperation">
+        <MappingFragment StoreEntitySet="tblOperation">
+          <ScalarProperty Name="OpId" ColumnName="OpId" />
+          <ScalarProperty Name="OpName" ColumnName="OpName" />
+          <ScalarProperty Name="PreOp" ColumnName="PreOp" />
+          <ScalarProperty Name="PostOp" ColumnName="PostOp" />
+          <ScalarProperty Name="CycleTime" ColumnName="CycleTime" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="McateCode" ColumnName="McateCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOrder">
+      <EntityTypeMapping TypeName="ERPModel.tblOrder">
+        <MappingFragment StoreEntitySet="tblOrder">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
+          <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="ShipDate" ColumnName="ShipDate" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="RegID" ColumnName="RegID" />
+          <ScalarProperty Name="ModDate" ColumnName="ModDate" />
+          <ScalarProperty Name="ModID" ColumnName="ModID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPart">
+      <EntityTypeMapping TypeName="ERPModel.tblPart">
+        <MappingFragment StoreEntitySet="tblPart">
+          <ScalarProperty Name="PartId" ColumnName="PartId" />
+          <ScalarProperty Name="PartCode" ColumnName="PartCode" />
+          <ScalarProperty Name="PartName" ColumnName="PartName" />
+          <ScalarProperty Name="PartLevel" ColumnName="PartLevel" />
+          <ScalarProperty Name="UpPart" ColumnName="UpPart" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProduction">
+      <EntityTypeMapping TypeName="ERPModel.tblProduction">
+        <MappingFragment StoreEntitySet="tblProduction">
+          <ScalarProperty Name="ProductionId" ColumnName="ProductionId" />
+          <ScalarProperty Name="ProductionCode" ColumnName="ProductionCode" />
+          <ScalarProperty Name="FactoryCode" ColumnName="FactoryCode" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="PlanQuantity" ColumnName="PlanQuantity" />
+          <ScalarProperty Name="FQuantity" ColumnName="FQuantity" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="RegID" ColumnName="RegID" />
+          <ScalarProperty Name="ModDate" ColumnName="ModDate" />
+          <ScalarProperty Name="ModID" ColumnName="ModID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUser">
+      <EntityTypeMapping TypeName="ERPModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUser">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="RItem" ColumnName="RItem" />
+          <ScalarProperty Name="ROrder" ColumnName="ROrder" />
+          <ScalarProperty Name="RProduction" ColumnName="RProduction" />
+          <ScalarProperty Name="RMaterial" ColumnName="RMaterial" />
+          <ScalarProperty Name="RFactory" ColumnName="RFactory" />
+          <ScalarProperty Name="RMES" ColumnName="RMES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWorker">
+      <EntityTypeMapping TypeName="ERPModel.tblWorker">
+        <MappingFragment StoreEntitySet="tblWorker">
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="WorkerCode" ColumnName="WorkerCode" />
+          <ScalarProperty Name="WorkerName" ColumnName="WorkerName" />
+          <ScalarProperty Name="WorkerPhone" ColumnName="WorkerPhone" />
+          <ScalarProperty Name="WorkerAddr" ColumnName="WorkerAddr" />
+          <ScalarProperty Name="FactoryCode" ColumnName="FactoryCode" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="RegID" ColumnName="RegID" />
+          <ScalarProperty Name="ModDate" ColumnName="ModDate" />
+          <ScalarProperty Name="ModID" ColumnName="ModID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ERPModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ERPModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ERPModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ERPModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ERPModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ERPModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ERPModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

@@ -20,7 +20,8 @@
                     <RowDefinition Height="200"/>
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <Image Source="/Resources/No_Picture.jpg"
+                <Image x:Name="ImgItem"
+                       Source="/Resources/No_Picture.jpg"
                        Grid.Row="0" Height="200"
                        Margin="10"/>
                 <Button x:Name="BtnUpload"
@@ -73,7 +74,7 @@
                          Grid.Row="0" Grid.Column="1"
                          Width="220" Margin="0,12"
                          HorizontalAlignment="Left"
-                         FontSize="15" FontWeight="Bold"
+                         FontSize="15" FontWeight="Bold" Background="LightGray"
                          IsReadOnly="True"/>
                 <TextBox x:Name="TxtName"
                          Grid.Row="1" Grid.Column="1"
@@ -94,12 +95,13 @@
                          Grid.Row="4" Grid.RowSpan="2" Grid.Column="1" 
                          Width="220" Margin="0,12" 
                          HorizontalAlignment="Left"
-                         FontSize="15" FontWeight="Bold"/>
+                         FontSize="15" FontWeight="Bold"
+                         TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
                 <Button x:Name="BtnEdit"
                         Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 
                         HorizontalAlignment="Right"
                         Margin="120,10" Width="80"
-                        Content="ADD" FontSize="15"
+                        Content="Edit" FontSize="15"
                         Foreground="White" Background="Orange"
                         Click="BtnEdit_Click"/>
                 <Button x:Name="BtnCancel"

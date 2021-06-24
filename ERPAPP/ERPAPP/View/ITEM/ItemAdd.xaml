@@ -21,14 +21,16 @@
                     <RowDefinition Height="200"/>
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <Image Source="/Resources/No_Picture.jpg"
+                <Image x:Name="ImgItem"
+                       Source="/Resources/No_Picture.jpg"
                        Grid.Row="0" Height="200"
                        Margin="10"/>
                 <Button x:Name="BtnUpload"
                         Grid.Row="1" Width="150" Height="30"
                         VerticalAlignment="Top"
                         Content="Upload" FontSize="12"
-                        Foreground="White" Background="CornflowerBlue"/>
+                        Foreground="White" Background="CornflowerBlue" 
+                        Click="BtnUpload_Click"/>
             </Grid>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -94,7 +96,8 @@
                          Grid.Row="4" Grid.RowSpan="2" Grid.Column="1" 
                          Width="220" Margin="0,12" 
                          HorizontalAlignment="Left"
-                         FontSize="15" FontWeight="Bold"/>
+                         FontSize="15" FontWeight="Bold"
+                         TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
                 <Button x:Name="BtnAdd"
                         Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 
                         HorizontalAlignment="Right"
