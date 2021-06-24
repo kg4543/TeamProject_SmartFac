@@ -1,0 +1,56 @@
+﻿<mah:MetroWindow x:Class="ERPAPP.View.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ERPAPP.View"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconpacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        Title="Login" Height="350" Width="350" ResizeMode="NoResize"
+        Loaded="MetroWindow_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0"
+               Margin="10"
+               Source="/Resources/Logo.png"/>
+
+        <TextBox x:Name="TxtUserId"
+                 Grid.Row="1" Margin="30, 10"
+                 mah:TextBoxHelper.Watermark="ID를 입력하세요"
+                 FontSize="20" KeyDown="TxtUserId_KeyDown"
+                 />
+
+        <PasswordBox x:Name="TxtUserPassword"
+                 Grid.Row="2" Margin="30, 10"
+                 mah:TextBoxHelper.Watermark="Password를 입력하세요"
+                 FontSize="20" KeyDown="TxtUserPassword_KeyDown"
+                 />
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="BtnLogin"
+                Width="100" Height="40"
+                Margin="5"
+                Content="Login" FontSize="15"
+                Foreground="White" Background="CornflowerBlue"
+                Click="BtnLogin_Click"/>
+            <Button x:Name="BtnCancel"
+                Width="100" Height="40"
+                Margin="5"
+                Content="Cancel" FontSize="15"
+                Foreground="White" Background="Crimson"
+                Click="BtnCancel_Click"/>
+        </StackPanel>
+        <Label Name="LblResult"
+               Grid.Row="4"
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+               Content="Result" FontSize="20"
+               Foreground="OrangeRed"/>
+    </Grid>
+</mah:MetroWindow>
