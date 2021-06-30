@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="839630561ad9406aa8c4b84e3c2cf1de" Name="Diagram1" ZoomLevel="62">
-        <EntityTypeShape EntityType="ERPModel.sysdiagrams" Width="1.5" PointX="2.875" PointY="4.25" IsExpanded="true" />
+      <Diagram DiagramId="b6940ed01523463994321bb2416ca5ee" Name="Diagram1">
+        <EntityTypeShape EntityType="ERPModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblBOM" Width="1.5" PointX="7.5" PointY="16.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblBrand" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblDCate" Width="1.5" PointX="9.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblFactory" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERPModel.tblICate" Width="1.5" PointX="2.375" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.tblICate" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblItem" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblLine" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblMachine" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />

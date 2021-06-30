@@ -29,7 +29,7 @@ namespace ERPAPP.Model
         public string ICateCode { get; set; }
         public string ItemName { get; set; }
         public string ItemDescription { get; set; }
-        public byte[] ItemImage { get; set; }
+        public string ItemImage { get; set; }
         public Nullable<System.DateTime> RegDate { get; set; }
         public string RegID { get; set; }
         public Nullable<System.DateTime> ModDate { get; set; }

@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ERPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tblBOM">
+    <Key>
+      <PropertyRef Name="BOMId" />
+    </Key>
+    <Property Name="BOMId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PartCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MaterialCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Quantity" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <NavigationProperty Name="tblItem" Relationship="Self.FK_tblBOM_tblItem" FromRole="tblBOM" ToRole="tblItem" />
+    <NavigationProperty Name="tblMaterial" Relationship="Self.FK_tblBOM_tblMaterial" FromRole="tblBOM" ToRole="tblMaterial" />
+    <NavigationProperty Name="tblPart" Relationship="Self.FK_tblBOM_tblPart" FromRole="tblBOM" ToRole="tblPart" />
+  </EntityType>
+  <EntityType Name="tblBrand">
+    <Key>
+      <PropertyRef Name="BrandCode" />
+    </Key>
+    <Property Name="BrandId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrandCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RegDate" Type="DateTime" Precision="0" />
+    <Property Name="RegID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModDate" Type="DateTime" Precision="0" />
+    <Property Name="ModID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblItem" Relationship="Self.FK_tblItem_tblBrand" FromRole="tblBrand" ToRole="tblItem" />
+    <NavigationProperty Name="tblOrder" Relationship="Self.FK_tblOrder_tblBrand" FromRole="tblBrand" ToRole="tblOrder" />
+  </EntityType>
+  <EntityType Name="tblDCate">
+    <Key>
+      <PropertyRef Name="DcateCode" />
+    </Key>
+    <Property Name="DcateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DcateCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DcateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblFactory">
+    <Key>
+      <PropertyRef Name="FactoryCode" />
+    </Key>
+    <Property Name="FactoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FactoryCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FactoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RegDate" Type="DateTime" Precision="0" />
+    <Property Name="RegID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModDate" Type="DateTime" Precision="0" />
+    <Property Name="ModID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblLine" Relationship="Self.FK_tblLine_tblFactory" FromRole="tblFactory" ToRole="tblLine" />
+    <NavigationProperty Name="tblMachine" Relationship="Self.FK_tblMachine_tblFactory" FromRole="tblFactory" ToRole="tblMachine" />
+    <NavigationProperty Name="tblProduction" Relationship="Self.FK_tblProduction_tblFactory" FromRole="tblFactory" ToRole="tblProduction" />
+    <NavigationProperty Name="tblWorker" Relationship="Self.FK_tblWorker_tblFactory" FromRole="tblFactory" ToRole="tblWorker" />
+  </EntityType>
+  <EntityType Name="tblICate">
+    <Key>
+      <PropertyRef Name="IcateCode" />
+    </Key>
+    <Property Name="IcateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IcateCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IcategName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RegDate" Type="DateTime" Precision="0" />
+    <Property Name="RegID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModDate" Type="DateTime" Precision="0" />
+    <Property Name="ModID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblItem" Relationship="Self.FK_tblItem_tblICate" FromRole="tblICate" ToRole="tblItem" />
+  </EntityType>
+  <EntityType Name="tblItem">
+    <Key>
+      <PropertyRef Name="ItemCode" />
+    </Key>
+    <Property Name="ItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BrandCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ICateCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ItemImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="RegDate" Type="DateTime" Precision="0" />
+    <Property Name="RegID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModDate" Type="DateTime" Precision="0" />
+    <Property Name="ModID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblBOM" Relationship="Self.FK_tblBOM_tblItem" FromRole="tblItem" ToRole="tblBOM" />
+    <NavigationProperty Name="tblBrand" Relationship="Self.FK_tblItem_tblBrand" FromRole="tblItem" ToRole="tblBrand" />
+    <NavigationProperty Name="tblICate" Relationship="Self.FK_tblItem_tblICate" FromRole="tblItem" ToRole="tblICate" />
+    <NavigationProperty Name="tblOperation" Relationship="Self.FK_tblOperation_tblItem" FromRole="tblItem" ToRole="tblOperation" />
+    <NavigationProperty Name="tblOrder" Relationship="Self.FK_tblOrder_tblItem" FromRole="tblItem" ToRole="tblOrder" />
+    <NavigationProperty Name="tblPart" Relationship="Self.FK_tblPart_tblItem" FromRole="tblItem" ToRole="tblPart" />
+  </EntityType>
+  <EntityType Name="tblLine">
+    <Key>
+      <PropertyRef Name="LineCode" />
+    </Key>
+    <Property Name="LineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LineCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FactoryCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblFactory" Relationship="Self.FK_tblLine_tblFactory" FromRole="tblLine" ToRole="tblFactory" />
+  </EntityType>
+  <EntityType Name="tblMachine">
+    <Key>
+      <PropertyRef Name="MachineCode" />
+    </Key>
+    <Property Name="MachineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MachineCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MCateCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FactoryCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IoTConnect" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RegDate" Type="DateTime" Precision="0" />
+    <Property Name="RegID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModDate" Type="DateTime" Precision="0" />
+    <Property Name="ModID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblFactory" Relationship="Self.FK_tblMachine_tblFactory" FromRole="tblMachine" ToRole="tblFactory" />
+    <NavigationProperty Name="tblMcCate" Relationship="Self.FK_tblMachine_tblMcCate" FromRole="tblMachine" ToRole="tblMcCate" />
+  </EntityType>
+  <EntityType Name="tblMaterial">
+    <Key>
+      <PropertyRef Name="MaterialCode" />
+    </Key>
+    <Property Name="MaterialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaterialCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaterialName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UNIT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblBOM" Relationship="Self.FK_tblBOM_tblMaterial" FromRole="tblMaterial" ToRole="tblBOM" />
+  </EntityType>
+  <EntityType Name="tblMcCate">
+    <Key>
+      <PropertyRef Name="McateCode" />
+    </Key>
+    <Property Name="McateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="McateCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="McateName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RegDate" Type="DateTime" Precision="0" />
+    <Property Name="RegID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModDate" Type="DateTime" Precision="0" />
+    <Property Name="ModID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblMachine" Relationship="Self.FK_tblMachine_tblMcCate" FromRole="tblMcCate" ToRole="tblMachine" />
+  </EntityType>
+  <EntityType Name="tblMES">
+    <Key>
+      <PropertyRef Name="MESId" />
+    </Key>
+    <Property Name="MESId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductionCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OpId" Type="Int32" Nullable="false" />
+    <Property Name="WorkingTime" Type="Time" Precision="7" />
+    <Property Name="PowerOnTime" Type="Time" Precision="7" />
+    <Property Name="Defect" Type="Boolean" />
+    <Property Name="DefectQty" Type="Int32" />
+    <Property Name="IoTConnect" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tblProduction" Relationship="Self.FK_tblMES_tblProduction" FromRole="tblMES" ToRole="tblProduction" />
+  </EntityType>
+  <EntityType Name="tblMRP">
+    <Key>
+      <PropertyRef Name="MRPId" />
+    </Key>
+    <Property Name="MRPId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MRPCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductionCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaterialCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SupplyCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ShipDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RegDate" Type="DateTime" Precision="0" />
+    <Property Name="RegID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModDate" Type="DateTime" Precision="0" />
+    <Property Name="ModID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblProduction" Relationship="Self.FK_tblMRP_tblProduction" FromRole="tblMRP" ToRole="tblProduction" />
+  </EntityType>
+  <EntityType Name="tblOperation">
+    <Key>
+      <PropertyRef Name="OpId" />
+    </Key>
+    <Property Name="OpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OpName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PreOp" Type="Int32" />
+    <Property Name="PostOp" Type="Int32" />
+    <Property Name="CycleTime" Type="Int32" Nullable="false" />
+    <Property Name="ItemCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="McateCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblItem" Relationship="Self.FK_tblOperation_tblItem" FromRole="tblOperation" ToRole="tblItem" />
+  </EntityType>
+  <EntityType Name="tblOrder">
+    <Key>
+      <PropertyRef Name="OrderCode" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BrandCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Destination" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ShipDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UnitPrice" Type="Int32" Nullable="false" />
+    <Property Name="RegDate" Type="DateTime" Precision="0" />
+    <Property Name="RegID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModDate" Type="DateTime" Precision="0" />
+    <Property Name="ModID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblBrand" Relationship="Self.FK_tblOrder_tblBrand" FromRole="tblOrder" ToRole="tblBrand" />
+    <NavigationProperty Name="tblItem" Relationship="Self.FK_tblOrder_tblItem" FromRole="tblOrder" ToRole="tblItem" />
+    <NavigationProperty Name="tblProduction" Relationship="Self.FK_tblProduction_tblOrder" FromRole="tblOrder" ToRole="tblProduction" />
+  </EntityType>
+  <EntityType Name="tblPart">
+    <Key>
+      <PropertyRef Name="PartCode" />
+    </Key>
+    <Property Name="PartId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PartCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PartName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PartLevel" Type="Int32" Nullable="false" />
+    <Property Name="UpPart" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ItemCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblBOM" Relationship="Self.FK_tblBOM_tblPart" FromRole="tblPart" ToRole="tblBOM" />
+    <NavigationProperty Name="tblItem" Relationship="Self.FK_tblPart_tblItem" FromRole="tblPart" ToRole="tblItem" />
+  </EntityType>
+  <EntityType Name="tblProduction">
+    <Key>
+      <PropertyRef Name="ProductionCode" />
+    </Key>
+    <Property Name="ProductionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductionCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FactoryCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="PlanQuantity" Type="Int32" Nullable="false" />
+    <Property Name="FQuantity" Type="Int32" />
+    <Property Name="RegDate" Type="DateTime" Precision="0" />
+    <Property Name="RegID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModDate" Type="DateTime" Precision="0" />
+    <Property Name="ModID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblFactory" Relationship="Self.FK_tblProduction_tblFactory" FromRole="tblProduction" ToRole="tblFactory" />
+    <NavigationProperty Name="tblMES" Relationship="Self.FK_tblMES_tblProduction" FromRole="tblProduction" ToRole="tblMES" />
+    <NavigationProperty Name="tblMRP" Relationship="Self.FK_tblMRP_tblProduction" FromRole="tblProduction" ToRole="tblMRP" />
+    <NavigationProperty Name="tblOrder" Relationship="Self.FK_tblProduction_tblOrder" FromRole="tblProduction" ToRole="tblOrder" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RItem" Type="Boolean" />
+    <Property Name="ROrder" Type="Boolean" />
+    <Property Name="RProduction" Type="Boolean" />
+    <Property Name="RMaterial" Type="Boolean" />
+    <Property Name="RFactory" Type="Boolean" />
+    <Property Name="RMES" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblWorker">
+    <Key>
+      <PropertyRef Name="WorkerCode" />
+    </Key>
+    <Property Name="WorkerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkerCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WorkerName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WorkerPhone" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="WorkerAddr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FactoryCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RegDate" Type="DateTime" Precision="0" />
+    <Property Name="RegID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModDate" Type="DateTime" Precision="0" />
+    <Property Name="ModID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblFactory" Relationship="Self.FK_tblWorker_tblFactory" FromRole="tblWorker" ToRole="tblFactory" />
+  </EntityType>
+  <Association Name="FK_tblBOM_tblItem">
+    <End Role="tblItem" Type="Self.tblItem" Multiplicity="1" />
+    <End Role="tblBOM" Type="Self.tblBOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblItem">
+        <PropertyRef Name="ItemCode" />
+      </Principal>
+      <Dependent Role="tblBOM">
+        <PropertyRef Name="ItemCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBOM_tblMaterial">
+    <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="1" />
+    <End Role="tblBOM" Type="Self.tblBOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMaterial">
+        <PropertyRef Name="MaterialCode" />
+      </Principal>
+      <Dependent Role="tblBOM">
+        <PropertyRef Name="MaterialCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBOM_tblPart">
+    <End Role="tblPart" Type="Self.tblPart" Multiplicity="0..1" />
+    <End Role="tblBOM" Type="Self.tblBOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPart">
+        <PropertyRef Name="PartCode" />
+      </Principal>
+      <Dependent Role="tblBOM">
+        <PropertyRef Name="PartCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblItem_tblBrand">
+    <End Role="tblBrand" Type="Self.tblBrand" Multiplicity="1" />
+    <End Role="tblItem" Type="Self.tblItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrand">
+        <PropertyRef Name="BrandCode" />
+      </Principal>
+      <Dependent Role="tblItem">
+        <PropertyRef Name="BrandCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblOrder_tblBrand">
+    <End Role="tblBrand" Type="Self.tblBrand" Multiplicity="1" />
+    <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrand">
+        <PropertyRef Name="BrandCode" />
+      </Principal>
+      <Dependent Role="tblOrder">
+        <PropertyRef Name="BrandCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLine_tblFactory">
+    <End Role="tblFactory" Type="Self.tblFactory" Multiplicity="1" />
+    <End Role="tblLine" Type="Self.tblLine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFactory">
+        <PropertyRef Name="FactoryCode" />
+      </Principal>
+      <Dependent Role="tblLine">
+        <PropertyRef Name="FactoryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMachine_tblFactory">
+    <End Role="tblFactory" Type="Self.tblFactory" Multiplicity="1" />
+    <End Role="tblMachine" Type="Self.tblMachine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFactory">
+        <PropertyRef Name="FactoryCode" />
+      </Principal>
+      <Dependent Role="tblMachine">
+        <PropertyRef Name="FactoryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProduction_tblFactory">
+    <End Role="tblFactory" Type="Self.tblFactory" Multiplicity="1" />
+    <End Role="tblProduction" Type="Self.tblProduction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFactory">
+        <PropertyRef Name="FactoryCode" />
+      </Principal>
+      <Dependent Role="tblProduction">
+        <PropertyRef Name="FactoryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblWorker_tblFactory">
+    <End Role="tblFactory" Type="Self.tblFactory" Multiplicity="1" />
+    <End Role="tblWorker" Type="Self.tblWorker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFactory">
+        <PropertyRef Name="FactoryCode" />
+      </Principal>
+      <Dependent Role="tblWorker">
+        <PropertyRef Name="FactoryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblItem_tblICate">
+    <End Role="tblICate" Type="Self.tblICate" Multiplicity="1" />
+    <End Role="tblItem" Type="Self.tblItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblICate">
+        <PropertyRef Name="IcateCode" />
+      </Principal>
+      <Dependent Role="tblItem">
+        <PropertyRef Name="ICateCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblOperation_tblItem">
+    <End Role="tblItem" Type="Self.tblItem" Multiplicity="1" />
+    <End Role="tblOperation" Type="Self.tblOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblItem">
+        <PropertyRef Name="ItemCode" />
+      </Principal>
+      <Dependent Role="tblOperation">
+        <PropertyRef Name="ItemCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblOrder_tblItem">
+    <End Role="tblItem" Type="Self.tblItem" Multiplicity="1" />
+    <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblItem">
+        <PropertyRef Name="ItemCode" />
+      </Principal>
+      <Dependent Role="tblOrder">
+        <PropertyRef Name="ItemCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPart_tblItem">
+    <End Role="tblItem" Type="Self.tblItem" Multiplicity="1" />
+    <End Role="tblPart" Type="Self.tblPart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblItem">
+        <PropertyRef Name="ItemCode" />
+      </Principal>
+      <Dependent Role="tblPart">
+        <PropertyRef Name="ItemCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMachine_tblMcCate">
+    <End Role="tblMcCate" Type="Self.tblMcCate" Multiplicity="1" />
+    <End Role="tblMachine" Type="Self.tblMachine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMcCate">
+        <PropertyRef Name="McateCode" />
+      </Principal>
+      <Dependent Role="tblMachine">
+        <PropertyRef Name="MCateCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMES_tblProduction">
+    <End Role="tblProduction" Type="Self.tblProduction" Multiplicity="1" />
+    <End Role="tblMES" Type="Self.tblMES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProduction">
+        <PropertyRef Name="ProductionCode" />
+      </Principal>
+      <Dependent Role="tblMES">
+        <PropertyRef Name="ProductionCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMRP_tblProduction">
+    <End Role="tblProduction" Type="Self.tblProduction" Multiplicity="1" />
+    <End Role="tblMRP" Type="Self.tblMRP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProduction">
+        <PropertyRef Name="ProductionCode" />
+      </Principal>
+      <Dependent Role="tblMRP">
+        <PropertyRef Name="ProductionCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProduction_tblOrder">
+    <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="1" />
+    <End Role="tblProduction" Type="Self.tblProduction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOrder">
+        <PropertyRef Name="OrderCode" />
+      </Principal>
+      <Dependent Role="tblProduction">
+        <PropertyRef Name="OrderCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ERPEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="tblBOM" EntityType="Self.tblBOM" />
+    <EntitySet Name="tblBrand" EntityType="Self.tblBrand" />
+    <EntitySet Name="tblDCate" EntityType="Self.tblDCate" />
+    <EntitySet Name="tblFactory" EntityType="Self.tblFactory" />
+    <EntitySet Name="tblICate" EntityType="Self.tblICate" />
+    <EntitySet Name="tblItem" EntityType="Self.tblItem" />
+    <EntitySet Name="tblLine" EntityType="Self.tblLine" />
+    <EntitySet Name="tblMachine" EntityType="Self.tblMachine" />
+    <EntitySet Name="tblMaterial" EntityType="Self.tblMaterial" />
+    <EntitySet Name="tblMcCate" EntityType="Self.tblMcCate" />
+    <EntitySet Name="tblMES" EntityType="Self.tblMES" />
+    <EntitySet Name="tblMRP" EntityType="Self.tblMRP" />
+    <EntitySet Name="tblOperation" EntityType="Self.tblOperation" />
+    <EntitySet Name="tblOrder" EntityType="Self.tblOrder" />
+    <EntitySet Name="tblPart" EntityType="Self.tblPart" />
+    <EntitySet Name="tblProduction" EntityType="Self.tblProduction" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" />
+    <EntitySet Name="tblWorker" EntityType="Self.tblWorker" />
+    <AssociationSet Name="FK_tblBOM_tblItem" Association="Self.FK_tblBOM_tblItem">
+      <End Role="tblItem" EntitySet="tblItem" />
+      <End Role="tblBOM" EntitySet="tblBOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBOM_tblMaterial" Association="Self.FK_tblBOM_tblMaterial">
+      <End Role="tblMaterial" EntitySet="tblMaterial" />
+      <End Role="tblBOM" EntitySet="tblBOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBOM_tblPart" Association="Self.FK_tblBOM_tblPart">
+      <End Role="tblPart" EntitySet="tblPart" />
+      <End Role="tblBOM" EntitySet="tblBOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblItem_tblBrand" Association="Self.FK_tblItem_tblBrand">
+      <End Role="tblBrand" EntitySet="tblBrand" />
+      <End Role="tblItem" EntitySet="tblItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblOrder_tblBrand" Association="Self.FK_tblOrder_tblBrand">
+      <End Role="tblBrand" EntitySet="tblBrand" />
+      <End Role="tblOrder" EntitySet="tblOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLine_tblFactory" Association="Self.FK_tblLine_tblFactory">
+      <End Role="tblFactory" EntitySet="tblFactory" />
+      <End Role="tblLine" EntitySet="tblLine" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMachine_tblFactory" Association="Self.FK_tblMachine_tblFactory">
+      <End Role="tblFactory" EntitySet="tblFactory" />
+      <End Role="tblMachine" EntitySet="tblMachine" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProduction_tblFactory" Association="Self.FK_tblProduction_tblFactory">
+      <End Role="tblFactory" EntitySet="tblFactory" />
+      <End Role="tblProduction" EntitySet="tblProduction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblWorker_tblFactory" Association="Self.FK_tblWorker_tblFactory">
+      <End Role="tblFactory" EntitySet="tblFactory" />
+      <End Role="tblWorker" EntitySet="tblWorker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblItem_tblICate" Association="Self.FK_tblItem_tblICate">
+      <End Role="tblICate" EntitySet="tblICate" />
+      <End Role="tblItem" EntitySet="tblItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblOperation_tblItem" Association="Self.FK_tblOperation_tblItem">
+      <End Role="tblItem" EntitySet="tblItem" />
+      <End Role="tblOperation" EntitySet="tblOperation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblOrder_tblItem" Association="Self.FK_tblOrder_tblItem">
+      <End Role="tblItem" EntitySet="tblItem" />
+      <End Role="tblOrder" EntitySet="tblOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPart_tblItem" Association="Self.FK_tblPart_tblItem">
+      <End Role="tblItem" EntitySet="tblItem" />
+      <End Role="tblPart" EntitySet="tblPart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMachine_tblMcCate" Association="Self.FK_tblMachine_tblMcCate">
+      <End Role="tblMcCate" EntitySet="tblMcCate" />
+      <End Role="tblMachine" EntitySet="tblMachine" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMES_tblProduction" Association="Self.FK_tblMES_tblProduction">
+      <End Role="tblProduction" EntitySet="tblProduction" />
+      <End Role="tblMES" EntitySet="tblMES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMRP_tblProduction" Association="Self.FK_tblMRP_tblProduction">
+      <End Role="tblProduction" EntitySet="tblProduction" />
+      <End Role="tblMRP" EntitySet="tblMRP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProduction_tblOrder" Association="Self.FK_tblProduction_tblOrder">
+      <End Role="tblOrder" EntitySet="tblOrder" />
+      <End Role="tblProduction" EntitySet="tblProduction" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ERPModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ERPModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

@@ -79,7 +79,7 @@
           <Property Name="ICateCode" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="ItemName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ItemDescription" Type="nvarchar" MaxLength="200" />
-          <Property Name="ItemImage" Type="image" />
+          <Property Name="ItemImage" Type="varchar(max)" />
           <Property Name="RegDate" Type="date" />
           <Property Name="RegID" Type="nvarchar" MaxLength="30" />
           <Property Name="ModDate" Type="date" />
@@ -660,7 +660,7 @@
           <Property Name="ICateCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ItemDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="ItemImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ItemImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="RegDate" Type="DateTime" Precision="0" />
           <Property Name="RegID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="ModDate" Type="DateTime" Precision="0" />

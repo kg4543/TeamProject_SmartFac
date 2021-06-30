@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\App.xaml
-51908228404
-21491102219
-36-528911500
-60-2016323373
-MainWindow.xaml;View\ITEM\ItemAdd.xaml;View\ITEM\ItemEdit.xaml;View\ITEM\ItemMain.xaml;View\LoginView.xaml;
+9-265575087
+2-1556844510
+40-1152588846
+61-1801936637
+MainWindow.xaml;View\BOM\BOMView.xaml;View\ITEM\Category\ICateAdd.xaml;View\ITEM\Category\ICateEdit.xaml;View\ITEM\ItemAdd.xaml;View\ITEM\Category\ItemCategoryView.xaml;View\ITEM\ItemEdit.xaml;View\ITEM\ItemMain.xaml;View\LoginView.xaml;
 
 True
 

@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ERPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblBOM">
+    <Key>
+      <PropertyRef Name="BOMId" />
+    </Key>
+    <Property Name="BOMId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PartCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="MaterialCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Quantity" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBrand">
+    <Key>
+      <PropertyRef Name="BrandCode" />
+    </Key>
+    <Property Name="BrandId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrandCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="BrandName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RegDate" Type="date" />
+    <Property Name="RegID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModDate" Type="date" />
+    <Property Name="ModID" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblDCate">
+    <Key>
+      <PropertyRef Name="DcateCode" />
+    </Key>
+    <Property Name="DcateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DcateCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DcateName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblFactory">
+    <Key>
+      <PropertyRef Name="FactoryCode" />
+    </Key>
+    <Property Name="FactoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FactoryCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="FactoryName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="RegDate" Type="date" />
+    <Property Name="RegID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModDate" Type="date" />
+    <Property Name="ModID" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblICate">
+    <Key>
+      <PropertyRef Name="IcateCode" />
+    </Key>
+    <Property Name="IcateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IcateCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="IcategName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="RegDate" Type="date" />
+    <Property Name="RegID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModDate" Type="date" />
+    <Property Name="ModID" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblItem">
+    <Key>
+      <PropertyRef Name="ItemCode" />
+    </Key>
+    <Property Name="ItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="BrandCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ICateCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemDescription" Type="nvarchar" MaxLength="200" />
+    <Property Name="ItemImage" Type="image" />
+    <Property Name="RegDate" Type="date" />
+    <Property Name="RegID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModDate" Type="date" />
+    <Property Name="ModID" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblLine">
+    <Key>
+      <PropertyRef Name="LineCode" />
+    </Key>
+    <Property Name="LineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LineCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="FactoryCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblMachine">
+    <Key>
+      <PropertyRef Name="MachineCode" />
+    </Key>
+    <Property Name="MachineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MachineCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MCateCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="FactoryCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MachineName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IoTConnect" Type="nvarchar" MaxLength="50" />
+    <Property Name="RegDate" Type="date" />
+    <Property Name="RegID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModDate" Type="date" />
+    <Property Name="ModID" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblMaterial">
+    <Key>
+      <PropertyRef Name="MaterialCode" />
+    </Key>
+    <Property Name="MaterialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaterialCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaterialName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="UNIT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblMcCate">
+    <Key>
+      <PropertyRef Name="McateCode" />
+    </Key>
+    <Property Name="McateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="McateCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="McateName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="RegDate" Type="date" />
+    <Property Name="RegID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModDate" Type="date" />
+    <Property Name="ModID" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblMES">
+    <Key>
+      <PropertyRef Name="MESId" />
+    </Key>
+    <Property Name="MESId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductionCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="OpId" Type="int" Nullable="false" />
+    <Property Name="WorkingTime" Type="time" Precision="7" />
+    <Property Name="PowerOnTime" Type="time" Precision="7" />
+    <Property Name="Defect" Type="bit" />
+    <Property Name="DefectQty" Type="int" />
+    <Property Name="IoTConnect" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblMRP">
+    <Key>
+      <PropertyRef Name="MRPId" />
+    </Key>
+    <Property Name="MRPId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MRPCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ProductionCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ItemCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaterialCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SupplyCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ShipDate" Type="date" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="RegDate" Type="date" />
+    <Property Name="RegID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModDate" Type="date" />
+    <Property Name="ModID" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblOperation">
+    <Key>
+      <PropertyRef Name="OpId" />
+    </Key>
+    <Property Name="OpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OpName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PreOp" Type="int" />
+    <Property Name="PostOp" Type="int" />
+    <Property Name="CycleTime" Type="int" Nullable="false" />
+    <Property Name="ItemCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="McateCode" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tblOrder">
+    <Key>
+      <PropertyRef Name="OrderCode" />
+    </Key>
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="BrandCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ItemCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Destination" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ShipDate" Type="date" Nullable="false" />
+    <Property Name="UnitPrice" Type="int" Nullable="false" />
+    <Property Name="RegDate" Type="date" />
+    <Property Name="RegID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModDate" Type="date" />
+    <Property Name="ModID" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblPart">
+    <Key>
+      <PropertyRef Name="PartCode" />
+    </Key>
+    <Property Name="PartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PartCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PartName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PartLevel" Type="int" Nullable="false" />
+    <Property Name="UpPart" Type="nvarchar" MaxLength="20" />
+    <Property Name="ItemCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblProduction">
+    <Key>
+      <PropertyRef Name="ProductionCode" />
+    </Key>
+    <Property Name="ProductionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductionCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="FactoryCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ItemCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="OrderCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="PlanQuantity" Type="int" Nullable="false" />
+    <Property Name="FQuantity" Type="int" />
+    <Property Name="RegDate" Type="date" />
+    <Property Name="RegID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModDate" Type="date" />
+    <Property Name="ModID" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="RItem" Type="bit" />
+    <Property Name="ROrder" Type="bit" />
+    <Property Name="RProduction" Type="bit" />
+    <Property Name="RMaterial" Type="bit" />
+    <Property Name="RFactory" Type="bit" />
+    <Property Name="RMES" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblWorker">
+    <Key>
+      <PropertyRef Name="WorkerCode" />
+    </Key>
+    <Property Name="WorkerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkerCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="WorkerName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="WorkerPhone" Type="nvarchar" MaxLength="13" />
+    <Property Name="WorkerAddr" Type="nvarchar" MaxLength="50" />
+    <Property Name="FactoryCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="RegDate" Type="date" />
+    <Property Name="RegID" Type="nvarchar" MaxLength="30" />
+    <Property Name="ModDate" Type="date" />
+    <Property Name="ModID" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK_tblBOM_tblItem">
+    <End Role="tblItem" Type="Self.tblItem" Multiplicity="1" />
+    <End Role="tblBOM" Type="Self.tblBOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblItem">
+        <PropertyRef Name="ItemCode" />
+      </Principal>
+      <Dependent Role="tblBOM">
+        <PropertyRef Name="ItemCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBOM_tblMaterial">
+    <End Role="tblMaterial" Type="Self.tblMaterial" Multiplicity="1" />
+    <End Role="tblBOM" Type="Self.tblBOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMaterial">
+        <PropertyRef Name="MaterialCode" />
+      </Principal>
+      <Dependent Role="tblBOM">
+        <PropertyRef Name="MaterialCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBOM_tblPart">
+    <End Role="tblPart" Type="Self.tblPart" Multiplicity="0..1" />
+    <End Role="tblBOM" Type="Self.tblBOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPart">
+        <PropertyRef Name="PartCode" />
+      </Principal>
+      <Dependent Role="tblBOM">
+        <PropertyRef Name="PartCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblItem_tblBrand">
+    <End Role="tblBrand" Type="Self.tblBrand" Multiplicity="1" />
+    <End Role="tblItem" Type="Self.tblItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrand">
+        <PropertyRef Name="BrandCode" />
+      </Principal>
+      <Dependent Role="tblItem">
+        <PropertyRef Name="BrandCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblItem_tblICate">
+    <End Role="tblICate" Type="Self.tblICate" Multiplicity="1" />
+    <End Role="tblItem" Type="Self.tblItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblICate">
+        <PropertyRef Name="IcateCode" />
+      </Principal>
+      <Dependent Role="tblItem">
+        <PropertyRef Name="ICateCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLine_tblFactory">
+    <End Role="tblFactory" Type="Self.tblFactory" Multiplicity="1" />
+    <End Role="tblLine" Type="Self.tblLine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFactory">
+        <PropertyRef Name="FactoryCode" />
+      </Principal>
+      <Dependent Role="tblLine">
+        <PropertyRef Name="FactoryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMachine_tblFactory">
+    <End Role="tblFactory" Type="Self.tblFactory" Multiplicity="1" />
+    <End Role="tblMachine" Type="Self.tblMachine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFactory">
+        <PropertyRef Name="FactoryCode" />
+      </Principal>
+      <Dependent Role="tblMachine">
+        <PropertyRef Name="FactoryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMachine_tblMcCate">
+    <End Role="tblMcCate" Type="Self.tblMcCate" Multiplicity="1" />
+    <End Role="tblMachine" Type="Self.tblMachine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMcCate">
+        <PropertyRef Name="McateCode" />
+      </Principal>
+      <Dependent Role="tblMachine">
+        <PropertyRef Name="MCateCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMES_tblProduction">
+    <End Role="tblProduction" Type="Self.tblProduction" Multiplicity="1" />
+    <End Role="tblMES" Type="Self.tblMES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProduction">
+        <PropertyRef Name="ProductionCode" />
+      </Principal>
+      <Dependent Role="tblMES">
+        <PropertyRef Name="ProductionCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMRP_tblProduction">
+    <End Role="tblProduction" Type="Self.tblProduction" Multiplicity="1" />
+    <End Role="tblMRP" Type="Self.tblMRP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProduction">
+        <PropertyRef Name="ProductionCode" />
+      </Principal>
+      <Dependent Role="tblMRP">
+        <PropertyRef Name="ProductionCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblOperation_tblItem">
+    <End Role="tblItem" Type="Self.tblItem" Multiplicity="1" />
+    <End Role="tblOperation" Type="Self.tblOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblItem">
+        <PropertyRef Name="ItemCode" />
+      </Principal>
+      <Dependent Role="tblOperation">
+        <PropertyRef Name="ItemCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblOrder_tblBrand">
+    <End Role="tblBrand" Type="Self.tblBrand" Multiplicity="1" />
+    <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrand">
+        <PropertyRef Name="BrandCode" />
+      </Principal>
+      <Dependent Role="tblOrder">
+        <PropertyRef Name="BrandCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblOrder_tblItem">
+    <End Role="tblItem" Type="Self.tblItem" Multiplicity="1" />
+    <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblItem">
+        <PropertyRef Name="ItemCode" />
+      </Principal>
+      <Dependent Role="tblOrder">
+        <PropertyRef Name="ItemCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPart_tblItem">
+    <End Role="tblItem" Type="Self.tblItem" Multiplicity="1" />
+    <End Role="tblPart" Type="Self.tblPart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblItem">
+        <PropertyRef Name="ItemCode" />
+      </Principal>
+      <Dependent Role="tblPart">
+        <PropertyRef Name="ItemCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProduction_tblFactory">
+    <End Role="tblFactory" Type="Self.tblFactory" Multiplicity="1" />
+    <End Role="tblProduction" Type="Self.tblProduction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFactory">
+        <PropertyRef Name="FactoryCode" />
+      </Principal>
+      <Dependent Role="tblProduction">
+        <PropertyRef Name="FactoryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProduction_tblOrder">
+    <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="1" />
+    <End Role="tblProduction" Type="Self.tblProduction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOrder">
+        <PropertyRef Name="OrderCode" />
+      </Principal>
+      <Dependent Role="tblProduction">
+        <PropertyRef Name="OrderCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblWorker_tblFactory">
+    <End Role="tblFactory" Type="Self.tblFactory" Multiplicity="1" />
+    <End Role="tblWorker" Type="Self.tblWorker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFactory">
+        <PropertyRef Name="FactoryCode" />
+      </Principal>
+      <Dependent Role="tblWorker">
+        <PropertyRef Name="FactoryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ERPModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBOM" EntityType="Self.tblBOM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBrand" EntityType="Self.tblBrand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDCate" EntityType="Self.tblDCate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblFactory" EntityType="Self.tblFactory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblICate" EntityType="Self.tblICate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblItem" EntityType="Self.tblItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLine" EntityType="Self.tblLine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMachine" EntityType="Self.tblMachine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMaterial" EntityType="Self.tblMaterial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMcCate" EntityType="Self.tblMcCate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMES" EntityType="Self.tblMES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMRP" EntityType="Self.tblMRP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOperation" EntityType="Self.tblOperation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOrder" EntityType="Self.tblOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPart" EntityType="Self.tblPart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblProduction" EntityType="Self.tblProduction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblWorker" EntityType="Self.tblWorker" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblBOM_tblItem" Association="Self.FK_tblBOM_tblItem">
+      <End Role="tblItem" EntitySet="tblItem" />
+      <End Role="tblBOM" EntitySet="tblBOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBOM_tblMaterial" Association="Self.FK_tblBOM_tblMaterial">
+      <End Role="tblMaterial" EntitySet="tblMaterial" />
+      <End Role="tblBOM" EntitySet="tblBOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBOM_tblPart" Association="Self.FK_tblBOM_tblPart">
+      <End Role="tblPart" EntitySet="tblPart" />
+      <End Role="tblBOM" EntitySet="tblBOM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblItem_tblBrand" Association="Self.FK_tblItem_tblBrand">
+      <End Role="tblBrand" EntitySet="tblBrand" />
+      <End Role="tblItem" EntitySet="tblItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblItem_tblICate" Association="Self.FK_tblItem_tblICate">
+      <End Role="tblICate" EntitySet="tblICate" />
+      <End Role="tblItem" EntitySet="tblItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLine_tblFactory" Association="Self.FK_tblLine_tblFactory">
+      <End Role="tblFactory" EntitySet="tblFactory" />
+      <End Role="tblLine" EntitySet="tblLine" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMachine_tblFactory" Association="Self.FK_tblMachine_tblFactory">
+      <End Role="tblFactory" EntitySet="tblFactory" />
+      <End Role="tblMachine" EntitySet="tblMachine" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMachine_tblMcCate" Association="Self.FK_tblMachine_tblMcCate">
+      <End Role="tblMcCate" EntitySet="tblMcCate" />
+      <End Role="tblMachine" EntitySet="tblMachine" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMES_tblProduction" Association="Self.FK_tblMES_tblProduction">
+      <End Role="tblProduction" EntitySet="tblProduction" />
+      <End Role="tblMES" EntitySet="tblMES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMRP_tblProduction" Association="Self.FK_tblMRP_tblProduction">
+      <End Role="tblProduction" EntitySet="tblProduction" />
+      <End Role="tblMRP" EntitySet="tblMRP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblOperation_tblItem" Association="Self.FK_tblOperation_tblItem">
+      <End Role="tblItem" EntitySet="tblItem" />
+      <End Role="tblOperation" EntitySet="tblOperation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblOrder_tblBrand" Association="Self.FK_tblOrder_tblBrand">
+      <End Role="tblBrand" EntitySet="tblBrand" />
+      <End Role="tblOrder" EntitySet="tblOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblOrder_tblItem" Association="Self.FK_tblOrder_tblItem">
+      <End Role="tblItem" EntitySet="tblItem" />
+      <End Role="tblOrder" EntitySet="tblOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPart_tblItem" Association="Self.FK_tblPart_tblItem">
+      <End Role="tblItem" EntitySet="tblItem" />
+      <End Role="tblPart" EntitySet="tblPart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProduction_tblFactory" Association="Self.FK_tblProduction_tblFactory">
+      <End Role="tblFactory" EntitySet="tblFactory" />
+      <End Role="tblProduction" EntitySet="tblProduction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProduction_tblOrder" Association="Self.FK_tblProduction_tblOrder">
+      <End Role="tblOrder" EntitySet="tblOrder" />
+      <End Role="tblProduction" EntitySet="tblProduction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblWorker_tblFactory" Association="Self.FK_tblWorker_tblFactory">
+      <End Role="tblFactory" EntitySet="tblFactory" />
+      <End Role="tblWorker" EntitySet="tblWorker" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

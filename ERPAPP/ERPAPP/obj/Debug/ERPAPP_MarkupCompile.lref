@@ -1,7 +1,10 @@
 ﻿
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\App.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\MainWindow.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\Category\ICateAdd.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\Category\ICateEdit.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\ItemAdd.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\Category\ItemCategoryView.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\ItemEdit.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\ItemMain.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\LoginView.xaml;;

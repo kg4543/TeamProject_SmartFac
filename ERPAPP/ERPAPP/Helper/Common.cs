@@ -19,6 +19,8 @@ namespace ERPAPP.Helper
 
         public static tblItem SELECT_ITEM;
 
+        public static tblICate SELECT_ICate;
+
         public static async Task<MessageDialogResult> ShowMessageAsync(
             string title, string message, MessageDialogStyle style = MessageDialogStyle.Affirmative)
         {
