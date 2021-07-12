@@ -1,6 +1,7 @@
 ﻿using ERPAPP.Helper;
 using ERPAPP.Logic;
 using ERPAPP.Model;
+using ERPAPP.View.ITEM.BOM;
 using ERPAPP.View.ITEM.Category;
 using Microsoft.Win32;
 using System;
@@ -28,6 +29,44 @@ namespace ERPAPP.View.ITEM
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             DataLoad(); //그리드 데이터 로드
+        }
+
+        private void DataClear()
+        {
+            //선택 값 초기화
+            TxtCode.Text = TxtName.Text = TxtBrand.Text = TxtCategory.Text = TxtDesc.Text = string.Empty;
+            GrdData.SelectedItem = null;
+        }
+
+        private void DataLoad()
+        {
+            try
+            {
+                //Item DB List 생성
+                List<tblItem> Items = new List<tblItem>();
+                Items = DataAcess.GetItems();
+                //데이터 그리드 바인딩에 Item DB 정보 로드
+                DataContext = Items;
+            }
+            catch (Exception ex)
+            {
+                Common.logger.Error($"ITEM 화면 로드 Error : {ex}");
+                throw ex;
+            }
+        }
+
+        private void TxtSearchCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            //검색창에서 엔터 시 이름 검색창 포커스됨
+            if (e.Key == Key.Enter)
+                TxtSearchName.Focus();
+        }
+
+        private void TxtSearchName_KeyDown(object sender, KeyEventArgs e)
+        {
+            //검색창에서 엔터 시 검색됨
+            if (e.Key == Key.Enter)
+                BtnSearch_Click(sender, e);
         }
 
         //데이터 검색
@@ -117,30 +156,6 @@ namespace ERPAPP.View.ITEM
             }
         }
 
-        private void DataClear()
-        {
-            //선택 값 초기화
-            TxtCode.Text = TxtName.Text = TxtBrand.Text = TxtCategory.Text = TxtDesc.Text = string.Empty;
-            GrdData.SelectedItem = null;
-        }
-
-        private void DataLoad()
-        {
-            try
-            {
-                //Item DB List 생성
-                List<tblItem> Items = new List<tblItem>();
-                Items = DataAcess.GetItems();
-                //데이터 그리드 바인딩에 Item DB 정보 로드
-                DataContext = Items;
-            }
-            catch (Exception ex)
-            {
-                Common.logger.Error($"화면 로드 Error : {ex}");
-                throw ex;
-            }
-        }
-
         private void BtnDownload_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog imageFile = new SaveFileDialog();
@@ -170,18 +185,17 @@ namespace ERPAPP.View.ITEM
             }
         }
 
-        private void TxtSearchCode_KeyDown(object sender, KeyEventArgs e)
+        private async void BtnBOM_Click(object sender, RoutedEventArgs e)
         {
-            //검색창에서 엔터 시 이름 검색창 포커스됨
-            if (e.Key == Key.Enter)
-                TxtSearchName.Focus();
-        }
-
-        private void TxtSearchName_KeyDown(object sender, KeyEventArgs e)
-        {
-            //검색창에서 엔터 시 검색됨
-            if (e.Key == Key.Enter)
-                BtnSearch_Click(sender, e);
+            try
+            {
+                NavigationService.Navigate(new BOMView());
+            }
+            catch (Exception ex)
+            {
+                Common.logger.Error($"예외발생 BtnAccount_Click : {ex}");
+                await Common.ShowMessageAsync("예외", $"예외발생 : {ex}");
+            }
         }
     }
 }

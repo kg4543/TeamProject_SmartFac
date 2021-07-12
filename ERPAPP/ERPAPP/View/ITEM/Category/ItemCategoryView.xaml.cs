@@ -125,7 +125,7 @@ namespace ERPAPP.View.ITEM.Category
             }
             catch (Exception ex)
             {
-                Common.logger.Error($"화면 로드 Error : {ex}");
+                Common.logger.Error($"Category 화면 로드 Error : {ex}");
                 throw ex;
             }
         }

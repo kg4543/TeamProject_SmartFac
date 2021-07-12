@@ -25,13 +25,13 @@
         <TextBox x:Name="TxtUserId"
                  Grid.Row="1" Margin="30, 10"
                  mah:TextBoxHelper.Watermark="ID를 입력하세요"
-                 FontSize="20" KeyDown="TxtUserId_KeyDown"
+                 FontSize="15" KeyDown="TxtUserId_KeyDown"
                  />
 
         <PasswordBox x:Name="TxtUserPassword"
                  Grid.Row="2" Margin="30, 10"
                  mah:TextBoxHelper.Watermark="Password를 입력하세요"
-                 FontSize="20" KeyDown="TxtUserPassword_KeyDown"
+                 FontSize="15" KeyDown="TxtUserPassword_KeyDown"
                  />
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="BtnLogin"

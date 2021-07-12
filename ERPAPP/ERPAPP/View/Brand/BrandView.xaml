@@ -1,13 +1,13 @@
-﻿<Page x:Class="ERPAPP.View.ITEM.ItemMain"
+﻿<Page x:Class="ERPAPP.View.Brand.BrandView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:ERPAPP.View.ITEM"
+      xmlns:local="clr-namespace:ERPAPP.View.Brand"
       mc:Ignorable="d" 
       d:DesignHeight="530" d:DesignWidth="1200"
-      Title="ItemMain" Background="White"
-      Loaded="Page_Loaded">
+      Title="BrandView" Background="White">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,7 +19,7 @@
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0"
-               Content="ITEM"
+               Content="Brand"
                FontSize="30" FontWeight="Bold"/>
         <Grid Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>
@@ -38,8 +38,7 @@
                    VerticalAlignment="Center" Margin="10,0,0,5"
                    FontSize="18" FontWeight="Bold"/>
                 <TextBox x:Name="TxtSearchName"
-                    Width="150" Height="30" Margin="0,10" 
-                    KeyDown="TxtSearchName_KeyDown"/>
+                    Width="150" Height="30" Margin="0,10" />
 
                 <Button x:Name="BtnSearch"
                     Width="70" Height="30" Margin="10"
@@ -54,59 +53,18 @@
                   SelectionUnit="FullRow" IsReadOnly="True"
                   SelectedCellsChanged="GrdData_SelectedCellsChanged">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding ItemCode}" Header="Code" Width="60" IsReadOnly="True"/>
-                    <DataGridTextColumn Binding="{Binding ItemName}" Header="Name" Width="150" IsReadOnly="True"/>
-                    <DataGridTextColumn Binding="{Binding BrandCode}" Header="Brand" Width="70" IsReadOnly="True"/>
-                    <DataGridTextColumn Binding="{Binding ICateCode}" Header="Category" Width="100" IsReadOnly="True"/>
-                    <DataGridTextColumn Binding="{Binding ItemDescription}" Header="Description" Width="1*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding IcateCode}" Header="Code" Width="100" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding IcategName}" Header="Name" Width="200" IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
         <StackPanel Grid.Row="2" Grid.Column="0"
-                    Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="BtnCategory"
-                    Width="150" Margin="15"
-                    Content="Category" FontSize="15"
-                    Foreground="White" Background="DodgerBlue"
-                    Click="BtnCategory_Click"/>
-            <Button x:Name="BtnBOM"
-                    Width="150" Margin="15"
-                    Content="BOM" FontSize="15"
-                    Foreground="White" Background="CadetBlue"
-                    Click="BtnBOM_Click"/>
-            <Button x:Name="BtnOps"
-                    Width="150" Margin="15"
-                    Content="Operation" FontSize="15"
-                    Foreground="White" Background="MidnightBlue"/>
-        </StackPanel>
+                    Orientation="Horizontal" HorizontalAlignment="Center"/>
         <Grid Grid.Row="1" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Image x:Name="ImgItem"
-                       Source="/Resources/No_Picture.jpg"
-                       Grid.Row="0" Height="200"
-                       Margin="10"/>
-                <Button x:Name="BtnDownload"
-                        Grid.Row="1" Width="150" Height="30"
-                        VerticalAlignment="Top"
-                        Content="Download" FontSize="12"
-                        Foreground="White" Background="CornflowerBlue"
-                        Click="BtnDownload_Click"/>
-            </Grid>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="130"/>
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -123,21 +81,6 @@
                        Content="Name : " 
                        HorizontalContentAlignment="Right"
                        FontSize="20" FontWeight="Bold"/>
-                <Label Grid.Row="2" Grid.Column="0" Margin="12"
-                       VerticalAlignment="Center"
-                       Content="Brand : " 
-                       HorizontalContentAlignment="Right"
-                       FontSize="20" FontWeight="Bold"/>
-                <Label Grid.Row="3" Grid.Column="0" Margin="12"
-                       VerticalAlignment="Center"
-                       Content="Category : " 
-                       HorizontalContentAlignment="Right"
-                       FontSize="20" FontWeight="Bold"/>
-                <Label Grid.Row="4" Grid.Column="0" Margin="12"
-                       VerticalAlignment="Top"
-                       Content="Desciption : " 
-                       HorizontalContentAlignment="Right" 
-                       FontSize="20" FontWeight="Bold"/>
 
                 <TextBox x:Name="TxtCode" 
                          Grid.Row="0" Grid.Column="1"
@@ -150,25 +93,6 @@
                          Width="220" Margin="0,12"
                          HorizontalAlignment="Left"
                          FontSize="15" FontWeight="Bold"
-                         IsReadOnly="True"/>
-                <TextBox x:Name="TxtBrand"
-                         Grid.Row="2" Grid.Column="1"
-                         Width="220" Margin="0,12"
-                         HorizontalAlignment="Left"
-                         FontSize="15" FontWeight="Bold"
-                         IsReadOnly="True"/>
-                <TextBox x:Name="TxtCategory"
-                         Grid.Row="3" Grid.Column="1"
-                         Width="220" Margin="0,12"
-                         HorizontalAlignment="Left"
-                         FontSize="15" FontWeight="Bold"
-                        IsReadOnly="True"/>
-                <TextBox x:Name="TxtDesc"
-                         Grid.Row="4" Grid.Column="1" 
-                         Width="220" Margin="0,12" 
-                         HorizontalAlignment="Left"
-                         FontSize="15" FontWeight="Bold"
-                         TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
                          IsReadOnly="True"/>
             </Grid>
         </Grid>
