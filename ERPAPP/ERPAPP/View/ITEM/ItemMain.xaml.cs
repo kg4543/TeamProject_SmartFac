@@ -139,7 +139,7 @@ namespace ERPAPP.View.ITEM
         }
 
         // 아이템 정보 수정
-        private async void BtnEdit_Click(object sender, RoutedEventArgs e)
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             if (GrdData.SelectedItem != null)
             {
@@ -152,7 +152,7 @@ namespace ERPAPP.View.ITEM
             }
             else //아이템을 선택하지 않았을 경우
             {
-                await Common.ShowMessageAsync("데이터 선택", "아이템을 선택해주세요.");
+                Common.ShowMessageAsync("데이터 선택", "아이템을 선택해주세요.");
             }
         }
 

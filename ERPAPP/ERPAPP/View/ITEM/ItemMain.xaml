@@ -67,17 +67,17 @@
             <Button x:Name="BtnCategory"
                     Width="150" Margin="15"
                     Content="Category" FontSize="15"
-                    Foreground="White" Background="DodgerBlue"
+                    Foreground="White" Background="YellowGreen"
                     Click="BtnCategory_Click"/>
             <Button x:Name="BtnBOM"
                     Width="150" Margin="15"
                     Content="BOM" FontSize="15"
-                    Foreground="White" Background="CadetBlue"
+                    Foreground="White" Background="CornflowerBlue"
                     Click="BtnBOM_Click"/>
             <Button x:Name="BtnOps"
                     Width="150" Margin="15"
                     Content="Operation" FontSize="15"
-                    Foreground="White" Background="MidnightBlue"/>
+                    Foreground="White" Background="LightSeaGreen"/>
         </StackPanel>
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.ColumnDefinitions>

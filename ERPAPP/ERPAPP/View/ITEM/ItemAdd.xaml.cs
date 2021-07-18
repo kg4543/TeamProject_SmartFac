@@ -75,7 +75,7 @@ namespace ERPAPP.View.ITEM
         }
 
         //DB에 데이터 추가
-        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        private async void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             if(IsValid())
             {
@@ -94,9 +94,16 @@ namespace ERPAPP.View.ITEM
                 };
                 DataAcess.SetItems(item);
 
-                this.ShowMessageAsync("데이터 등록", "아이템이 등록되었습니다.");
-
-                DataClear();
+                var result = await this.ShowMessageAsync("데이터 등록", "아이템이 등록되었습니다.\n 추가 등록하시겠습니까?",
+                                                    MessageDialogStyle.AffirmativeAndNegative, null);
+                if (result == MessageDialogResult.Affirmative)
+                {
+                    DataClear();
+                }
+                else
+                {
+                    Close();
+                }
             }
         }
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
