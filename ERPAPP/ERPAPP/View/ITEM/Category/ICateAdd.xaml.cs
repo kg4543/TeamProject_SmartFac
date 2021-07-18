@@ -20,16 +20,10 @@ namespace ERPAPP.View.ITEM.Category
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            ClearData();
+            DataClear();
         }
 
-        private void ClearData()
-        {
-            TxtCode.Text = TxtName.Text = string.Empty;
-            TxtCode.Focus();
-        }
-
-        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        private async void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             if (IsValid())
             {
@@ -41,8 +35,16 @@ namespace ERPAPP.View.ITEM.Category
                     RegID = Common.LOGINED_USER.UserId
                 };
                 Logic.DataAcess.SetICates(iCate);
-                this.ShowMessageAsync("카테고리 등록","카테고리를 추가하였습니다.");
-                ClearData();
+                var result = await this.ShowMessageAsync("데이터 등록", "카테고리가 등록되었습니다.\n 추가 등록하시겠습니까?",
+                                                    MessageDialogStyle.AffirmativeAndNegative, null);
+                if (result == MessageDialogResult.Affirmative)
+                {
+                    DataClear();
+                }
+                else
+                {
+                    Close();
+                }
             }
         }
 
@@ -70,6 +72,12 @@ namespace ERPAPP.View.ITEM.Category
                 return false;
             }
             return true;
+        }
+
+        private void DataClear()
+        {
+            TxtCode.Text = TxtName.Text = string.Empty;
+            TxtCode.Focus();
         }
     }
 }

@@ -57,12 +57,6 @@ namespace ERPAPP.View.ITEM.Category
                 BtnSearch_Click(sender, e);
         }
 
-        private void TxtSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-                BtnSearch_Click(sender, e);
-        }
-
         private void GrdData_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             try

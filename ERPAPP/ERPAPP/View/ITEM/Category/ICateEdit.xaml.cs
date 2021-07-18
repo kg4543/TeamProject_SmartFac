@@ -48,7 +48,7 @@ namespace ERPAPP.View.ITEM.Category
         {
             if (string.IsNullOrEmpty(TxtName.Text))
             {
-                this.ShowMessageAsync("입력오류", "아이템 이름을 입력해주세요.");
+                this.ShowMessageAsync("입력오류", "카테고리 이름을 입력해주세요.");
                 return false;
             }
             return true;
