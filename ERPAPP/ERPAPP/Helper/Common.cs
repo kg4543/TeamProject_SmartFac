@@ -15,11 +15,19 @@ namespace ERPAPP.Helper
     {
         public static readonly Logger logger = LogManager.GetCurrentClassLogger();
 
+        //현재 로그인한 유저 정보
         public static tblUser LOGINED_USER;
 
+        //유저가 선택한 데이터
         public static tblItem SELECT_ITEM;
 
         public static tblICate SELECT_ICate;
+
+        public static tblBrand SELECT_BRAND;
+
+        public static tblOrder SELECT_ORDER;
+
+        public static tblFactory SELECT_Factory;
 
         public static async Task<MessageDialogResult> ShowMessageAsync(
             string title, string message, MessageDialogStyle style = MessageDialogStyle.Affirmative)

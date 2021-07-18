@@ -23,14 +23,15 @@ namespace ERPAPP.Logic
 
             return list;
         }
-        public static int SetUsers(tblUser item)
+
+        /*public static int SetUsers(tblUser item)
         {
             using (var ctx = new ERPEntities())
             {
                 ctx.tblUser.AddOrUpdate(item);
                 return ctx.SaveChanges(); // commit
             }
-        }
+        }*/
 
         public static List<tblItem> GetItems()
         {
@@ -43,7 +44,6 @@ namespace ERPAPP.Logic
 
             return list;
         }
-
         public static int SetItems(tblItem item)
         {
             using (var ctx = new ERPEntities())
@@ -84,11 +84,138 @@ namespace ERPAPP.Logic
 
             return list;
         }
+
         public static int SetICates(tblICate item)
         {
             using (var ctx = new ERPEntities())
             {
                 ctx.tblICate.AddOrUpdate(item);
+                return ctx.SaveChanges(); // commit
+            }
+        }
+
+        public static List<tblBOM> GetBOM()
+        {
+            List<tblBOM> list;
+
+            using (var ctx = new ERPEntities())
+            {
+                list = ctx.tblBOM.ToList();
+            }
+
+            return list;
+        }
+
+        public static int SetBOM(tblBOM item)
+        {
+            using (var ctx = new ERPEntities())
+            {
+                ctx.tblBOM.AddOrUpdate(item);
+                return ctx.SaveChanges(); // commit
+            }
+        }
+
+        internal static List<tblOrder> GetOrders()
+        {
+            List<tblOrder> list;
+
+            using (var ctx = new ERPEntities())
+            {
+                list = ctx.tblOrder.ToList();
+            }
+
+            return list;
+        }
+
+        public static int SetOrder(tblOrder item)
+        {
+            using (var ctx = new ERPEntities())
+            {
+                ctx.tblOrder.AddOrUpdate(item);
+                return ctx.SaveChanges(); // commit
+            }
+        }
+
+        internal static List<tblFactory> GetFactory()
+        {
+            List<tblFactory> list;
+
+            using (var ctx = new ERPEntities())
+            {
+                list = ctx.tblFactory.ToList();
+            }
+
+            return list;
+        }
+
+        public static int SetFactory(tblFactory item)
+        {
+            using (var ctx = new ERPEntities())
+            {
+                ctx.tblFactory.AddOrUpdate(item);
+                return ctx.SaveChanges(); // commit
+            }
+        }
+
+        internal static List<tblWorker> GetWorker()
+        {
+            List<tblWorker> list;
+
+            using (var ctx = new ERPEntities())
+            {
+                list = ctx.tblWorker.ToList();
+            }
+
+            return list;
+        }
+
+        public static int SetWorker(tblWorker item)
+        {
+            using (var ctx = new ERPEntities())
+            {
+                ctx.tblWorker.AddOrUpdate(item);
+                return ctx.SaveChanges(); // commit
+            }
+        }
+
+        internal static List<tblMachine> GetMachine()
+        {
+            List<tblMachine> list;
+
+            using (var ctx = new ERPEntities())
+            {
+                list = ctx.tblMachine.ToList();
+            }
+
+            return list;
+        }
+
+        public static int SetMachine(tblMachine item)
+        {
+            using (var ctx = new ERPEntities())
+            {
+                ctx.tblMachine.AddOrUpdate(item);
+                return ctx.SaveChanges(); // commit
+            }
+        }
+
+        internal static List<tblMcCate> GetMcCate()
+        {
+            List<tblMcCate> list;
+
+            using (var ctx = new ERPEntities())
+            {
+                list = ctx.tblMcCate.ToList();
+            }
+
+            return list;
+        }
+
+        public static int SetMcCate(tblMcCate item)
+        {
+            using (var ctx = new ERPEntities())
+            {
+                ctx.tblMcCate.AddOrUpdate(item);
                 return ctx.SaveChanges(); // commit
             }
         }

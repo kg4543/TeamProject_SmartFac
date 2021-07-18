@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\App.xaml
-81697142502
+20-534899217
 2-1556844510
-38-1853375261
+50-235921322
 61-1801936637
-MainWindow.xaml;View\ITEM\Category\ICateAdd.xaml;View\ITEM\Category\ICateEdit.xaml;View\ITEM\ItemAdd.xaml;View\ITEM\Category\ItemCategoryView.xaml;View\ITEM\ItemEdit.xaml;View\ITEM\ItemMain.xaml;View\LoginView.xaml;
+MainWindow.xaml;View\Brand\BrandAdd.xaml;View\Brand\BrandEdit.xaml;View\Brand\BrandView.xaml;View\Factory\FactoryAdd.xaml;View\Factory\FactoryEdit.xaml;View\Factory\FactoryView.xaml;View\Factory\Machine\MachineView.xaml;View\Factory\Worker\WorkerView.xaml;View\ITEM\BOM\BOMView.xaml;View\ITEM\Category\ICateAdd.xaml;View\ITEM\Category\ICateEdit.xaml;View\ITEM\ItemAdd.xaml;View\ITEM\Category\ItemCategoryView.xaml;View\ITEM\ItemEdit.xaml;View\ITEM\ItemMain.xaml;View\LoginView.xaml;View\Order\OrderAdd.xaml;View\Order\OrderEdit.xaml;View\Order\OrderView.xaml;
 
 False
 

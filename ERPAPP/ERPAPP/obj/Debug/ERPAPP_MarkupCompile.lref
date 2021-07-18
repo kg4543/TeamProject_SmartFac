@@ -1,6 +1,15 @@
 ﻿
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\App.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\MainWindow.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Brand\BrandAdd.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Brand\BrandEdit.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Brand\BrandView.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Factory\FactoryAdd.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Factory\FactoryEdit.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Factory\FactoryView.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Factory\Machine\MachineView.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Factory\Worker\WorkerView.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\BOM\BOMView.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\Category\ICateAdd.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\Category\ICateEdit.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\ItemAdd.xaml;;
@@ -8,4 +17,7 @@ FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\Category\ItemCategoryV
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\ItemEdit.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\ItemMain.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\LoginView.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Order\OrderAdd.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Order\OrderView.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Order\OrderEdit.xaml;;
 
