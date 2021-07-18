@@ -5,6 +5,8 @@ using ERPAPP.View;
 using MahApps.Metro.Controls.Dialogs;
 using ERPAPP.Helper;
 using ERPAPP.View.ITEM;
+using ERPAPP.View.Order;
+using ERPAPP.View.Factory;
 
 namespace ERPAPP
 {
@@ -46,8 +48,6 @@ namespace ERPAPP
                     BtnMES.IsEnabled = true;
             }
         }
-
-        
 
         private async void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -100,6 +100,32 @@ namespace ERPAPP
             try
             {
                 ActivePage.Content = new ItemMain();
+            }
+            catch (Exception ex)
+            {
+                Common.logger.Error($"예외발생 BtnAccount_Click : {ex}");
+                await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
+            }
+        }
+
+        private async void BtnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ActivePage.Content = new OrderView();
+            }
+            catch (Exception ex)
+            {
+                Common.logger.Error($"예외발생 BtnAccount_Click : {ex}");
+                await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
+            }
+        }
+
+        private async void BtnFactory_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ActivePage.Content = new FactoryView();
             }
             catch (Exception ex)
             {

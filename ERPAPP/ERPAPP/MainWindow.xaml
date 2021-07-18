@@ -12,7 +12,7 @@
         Icon="/Resources/Logo2.ico"
         WindowStartupLocation="CenterScreen"
         ContentRendered="MetroWindow_ContentRendered"
-        Activated="MetroWindow_Activated">
+        Activated="MetroWindow_Activated" IsMaxRestoreButtonEnabled="False">
 
     <DockPanel>
         <Grid DockPanel.Dock="Top" Height="70">
@@ -37,7 +37,8 @@
                     Grid.Column="1" Margin="10,15"
                     Content="Order" FontSize="15"
                     Foreground="White" Background="YellowGreen" 
-                    IsEnabled="False"/>
+                    IsEnabled="False"
+                    Click="BtnOrder_Click"/>
             <Button x:Name="BtnProduction"
                     Grid.Column="2" Margin="10,15"
                     Content="Production" FontSize="15"
@@ -52,7 +53,8 @@
                     Grid.Column="4" Margin="10,15" 
                     Content="Factory" FontSize="15"
                     Foreground="White" Background="DarkOrange" 
-                    IsEnabled="False"/>
+                    IsEnabled="False"
+                    Click="BtnFactory_Click"/>
             <Button x:Name="BtnMES" 
                     Grid.Column="5" Margin="10,15" 
                     Content="MES" FontSize="15"
