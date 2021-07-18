@@ -32,6 +32,7 @@ namespace ERPAPP.View.Order
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            DataClear();
             DataLoad();
         }
 
@@ -143,25 +144,35 @@ namespace ERPAPP.View.Order
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            BrandAdd brandAdd = new BrandAdd();
-            brandAdd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            brandAdd.ShowDialog();
+            OrderAdd OrderAdd = new OrderAdd();
+            OrderAdd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            OrderAdd.ShowDialog();
             DataClear(); //선택값 초기화
             DataLoad(); //데이터 로드
         }
 
         private void DataClear()
         {
-            
+            TxtCode.Text = TxtBrandCode.Text = TxtItemCode.Text = TxtShipDate.Text = TxtDestination.Text =
+                TxtQuantity.Text = TxtUnitPrice.Text = string.Empty;
+
+            GrdData.SelectedItem = null;
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            BrandEdit brandEdit = new BrandEdit();
-            brandEdit.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            brandEdit.ShowDialog();
-            DataClear(); //선택값 초기화
-            DataLoad(); //데이터 로드
+            if (GrdData.SelectedItem != null)
+            {
+                OrderEdit orderEdit = new OrderEdit();
+                orderEdit.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                orderEdit.ShowDialog();
+                DataClear(); //선택값 초기화
+                DataLoad(); //데이터 로드
+            }
+            else
+            {
+                Common.ShowMessageAsync("데이터 선택", "아이템을 선택해주세요.");
+            }
         }
 
         

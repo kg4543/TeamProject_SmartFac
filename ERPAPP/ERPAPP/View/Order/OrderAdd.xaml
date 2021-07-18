@@ -1,0 +1,135 @@
+﻿<mah:MetroWindow
+        x:Class="ERPAPP.View.Order.OrderAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:ERPAPP.View.Order"
+        mc:Ignorable="d"
+        Title="OrderAdd" Height="500" Width="650"
+        Loaded="MetroWindow_Loaded">
+    <Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image x:Name="ImgItem"
+                       Source="/Resources/No_Picture.jpg"
+                       Grid.Row="0" Height="200"
+                       Margin="10"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Margin="12"
+                       VerticalAlignment="Center"
+                       Content="Code : " 
+                       HorizontalContentAlignment="Right"
+                       FontSize="20" FontWeight="Bold"/>
+                <Label Grid.Row="1" Grid.Column="0" Margin="12"
+                       VerticalAlignment="Center"
+                       Content="Brand : " 
+                       HorizontalContentAlignment="Right"
+                       FontSize="20" FontWeight="Bold"/>
+                <Label Grid.Row="2" Grid.Column="0" Margin="12"
+                       VerticalAlignment="Center"
+                       Content="ITEM : " 
+                       HorizontalContentAlignment="Right"
+                       FontSize="20" FontWeight="Bold"/>
+                <Label Grid.Row="3" Grid.Column="0" Margin="12"
+                       VerticalAlignment="Center"
+                       Content="ShipDate : " 
+                       HorizontalContentAlignment="Right"
+                       FontSize="20" FontWeight="Bold"/>
+                <Label Grid.Row="4" Grid.Column="0" Margin="12"
+                       VerticalAlignment="Center"
+                       Content="Destination : " 
+                       HorizontalContentAlignment="Right"
+                       FontSize="19" FontWeight="Bold"/>
+                <Label Grid.Row="5" Grid.Column="0" Margin="12"
+                       VerticalAlignment="Center"
+                       Content="Quantity : " 
+                       HorizontalContentAlignment="Right"
+                       FontSize="20" FontWeight="Bold"/>
+                <Label Grid.Row="6" Grid.Column="0" Margin="12"
+                       VerticalAlignment="Center"
+                       Content="Unit Price : " 
+                       HorizontalContentAlignment="Right"
+                       FontSize="20" FontWeight="Bold"/>
+                
+                <TextBox x:Name="TxtCode" 
+                         Grid.Row="0" Grid.Column="1"
+                         Width="240" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"/>
+                <ComboBox Name="CmbBrand"
+                          Grid.Row="1" Grid.Column="1"
+                          Width="240" Margin="0,5"
+                          HorizontalAlignment="Left"
+                          FontSize="15" FontWeight="Bold"
+                          SelectionChanged="CmbBrand_SelectionChanged"/>
+                <ComboBox Name="CmbItem"
+                          Grid.Row="2" Grid.Column="1"
+                          Width="240" Margin="0,5"
+                          HorizontalAlignment="Left"
+                          FontSize="15" FontWeight="Bold"
+                          SelectionChanged="CmbItem_SelectionChanged"/>
+                <DatePicker Name="DtpShipdate"
+                            Grid.Row="3" Grid.Column="1"
+                            Width="240" Margin="0,5"
+                            HorizontalAlignment="Left"
+                            FontSize="15" FontWeight="Bold"/>
+                <ComboBox Name="CmbDest"
+                          Grid.Row="4" Grid.Column="1"
+                          Width="240" Margin="0,5"
+                          HorizontalAlignment="Left"
+                          FontSize="15" FontWeight="Bold"/>
+                <mah:NumericUpDown Name="NumQuantity"
+                                   Grid.Row="5" Grid.Column="1"
+                                   Width="240" Margin="0,5"
+                                   HorizontalAlignment="Left"
+                                   FontSize="15" FontWeight="Bold"/>
+                <TextBox Name="TxtPrice"
+                         Grid.Row="6" Grid.Column="1"
+                         Width="240" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"/>
+
+                <Button x:Name="BtnAdd"
+                        Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" 
+                        HorizontalAlignment="Right"
+                        Margin="120,10" Width="80"
+                        Content="ADD" FontSize="15"
+                        Foreground="White" Background="Orange"
+                        Click="BtnAdd_Click"/>
+                <Button x:Name="BtnCancel"
+                        Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"
+                        HorizontalAlignment="Right"
+                        Margin="30,10" Width="80"
+                        Content="Cancel" FontSize="15"
+                        Foreground="White" Background="Crimson"
+                        Click="BtnCancel_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</mah:MetroWindow>
