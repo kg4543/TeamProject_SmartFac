@@ -135,7 +135,7 @@ private async void BtnUpload_Click(object sender, RoutedEventArgs e)
 - Entity Framework를 활용하여 DB연동
 - DatePicker를 활용하여 날짜 선택
 - Linq를 활용하여 DB 검색 (Trim()을 써서 뒤 공백을 없애줌)
-``` 
+```C#
 private void BtnSearch_Click(object sender, RoutedEventArgs e)
 {
     //검색 내용
@@ -209,7 +209,7 @@ private void CmbItem_SelectionChanged(object sender, SelectionChangedEventArgs e
 (Click the Image)
 
 - 공장 선택 시 해당 공장에 소속된 직원 및 기계 수량 표기
-```
+```C#
  if (GrdData.SelectedItem != null)
 {
     Common.SELECT_Factory = GrdData.SelectedItem as tblFactory;
