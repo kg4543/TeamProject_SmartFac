@@ -36,9 +36,10 @@ else //로그인한 아이디 정보를 받아옴
 }
 ```
 
-# Menu
+# Main Menu
 
-<kbd>[![Menu](/Capture/Menu.PNG "Menu")](https://github.com/kg4543/MiniProject_ERP/blob/main/ERPAPP/ERPAPP/View/LoginView.xaml.cs)</kbd> </br>
+<kbd>[![Menu](/Capture/Menu.PNG "Menu")](https://github.com/kg4543/MiniProject_ERP/blob/main/ERPAPP/ERPAPP/MainWindow.xaml.cs)</kbd> </br>
+(Click the Image)
 
 - 로그인 정보의 권한에 따라 메뉴 활성화
 ```C#
