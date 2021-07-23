@@ -84,7 +84,7 @@ else
 }
 ```
 - FileDialog를 활용하여 사진을 다운로드 및 업로드
-```
+```C#
 private void BtnDownload_Click(object sender, RoutedEventArgs e)
 {
     SaveFileDialog imageFile = new SaveFileDialog();
