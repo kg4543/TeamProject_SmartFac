@@ -31,10 +31,8 @@ namespace ERPAPP.View.Factory.Worker
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            // 콤보박스 리스트 로드
-            var Factorys = DataAcess.GetFactory();
-            foreach (var item in Factorys)
-                CmbFactory.Items.Add(item.FactoryCode);
+            DataClear();
+            DataLoad();
         }
 
         private async void BtnAdd_Click(object sender, RoutedEventArgs e)
@@ -53,7 +51,7 @@ namespace ERPAPP.View.Factory.Worker
                 };
                 DataAcess.SetWorker(worker);
 
-                var result = await this.ShowMessageAsync("데이터 등록", "직원정보가 등록되었습니다.\n 추가 등록하시겠습니까?",
+                var result = await this.ShowMessageAsync("데이터 등록", "기계정보가 등록되었습니다.\n 추가 등록하시겠습니까?",
                                                     MessageDialogStyle.AffirmativeAndNegative, null);
                 if (result == MessageDialogResult.Affirmative)
                 {
@@ -111,6 +109,13 @@ namespace ERPAPP.View.Factory.Worker
         {
             TxtCode.Text = TxtName.Text = TxtPhone.Text = TxtAddr.Text = string.Empty;
             CmbFactory.SelectedItem = null;
+        }
+        private void DataLoad()
+        {
+            // 콤보박스 리스트 로드
+            var Factorys = DataAcess.GetFactory();
+            foreach (var item in Factorys)
+                CmbFactory.Items.Add(item.FactoryCode);
         }
     }
 }
