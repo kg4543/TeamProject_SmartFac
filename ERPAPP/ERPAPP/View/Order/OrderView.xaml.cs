@@ -171,7 +171,7 @@ namespace ERPAPP.View.Order
             }
             else
             {
-                Common.ShowMessageAsync("데이터 선택", "아이템을 선택해주세요.");
+                Common.ShowMessageAsync("데이터 선택", "오더를 선택해주세요.");
             }
         }
 
