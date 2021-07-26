@@ -278,6 +278,12 @@
     <Compile Include="View\Factory\FactoryView.xaml.cs">
       <DependentUpon>FactoryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Factory\Machine\MachineAdd.xaml.cs">
+      <DependentUpon>MachineAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Factory\Machine\MachineEdit.xaml.cs">
+      <DependentUpon>MachineEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Factory\Machine\MachineView.xaml.cs">
       <DependentUpon>MachineView.xaml</DependentUpon>
     </Compile>
@@ -356,6 +362,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Factory\FactoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Factory\Machine\MachineAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Factory\Machine\MachineEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
