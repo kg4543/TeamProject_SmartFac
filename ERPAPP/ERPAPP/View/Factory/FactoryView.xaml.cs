@@ -108,7 +108,7 @@ namespace ERPAPP.View.Factory
             }
             catch (Exception ex)
             {
-                Common.logger.Error($"카테고리 데이터 선택 Error : {ex}");
+                Common.logger.Error($"공장 데이터 선택 Error : {ex}");
                 throw ex;
             }
         }

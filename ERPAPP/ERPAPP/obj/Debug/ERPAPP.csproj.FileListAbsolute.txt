@@ -163,3 +163,7 @@ D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Factory\Machine\Ma
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Factory\Worker\WorkerView.baml
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Order\OrderEdit.g.cs
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Order\OrderEdit.baml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Factory\Worker\WorkerAdd.g.cs
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Factory\Worker\WorkerEdit.g.cs
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Factory\Worker\WorkerAdd.baml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Factory\Worker\WorkerEdit.baml
