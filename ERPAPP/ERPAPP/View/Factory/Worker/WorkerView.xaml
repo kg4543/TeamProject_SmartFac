@@ -55,8 +55,11 @@
                   SelectionUnit="FullRow" IsReadOnly="True"
                   SelectedCellsChanged="GrdData_SelectedCellsChanged">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding FactoryCode}" Header="Code" Width="100" IsReadOnly="True"/>
-                    <DataGridTextColumn Binding="{Binding FactoryName}" Header="Name" Width="200" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding WorkerCode}" Header="Code" Width="100" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding WorkerName}" Header="Name" Width="120" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding FactoryCode}" Header="Factory" Width="110" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding WorkerPhone}" Header="Phone" Width="110" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding WorkerAddr}" Header="Addr" Width="110" IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
@@ -65,6 +68,7 @@
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="60"/>
@@ -87,36 +91,46 @@
                        FontSize="20" FontWeight="Bold"/>
                 <Label Grid.Row="2" Grid.Column="0" Margin="12"
                        VerticalAlignment="Center"
-                       Content="Worker : " 
+                       Content="Factory : " 
                        HorizontalContentAlignment="Right"
                        FontSize="20" FontWeight="Bold"/>
                 <Label Grid.Row="3" Grid.Column="0" Margin="12"
                        VerticalAlignment="Center"
-                       Content="Machine : " 
+                       Content="Phone : " 
                        HorizontalContentAlignment="Right"
                        FontSize="20" FontWeight="Bold"/>
-
+                <Label Grid.Row="4" Grid.Column="0" Margin="12"
+                       VerticalAlignment="Center"
+                       Content="Address : " 
+                       HorizontalContentAlignment="Right"
+                       FontSize="20" FontWeight="Bold"/>
                 <TextBox x:Name="TxtCode" 
                          Grid.Row="0" Grid.Column="1"
-                         Width="220" Margin="0,12"
+                         Width="220" Margin="0,8"
                          HorizontalAlignment="Left"
                          FontSize="15" FontWeight="Bold"
                          IsReadOnly="True"/>
                 <TextBox x:Name="TxtName"
                          Grid.Row="1" Grid.Column="1"
-                         Width="220" Margin="0,12"
+                         Width="220" Margin="0,8"
                          HorizontalAlignment="Left"
                          FontSize="15" FontWeight="Bold"
                          IsReadOnly="True"/>
-                <TextBox x:Name="TxtWorkerQty"
+                <TextBox x:Name="TxtFactory"
                          Grid.Row="2" Grid.Column="1"
-                         Width="220" Margin="0,12"
+                         Width="220" Margin="0,8"
                          HorizontalAlignment="Left"
                          FontSize="15" FontWeight="Bold"
                          IsReadOnly="True"/>
-                <TextBox x:Name="TxtMachineQty"
+                <TextBox x:Name="TxtPhone"
                          Grid.Row="3" Grid.Column="1"
-                         Width="220" Margin="0,12"
+                         Width="220" Margin="0,8"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"
+                         IsReadOnly="True"/>
+                <TextBox x:Name="TxtAddr"
+                         Grid.Row="4" Grid.Column="1"
+                         Width="220" Margin="0,8"
                          HorizontalAlignment="Left"
                          FontSize="15" FontWeight="Bold"
                          IsReadOnly="True"/>
