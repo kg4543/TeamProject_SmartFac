@@ -39,7 +39,7 @@ namespace ERPAPP.View.Factory.Worker
             try
             {
                 List<tblWorker> Worker = new List<tblWorker>();
-                Worker = DataAcess.GetWorker();
+                Worker = DataAcess.GetWorkers();
                 DataContext = Worker;
             }
             catch (Exception ex)
@@ -76,7 +76,7 @@ namespace ERPAPP.View.Factory.Worker
             try
             {
                 //검색한 아이템이 있는지 확인
-                DataContext = DataAcess.GetWorker().Where(i => i.WorkerCode.Trim().Contains(searchCode)
+                DataContext = DataAcess.GetWorkers().Where(i => i.WorkerCode.Trim().Contains(searchCode)
                                                         & i.WorkerName.Trim().Contains(searchName)).ToList();
             }
             catch (Exception ex)

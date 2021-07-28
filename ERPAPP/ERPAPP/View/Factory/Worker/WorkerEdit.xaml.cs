@@ -35,7 +35,7 @@ namespace ERPAPP.View.Factory.Worker
                 selectedItem.ModDate = DateTime.Now.Date;
                 selectedItem.ModID = Common.LOGINED_USER.UserId.ToString();
 
-                DataAcess.SetWorker(selectedItem);
+                DataAcess.SetWorkers(selectedItem);
 
                 await this.ShowMessageAsync("데이터 수정", "직원 정보가 수정되었습니다.");
                 Close();
@@ -76,7 +76,7 @@ namespace ERPAPP.View.Factory.Worker
         private void DataLoad()
         {
             // 콤보박스 리스트 로드
-            var Factorys = DataAcess.GetFactory();
+            var Factorys = DataAcess.GetFactorys();
             foreach (var item in Factorys)
                 CmbFactory.Items.Add(item.FactoryCode);
 

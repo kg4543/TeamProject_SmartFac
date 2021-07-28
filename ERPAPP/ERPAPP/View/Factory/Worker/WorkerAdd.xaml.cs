@@ -49,7 +49,7 @@ namespace ERPAPP.View.Factory.Worker
                     RegDate = DateTime.Now.Date,
                     RegID = Common.LOGINED_USER.UserId.ToString()
                 };
-                DataAcess.SetWorker(worker);
+                DataAcess.SetWorkers(worker);
 
                 var result = await this.ShowMessageAsync("데이터 등록", "기계정보가 등록되었습니다.\n 추가 등록하시겠습니까?",
                                                     MessageDialogStyle.AffirmativeAndNegative, null);
@@ -113,7 +113,7 @@ namespace ERPAPP.View.Factory.Worker
         private void DataLoad()
         {
             // 콤보박스 리스트 로드
-            var Factorys = DataAcess.GetFactory();
+            var Factorys = DataAcess.GetFactorys();
             foreach (var item in Factorys)
                 CmbFactory.Items.Add(item.FactoryCode);
         }
