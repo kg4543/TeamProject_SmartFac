@@ -32,7 +32,7 @@ namespace ERPAPP.View.Factory
                 selectedItem.ModDate = DateTime.Now.Date;
                 selectedItem.ModID = Common.LOGINED_USER.UserId.ToString();
 
-                DataAcess.SetFactory(selectedItem);
+                DataAcess.SetFactorys(selectedItem);
 
                 await this.ShowMessageAsync("데이터 수정", "공장 정보가 수정되었습니다.");
                 Close();

@@ -34,7 +34,7 @@ namespace ERPAPP.View.Factory
                     RegDate = DateTime.Now.Date,
                     RegID = Common.LOGINED_USER.UserId
                 };
-                Logic.DataAcess.SetFactory(factory);
+                Logic.DataAcess.SetFactorys(factory);
                 var result = await this.ShowMessageAsync("데이터 등록", "공장이 등록되었습니다.\n 추가 등록하시겠습니까?",
                                                     MessageDialogStyle.AffirmativeAndNegative, null);
                 if (result == MessageDialogResult.Affirmative)

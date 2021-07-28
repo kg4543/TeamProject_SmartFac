@@ -34,7 +34,7 @@ namespace ERPAPP.View.Factory
             try
             {
                 List<tblFactory> Factory = new List<tblFactory>();
-                Factory = DataAcess.GetFactory();
+                Factory = DataAcess.GetFactorys();
                 DataContext = Factory;
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace ERPAPP.View.Factory
 
             try
             {
-                DataContext = DataAcess.GetFactory().Where(i => i.FactoryCode.Trim().Contains(searchCode)
+                DataContext = DataAcess.GetFactorys().Where(i => i.FactoryCode.Trim().Contains(searchCode)
                                                         & i.FactoryName.Trim().Contains(searchName)).ToList();
             }
             catch (Exception ex)
@@ -89,8 +89,8 @@ namespace ERPAPP.View.Factory
                 {
                     Common.SELECT_Factory = GrdData.SelectedItem as tblFactory;
                     var selectedItem = Common.SELECT_Factory;
-                    var WorkerQty = DataAcess.GetWorker().Where(i => i.FactoryCode.Trim().Equals(selectedItem.FactoryCode.Trim().ToString())).Count();
-                    var MachineQty = DataAcess.GetMachine().Where(i => i.FactoryCode.Trim().Equals(selectedItem.FactoryCode.Trim().ToString())).Count();
+                    var WorkerQty = DataAcess.GetWorkers().Where(i => i.FactoryCode.Trim().Equals(selectedItem.FactoryCode.Trim().ToString())).Count();
+                    var MachineQty = DataAcess.GetMachines().Where(i => i.FactoryCode.Trim().Equals(selectedItem.FactoryCode.Trim().ToString())).Count();
 
                     TxtCode.Text = selectedItem.FactoryCode.ToString();
                     TxtName.Text = selectedItem.FactoryName.ToString();
