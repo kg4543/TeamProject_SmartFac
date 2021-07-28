@@ -36,11 +36,11 @@ namespace ERPAPP.View.Factory.Machine
         private void DataLoad()
         {
             // 콤보박스 리스트 로드
-            var Categorys = DataAcess.GetMcCate();
+            var Categorys = DataAcess.GetMcCates();
             foreach (var item in Categorys)
                 CmbCategory.Items.Add(item.McateCode);
 
-            var Factorys = DataAcess.GetFactory();
+            var Factorys = DataAcess.GetFactorys();
             foreach (var item in Factorys)
                 CmbFactory.Items.Add(item.FactoryCode);
 
@@ -64,7 +64,7 @@ namespace ERPAPP.View.Factory.Machine
                 selectedItem.ModDate = DateTime.Now.Date;
                 selectedItem.ModID = Common.LOGINED_USER.UserId.ToString();
 
-                DataAcess.SetMachine(selectedItem);
+                DataAcess.SetMachines(selectedItem);
 
                 await this.ShowMessageAsync("데이터 수정", "기계 정보가 수정되었습니다.");
                 Close();

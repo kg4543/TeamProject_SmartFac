@@ -39,7 +39,7 @@ namespace ERPAPP.View.Factory.Machine
             try
             {
                 List<tblMachine> Machine = new List<tblMachine>();
-                Machine = DataAcess.GetMachine();
+                Machine = DataAcess.GetMachines();
                 DataContext = Machine;
             }
             catch (Exception ex)
@@ -75,7 +75,7 @@ namespace ERPAPP.View.Factory.Machine
 
             try
             {
-                DataContext = DataAcess.GetMachine().Where(i => i.MachineCode.Trim().Contains(searchCode)
+                DataContext = DataAcess.GetMachines().Where(i => i.MachineCode.Trim().Contains(searchCode)
                                                         & i.MachineName.Trim().Contains(searchName)).ToList();
             }
             catch (Exception ex)
