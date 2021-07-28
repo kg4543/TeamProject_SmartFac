@@ -7,6 +7,7 @@ using ERPAPP.Helper;
 using ERPAPP.View.ITEM;
 using ERPAPP.View.Order;
 using ERPAPP.View.Factory;
+using ERPAPP.View.Production;
 
 namespace ERPAPP
 {
@@ -126,6 +127,19 @@ namespace ERPAPP
             try
             {
                 ActivePage.Content = new FactoryView();
+            }
+            catch (Exception ex)
+            {
+                Common.logger.Error($"예외발생 BtnAccount_Click : {ex}");
+                await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
+            }
+        }
+
+        private async void BtnProduction_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ActivePage.Content = new ProductionView();
             }
             catch (Exception ex)
             {

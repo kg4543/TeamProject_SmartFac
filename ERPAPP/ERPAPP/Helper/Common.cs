@@ -32,6 +32,7 @@ namespace ERPAPP.Helper
         internal static tblWorker SELECT_Worker;
         internal static tblBrand SELECT_Brand;
         internal static tblMachine SELECT_Machine;
+        internal static tblProduction SELECT_Production;
 
         public static async Task<MessageDialogResult> ShowMessageAsync(
             string title, string message, MessageDialogStyle style = MessageDialogStyle.Affirmative)

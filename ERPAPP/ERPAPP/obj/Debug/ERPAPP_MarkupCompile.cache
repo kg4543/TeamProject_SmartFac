@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\App.xaml
-241803858592
+28-619214380
 2-1556844510
-54120827942
+58755614484
 61-1801936637
-MainWindow.xaml;View\Brand\BrandAdd.xaml;View\Brand\BrandEdit.xaml;View\Brand\BrandView.xaml;View\Factory\FactoryAdd.xaml;View\Factory\FactoryEdit.xaml;View\Factory\FactoryView.xaml;View\Factory\Machine\MachineAdd.xaml;View\Factory\Machine\MachineEdit.xaml;View\Factory\Machine\MachineView.xaml;View\Factory\Worker\WorkerAdd.xaml;View\Factory\Worker\WorkerEdit.xaml;View\Factory\Worker\WorkerView.xaml;View\ITEM\BOM\BOMView.xaml;View\ITEM\Category\ICateAdd.xaml;View\ITEM\Category\ICateEdit.xaml;View\ITEM\ItemAdd.xaml;View\ITEM\Category\ItemCategoryView.xaml;View\ITEM\ItemEdit.xaml;View\ITEM\ItemMain.xaml;View\LoginView.xaml;View\Order\OrderAdd.xaml;View\Order\OrderEdit.xaml;View\Order\OrderView.xaml;
+MainWindow.xaml;View\Brand\BrandAdd.xaml;View\Brand\BrandEdit.xaml;View\Brand\BrandView.xaml;View\Factory\FactoryAdd.xaml;View\Factory\FactoryEdit.xaml;View\Factory\FactoryView.xaml;View\Factory\Machine\MachineAdd.xaml;View\Factory\Machine\MachineEdit.xaml;View\Factory\Machine\MachineView.xaml;View\Factory\Worker\WorkerAdd.xaml;View\Factory\Worker\WorkerEdit.xaml;View\Factory\Worker\WorkerView.xaml;View\ITEM\BOM\BOMView.xaml;View\ITEM\Category\ICateAdd.xaml;View\ITEM\Category\ICateEdit.xaml;View\ITEM\ItemAdd.xaml;View\ITEM\Category\ItemCategoryView.xaml;View\ITEM\ItemEdit.xaml;View\ITEM\ItemMain.xaml;View\LoginView.xaml;View\Order\OrderAdd.xaml;View\Order\OrderEdit.xaml;View\Order\OrderView.xaml;View\Production\OrderSearch.xaml;View\Production\ProductionAdd.xaml;View\Production\ProductionEdit.xaml;View\Production\ProductionView.xaml;
 
 False
 

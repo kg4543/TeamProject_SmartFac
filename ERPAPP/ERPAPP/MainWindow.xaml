@@ -43,7 +43,8 @@
                     Grid.Column="2" Margin="10,15"
                     Content="Production" FontSize="15"
                     Foreground="White" Background="DodgerBlue" 
-                    IsEnabled="False"/>
+                    IsEnabled="False"
+                    Click="BtnProduction_Click"/>
             <Button x:Name="BtnMRP" 
                     Grid.Column="3" Margin="10,15"
                     Content="Material" FontSize="15"

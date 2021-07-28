@@ -171,3 +171,11 @@ D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Factory\Machine\Ma
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Factory\Machine\MachineEdit.g.cs
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Factory\Machine\MachineAdd.baml
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Factory\Machine\MachineEdit.baml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Production\ProductionView.g.cs
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Production\ProductionView.baml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Production\ProductionAdd.g.cs
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Production\ProductionEdit.g.cs
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Production\ProductionAdd.baml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Production\ProductionEdit.baml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Production\OrderSearch.g.cs
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Production\OrderSearch.baml

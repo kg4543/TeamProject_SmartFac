@@ -329,6 +329,18 @@
     <Compile Include="View\Order\OrderView.xaml.cs">
       <DependentUpon>OrderView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Production\OrderSearch.xaml.cs">
+      <DependentUpon>OrderSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Production\ProductionAdd.xaml.cs">
+      <DependentUpon>ProductionAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Production\ProductionEdit.xaml.cs">
+      <DependentUpon>ProductionEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Production\ProductionView.xaml.cs">
+      <DependentUpon>ProductionView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -430,6 +442,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Order\OrderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Production\OrderSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Production\ProductionAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Production\ProductionEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Production\ProductionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

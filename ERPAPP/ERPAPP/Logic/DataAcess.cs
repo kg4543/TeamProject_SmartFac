@@ -44,6 +44,7 @@ namespace ERPAPP.Logic
 
             return list;
         }
+
         public static int SetItems(tblItem item)
         {
             using (var ctx = new ERPEntities())
@@ -127,7 +128,7 @@ namespace ERPAPP.Logic
             return list;
         }
 
-        public static int SetOrder(tblOrder item)
+        public static int SetOrders(tblOrder item)
         {
             using (var ctx = new ERPEntities())
             {
@@ -136,7 +137,7 @@ namespace ERPAPP.Logic
             }
         }
 
-        internal static List<tblFactory> GetFactory()
+        internal static List<tblFactory> GetFactorys()
         {
             List<tblFactory> list;
 
@@ -148,7 +149,7 @@ namespace ERPAPP.Logic
             return list;
         }
 
-        public static int SetFactory(tblFactory item)
+        public static int SetFactorys(tblFactory item)
         {
             using (var ctx = new ERPEntities())
             {
@@ -157,7 +158,7 @@ namespace ERPAPP.Logic
             }
         }
 
-        internal static List<tblWorker> GetWorker()
+        internal static List<tblWorker> GetWorkers()
         {
             List<tblWorker> list;
 
@@ -169,7 +170,7 @@ namespace ERPAPP.Logic
             return list;
         }
 
-        public static int SetWorker(tblWorker item)
+        public static int SetWorkers(tblWorker item)
         {
             using (var ctx = new ERPEntities())
             {
@@ -178,7 +179,7 @@ namespace ERPAPP.Logic
             }
         }
 
-        internal static List<tblMachine> GetMachine()
+        internal static List<tblMachine> GetMachines()
         {
             List<tblMachine> list;
 
@@ -190,7 +191,7 @@ namespace ERPAPP.Logic
             return list;
         }
 
-        public static int SetMachine(tblMachine item)
+        public static int SetMachines(tblMachine item)
         {
             using (var ctx = new ERPEntities())
             {
@@ -199,7 +200,7 @@ namespace ERPAPP.Logic
             }
         }
 
-        internal static List<tblMcCate> GetMcCate()
+        internal static List<tblMcCate> GetMcCates()
         {
             List<tblMcCate> list;
 
@@ -211,11 +212,32 @@ namespace ERPAPP.Logic
             return list;
         }
 
-        public static int SetMcCate(tblMcCate item)
+        public static int SetMcCates(tblMcCate item)
         {
             using (var ctx = new ERPEntities())
             {
                 ctx.tblMcCate.AddOrUpdate(item);
+                return ctx.SaveChanges(); // commit
+            }
+        }
+
+        internal static List<tblProduction> GetProductions()
+        {
+            List<tblProduction> list;
+
+            using (var ctx = new ERPEntities())
+            {
+                list = ctx.tblProduction.ToList();
+            }
+
+            return list;
+        }
+
+        public static int SetProductions(tblProduction item)
+        {
+            using (var ctx = new ERPEntities())
+            {
+                ctx.tblProduction.AddOrUpdate(item);
                 return ctx.SaveChanges(); // commit
             }
         }
