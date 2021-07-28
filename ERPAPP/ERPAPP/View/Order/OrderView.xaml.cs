@@ -6,17 +6,10 @@ using ERPAPP.View.ITEM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ERPAPP.View.Order
 {
@@ -34,21 +27,6 @@ namespace ERPAPP.View.Order
         {
             DataClear();
             DataLoad();
-        }
-
-        private void DataLoad()
-        {
-            try
-            {
-                List<tblOrder> Items = new List<tblOrder>();
-                Items = DataAcess.GetOrders();
-                DataContext = Items;
-            }
-            catch (Exception ex)
-            {
-                Common.logger.Error($"ORDER 화면 로드 Error : {ex}");
-                throw ex;
-            }
         }
 
         private void TxtSearchCode_KeyDown(object sender, KeyEventArgs e)
@@ -94,11 +72,9 @@ namespace ERPAPP.View.Order
             {
                 if (GrdData.SelectedItem != null)
                 {
-                    //선택한 아이템을 외부에서 사용하도록 지정
                     Common.SELECT_ORDER = GrdData.SelectedItem as tblOrder;
                     var selectedItem = Common.SELECT_ORDER;
 
-                    //선택한 아이템 정보를 로드
                     TxtCode.Text = selectedItem.OrderCode.ToString();
                     TxtBrandCode.Text = selectedItem.BrandCode.ToString();
                     TxtItemCode.Text = selectedItem.ItemCode.ToString();
@@ -150,15 +126,6 @@ namespace ERPAPP.View.Order
             DataClear(); //선택값 초기화
             DataLoad(); //데이터 로드
         }
-
-        private void DataClear()
-        {
-            TxtCode.Text = TxtBrandCode.Text = TxtItemCode.Text = TxtShipDate.Text = TxtDestination.Text =
-                TxtQuantity.Text = TxtUnitPrice.Text = string.Empty;
-
-            GrdData.SelectedItem = null;
-        }
-
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             if (GrdData.SelectedItem != null)
@@ -175,6 +142,27 @@ namespace ERPAPP.View.Order
             }
         }
 
-        
+        private void DataClear()
+        {
+            TxtCode.Text = TxtBrandCode.Text = TxtItemCode.Text = TxtShipDate.Text = TxtDestination.Text =
+                TxtQuantity.Text = TxtUnitPrice.Text = string.Empty;
+
+            GrdData.SelectedItem = null;
+        }
+
+        private void DataLoad()
+        {
+            try
+            {
+                List<tblOrder> Items = new List<tblOrder>();
+                Items = DataAcess.GetOrders();
+                DataContext = Items;
+            }
+            catch (Exception ex)
+            {
+                Common.logger.Error($"ORDER 화면 로드 Error : {ex}");
+                throw ex;
+            }
+        }
     }
 }

@@ -7,7 +7,7 @@
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:ERPAPP.View.Order"
         mc:Ignorable="d"
-        Title="OrderAdd" Height="500" Width="650"
+        Title="OrderAdd" Height="550" Width="650"
         Loaded="MetroWindow_Loaded">
     <Grid>
         <Grid Grid.Row="1" Grid.Column="1">
@@ -15,7 +15,7 @@
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            
+
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200"/>
@@ -76,7 +76,7 @@
                        Content="Unit Price : " 
                        HorizontalContentAlignment="Right"
                        FontSize="20" FontWeight="Bold"/>
-                
+
                 <TextBox x:Name="TxtCode" 
                          Grid.Row="0" Grid.Column="1"
                          Width="240" Margin="0,5"

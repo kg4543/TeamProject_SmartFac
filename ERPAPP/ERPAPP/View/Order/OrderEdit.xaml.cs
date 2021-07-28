@@ -44,7 +44,7 @@ namespace ERPAPP.View.Order
                 selectedItem.ModDate = DateTime.Now.Date;
                 selectedItem.ModID = Common.LOGINED_USER.UserId.ToString();
 
-                DataAcess.SetOrder(selectedOrder);
+                DataAcess.SetOrders(selectedOrder);
 
                 this.ShowMessageAsync("데이터 수정", "아이템 정보가 수정되었습니다.");
                 Close();

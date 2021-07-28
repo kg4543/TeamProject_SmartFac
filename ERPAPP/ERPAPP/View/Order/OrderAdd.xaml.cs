@@ -25,15 +25,8 @@ namespace ERPAPP.View.Order
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            // 브랜드 콤보박스 리스트 로드
-            var Brands = DataAcess.GetBrands();
-            foreach (var item in Brands)
-                CmbBrand.Items.Add(item.BrandCode);
-
-            CmbDest.Items.Add("KOR");
-            CmbDest.Items.Add("CHA");
-            CmbDest.Items.Add("USA");
-            CmbDest.Items.Add("JPN");
+            DataClear();
+            DataLoad();
         }
 
         private void CmbBrand_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -90,7 +83,7 @@ namespace ERPAPP.View.Order
                     RegDate = DateTime.Now.Date,
                     RegID = Common.LOGINED_USER.UserId.ToString()
                 };
-                DataAcess.SetOrder(order);
+                DataAcess.SetOrders(order);
 
                 //this.ShowMessageAsync("데이터 등록", "오더가 등록되었습니다.");
                 var result = await this.ShowMessageAsync("데이터 등록", "오더가 등록되었습니다.\n 추가 등록하시겠습니까?",
@@ -154,6 +147,19 @@ namespace ERPAPP.View.Order
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void DataLoad()
+        {
+            // 브랜드 콤보박스 리스트 로드
+            var Brands = DataAcess.GetBrands();
+            foreach (var item in Brands)
+                CmbBrand.Items.Add(item.BrandCode);
+
+            CmbDest.Items.Add("KOR");
+            CmbDest.Items.Add("CHA");
+            CmbDest.Items.Add("USA");
+            CmbDest.Items.Add("JPN");
         }
 
         private void DataClear()
