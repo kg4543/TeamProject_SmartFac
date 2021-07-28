@@ -1,0 +1,188 @@
+﻿<Page x:Class="ERPAPP.View.Production.ProductionView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ERPAPP.View.Production"
+      mc:Ignorable="d" 
+      d:DesignHeight="530" d:DesignWidth="1200"
+      Title="ProductionView" Background="White"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="730"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0"
+               Content="Production"
+               FontSize="30" FontWeight="Bold"/>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal"
+                    HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Label Content="Code :" 
+                   VerticalAlignment="Center" Margin="5"
+                   FontSize="18" FontWeight="Bold"/>
+                <TextBox x:Name="TxtSearchCode"
+                    Width="150" Height="30" 
+                    KeyDown="TxtSearchCode_KeyDown"/>
+                <Label Content="StartDate :" 
+                   VerticalAlignment="Center" Margin="10,0,0,5"
+                   FontSize="18" FontWeight="Bold"/>
+                <DatePicker Name="DtpStart" 
+                            Width="200" Margin="5"
+                            KeyDown="DtpStart_KeyDown"/>
+
+                <Button x:Name="BtnSearch"
+                    Width="70" Height="30" Margin="10"
+                    Content="Search" 
+                    Foreground="White" Background="RoyalBlue"
+                    Click="BtnSearch_Click"/>
+            </StackPanel>
+            <DataGrid x:Name="GrdData"
+                  Grid.Row="1" Grid.Column="0" Margin="20,10"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding}"
+                  SelectionUnit="FullRow" IsReadOnly="True"
+                  SelectedCellsChanged="GrdData_SelectedCellsChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding ProductionId}" Header="Idx" Width="45" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding ProductionCode}" Header="Code" Width="120" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding FactoryCode}" Header="Factory" Width="80" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding ItemCode}" Header="Item" Width="80" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding StartDate, StringFormat=yyyy-MM-dd}" Header="Startdate" Width="100" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding EndDate, StringFormat=yyyy-MM-dd}" Header="Enddate" Width="100" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding PlanQuantity}" Header="Plan" Width="80" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding FQuantity}" Header="Finished" Width="80" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <!--StackPanel-->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0"
+                       VerticalAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="Code : " 
+                       FontSize="20" FontWeight="Bold"/>
+            <Label Grid.Row="1" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="Factory : " 
+                       FontSize="20" FontWeight="Bold"/>
+            <Label Grid.Row="2" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="Order : " 
+                       FontSize="20" FontWeight="Bold"/>
+            <Label Grid.Row="3" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="ITEM : " 
+                       FontSize="20" FontWeight="Bold"/>
+            <Label Grid.Row="4" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="StartDate : " 
+                       FontSize="20" FontWeight="Bold"/>
+            <Label Grid.Row="5" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right" 
+                       Content="EndDate : " 
+                       FontSize="20" FontWeight="Bold"/>
+            <Label Grid.Row="6" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="Plan Q'ty : "  
+                       FontSize="20" FontWeight="Bold"/>
+            <Label Grid.Row="7" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="Finished Q'ty : " 
+                       FontSize="20" FontWeight="Bold"/>
+
+            <TextBox x:Name="TxtCode" 
+                         Grid.Row="0" Grid.Column="1"
+                         Width="220" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"
+                         IsReadOnly="True"/>
+            <TextBox x:Name="TxtFactory"
+                         Grid.Row="1" Grid.Column="1"
+                         Width="220" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"
+                         IsReadOnly="True"/>
+            <TextBox x:Name="TxtOrder"
+                         Grid.Row="2" Grid.Column="1"
+                         Width="220" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"
+                         IsReadOnly="True"/>
+            <TextBox x:Name="TxtItem"
+                         Grid.Row="3" Grid.Column="1"
+                         Width="220" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"
+                        IsReadOnly="True"/>
+            <TextBox x:Name="TxtStartDate"
+                         Grid.Row="4" Grid.Column="1"
+                         Width="220" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"
+                        IsReadOnly="True"/>
+            <TextBox x:Name="TxtEndDate"
+                         Grid.Row="5" Grid.Column="1"
+                         Width="220" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"
+                        IsReadOnly="True"/>
+            <TextBox x:Name="TxtPlanQty"
+                         Grid.Row="6" Grid.Column="1"
+                         Width="220" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"
+                        IsReadOnly="True"/>
+            <TextBox x:Name="TxtFinishQty"
+                         Grid.Row="7" Grid.Column="1"
+                         Width="220" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"
+                         IsReadOnly="True"/>
+        </Grid>
+        <Button x:Name="BtnAdd"
+                Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right"
+                Margin="150,15" Width="100"
+                Content="ADD" FontSize="15"
+                Foreground="White" Background="Orange"
+                Click="BtnAdd_Click"/>
+        <Button x:Name="BtnEdit"
+                Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right"
+                Margin="30,15" Width="100"
+                Content="Edit" FontSize="15"
+                Foreground="White" Background="Orangered"
+                Click="BtnEdit_Click"/>
+    </Grid>
+</Page>

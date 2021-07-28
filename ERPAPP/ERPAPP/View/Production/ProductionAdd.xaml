@@ -1,0 +1,153 @@
+﻿<mah:MetroWindow
+        x:Class="ERPAPP.View.Production.ProductionAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:ERPAPP.View.Production"
+        mc:Ignorable="d"
+        Title="ProductionAdd" Height="600" Width="650"
+        Loaded="MetroWindow_Loaded" IsMaxRestoreButtonEnabled="False">
+
+    <Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image x:Name="ImgItem"
+                       Source="/Resources/No_Picture.jpg"
+                       Grid.Row="0" Height="200"
+                       Margin="10"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0"
+                       VerticalAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="Code : " 
+                       FontSize="20" FontWeight="Bold"/>
+                <Label Grid.Row="1" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="Factory : " 
+                       FontSize="20" FontWeight="Bold"/>
+                <Label Grid.Row="2" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="Order : " 
+                       FontSize="20" FontWeight="Bold"/>
+                <Label Grid.Row="3" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="ITEM : " 
+                       FontSize="20" FontWeight="Bold"/>
+                <Label Grid.Row="4" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="StartDate : " 
+                       FontSize="20" FontWeight="Bold"/>
+                <Label Grid.Row="5" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right" 
+                       Content="EndDate : " 
+                       FontSize="20" FontWeight="Bold"/>
+                <Label Grid.Row="6" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="Plan Q'ty : "  
+                       FontSize="20" FontWeight="Bold"/>
+                <Label Grid.Row="7" Grid.Column="0"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Content="Finished Q'ty : " 
+                       FontSize="20" FontWeight="Bold"/>
+
+                <TextBox x:Name="TxtCode" 
+                         Grid.Row="0" Grid.Column="1"
+                         Width="220" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"/>
+                <ComboBox x:Name="CmbFactory"
+                         Grid.Row="1" Grid.Column="1"
+                         Width="220" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"/>
+                <TextBox x:Name="TxtOrder"
+                         Grid.Row="2" Grid.Column="1"
+                         Width="220" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"
+                         IsReadOnly="True" Background="LightGray"/>
+                <Button x:Name="BtnOrderSerch"
+                        Grid.Row="2" Grid.Column="1"
+                        Content="..." FontSize="20"
+                        Margin="230,10,20,10"
+                        Background="LightBlue"
+                        Click="BtnOrderSerch_Click"/>
+                <TextBox x:Name="TxtItem"
+                         Grid.Row="3" Grid.Column="1"
+                         Width="220" Margin="0,5"
+                         HorizontalAlignment="Left"
+                         FontSize="15" FontWeight="Bold"
+                         IsReadOnly="True" Background="LightGray"/>
+                <DatePicker Name="DtpStartdate"
+                            Grid.Row="4" Grid.Column="1"
+                            Width="220" Margin="0,5"
+                            HorizontalAlignment="Left"
+                            FontSize="15" FontWeight="Bold"/>
+                <DatePicker Name="DtpEnddate"
+                            Grid.Row="5" Grid.Column="1"
+                            Width="220" Margin="0,5"
+                            HorizontalAlignment="Left"
+                            FontSize="15" FontWeight="Bold"/>
+                <mah:NumericUpDown Name="NumPlanQty"
+                                   Grid.Row="6" Grid.Column="1"
+                                   Width="220" Margin="0,5"
+                                   HorizontalAlignment="Left"
+                                   FontSize="15" FontWeight="Bold"/>
+                <mah:NumericUpDown Name="NumFinishQty"
+                                   Grid.Row="7" Grid.Column="1"
+                                   Width="220" Margin="0,5"
+                                   HorizontalAlignment="Left"
+                                   FontSize="15" FontWeight="Bold"/>
+
+                <Button x:Name="BtnAdd"
+                        Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" 
+                        HorizontalAlignment="Right"
+                        Margin="120,10" Width="80"
+                        Content="ADD" FontSize="15"
+                        Foreground="White" Background="Orange"
+                        Click="BtnAdd_Click"/>
+                <Button x:Name="BtnCancel"
+                        Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"
+                        HorizontalAlignment="Right"
+                        Margin="30,10" Width="80"
+                        Content="Cancel" FontSize="15"
+                        Foreground="White" Background="Crimson"
+                        Click="BtnCancel_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</mah:MetroWindow>
