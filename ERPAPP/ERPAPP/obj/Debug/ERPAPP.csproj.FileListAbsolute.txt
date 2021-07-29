@@ -179,3 +179,9 @@ D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Production\Product
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Production\ProductionEdit.baml
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Production\OrderSearch.g.cs
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\Production\OrderSearch.baml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\OPS\OperationAdd.g.cs
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\OPS\OperationEdit.g.cs
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\OPS\OperationView.g.cs
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\OPS\OperationAdd.baml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\OPS\OperationEdit.baml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\OPS\OperationView.baml

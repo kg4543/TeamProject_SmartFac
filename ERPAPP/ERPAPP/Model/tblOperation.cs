@@ -14,7 +14,7 @@ namespace ERPAPP.Model
     
     public partial class tblOperation
     {
-        public int OpId { get; set; }
+        public int OpIdx { get; set; }
         public string OpName { get; set; }
         public Nullable<int> PreOp { get; set; }
         public Nullable<int> PostOp { get; set; }

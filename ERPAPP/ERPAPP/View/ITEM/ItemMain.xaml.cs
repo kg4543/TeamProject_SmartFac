@@ -3,6 +3,7 @@ using ERPAPP.Logic;
 using ERPAPP.Model;
 using ERPAPP.View.ITEM.BOM;
 using ERPAPP.View.ITEM.Category;
+using ERPAPP.View.OPS;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace ERPAPP.View.ITEM
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            DataClear();
             DataLoad(); //그리드 데이터 로드
         }
 
@@ -190,6 +192,19 @@ namespace ERPAPP.View.ITEM
             try
             {
                 NavigationService.Navigate(new BOMView());
+            }
+            catch (Exception ex)
+            {
+                Common.logger.Error($"예외발생 BtnAccount_Click : {ex}");
+                await Common.ShowMessageAsync("예외", $"예외발생 : {ex}");
+            }
+        }
+
+        private async void BtnOps_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                NavigationService.Navigate(new OperationView());
             }
             catch (Exception ex)
             {

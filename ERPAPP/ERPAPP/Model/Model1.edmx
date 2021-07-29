@@ -757,9 +757,9 @@
         </EntityType>
         <EntityType Name="tblOperation">
           <Key>
-            <PropertyRef Name="OpId" />
+            <PropertyRef Name="OpIdx" />
           </Key>
-          <Property Name="OpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OpIdx" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OpName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PreOp" Type="Int32" />
           <Property Name="PostOp" Type="Int32" />
@@ -1364,7 +1364,7 @@
           <EntitySetMapping Name="tblOperation">
             <EntityTypeMapping TypeName="ERPModel.tblOperation">
               <MappingFragment StoreEntitySet="tblOperation">
-                <ScalarProperty Name="OpId" ColumnName="OpId" />
+                <ScalarProperty Name="OpIdx" ColumnName="OpId" />
                 <ScalarProperty Name="OpName" ColumnName="OpName" />
                 <ScalarProperty Name="PreOp" ColumnName="PreOp" />
                 <ScalarProperty Name="PostOp" ColumnName="PostOp" />

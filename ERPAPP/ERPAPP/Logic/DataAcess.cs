@@ -241,5 +241,26 @@ namespace ERPAPP.Logic
                 return ctx.SaveChanges(); // commit
             }
         }
+
+        internal static List<tblOperation> GetOperations()
+        {
+            List<tblOperation> list;
+
+            using (var ctx = new ERPEntities())
+            {
+                list = ctx.tblOperation.ToList();
+            }
+
+            return list;
+        }
+
+        public static int SetOperations(tblOperation item)
+        {
+            using (var ctx = new ERPEntities())
+            {
+                ctx.tblOperation.AddOrUpdate(item);
+                return ctx.SaveChanges(); // commit
+            }
+        }
     }
 }

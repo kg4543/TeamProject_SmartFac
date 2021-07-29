@@ -173,7 +173,7 @@
     <EntitySetMapping Name="tblOperation">
       <EntityTypeMapping TypeName="ERPModel.tblOperation">
         <MappingFragment StoreEntitySet="tblOperation">
-          <ScalarProperty Name="OpId" ColumnName="OpId" />
+          <ScalarProperty Name="OpIdx" ColumnName="OpId" />
           <ScalarProperty Name="OpName" ColumnName="OpName" />
           <ScalarProperty Name="PreOp" ColumnName="PreOp" />
           <ScalarProperty Name="PostOp" ColumnName="PostOp" />

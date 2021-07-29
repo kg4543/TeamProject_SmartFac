@@ -181,9 +181,9 @@
   </EntityType>
   <EntityType Name="tblOperation">
     <Key>
-      <PropertyRef Name="OpId" />
+      <PropertyRef Name="OpIdx" />
     </Key>
-    <Property Name="OpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OpIdx" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="OpName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="PreOp" Type="Int32" />
     <Property Name="PostOp" Type="Int32" />

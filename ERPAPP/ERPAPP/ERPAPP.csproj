@@ -320,6 +320,15 @@
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OPS\OperationAdd.xaml.cs">
+      <DependentUpon>OperationAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OPS\OperationEdit.xaml.cs">
+      <DependentUpon>OperationEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OPS\OperationView.xaml.cs">
+      <DependentUpon>OperationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Order\OrderAdd.xaml.cs">
       <DependentUpon>OrderAdd.xaml</DependentUpon>
     </Compile>
@@ -433,6 +442,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\OPS\OperationAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OPS\OperationEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OPS\OperationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Order\OrderAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -522,9 +543,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\OPS\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

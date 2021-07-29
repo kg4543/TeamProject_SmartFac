@@ -77,7 +77,8 @@
             <Button x:Name="BtnOps"
                     Width="150" Margin="15"
                     Content="Operation" FontSize="15"
-                    Foreground="White" Background="LightSeaGreen"/>
+                    Foreground="White" Background="LightSeaGreen"
+                    Click="BtnOps_Click"/>
         </StackPanel>
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.ColumnDefinitions>

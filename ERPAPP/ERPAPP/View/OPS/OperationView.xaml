@@ -1,0 +1,103 @@
+﻿<Page x:Class="ERPAPP.View.OPS.OperationView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ERPAPP.View.OPS"
+      mc:Ignorable="d" 
+      d:DesignHeight="530" d:DesignWidth="1200"
+      Title="OperationView" Background="White"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0"
+               Content="Operation"
+               FontSize="30" FontWeight="Bold"/>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0"
+               Content="ITEM"
+               FontSize="28" FontWeight="Bold"/>
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal"
+                    HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Label Content="Code :" 
+                   VerticalAlignment="Center" Margin="5"
+                   FontSize="18" FontWeight="Bold"/>
+                <TextBox x:Name="TxtSearchCode"
+                    Width="150" Height="30" 
+                    KeyDown="TxtSearchCode_KeyDown"/>
+                <Label Content="Name :" 
+                   VerticalAlignment="Center" Margin="10,0,0,5"
+                   FontSize="18" FontWeight="Bold"/>
+                <TextBox x:Name="TxtSearchName"
+                    Width="150" Height="30" Margin="0,10" 
+                    KeyDown="TxtSearchName_KeyDown"/>
+
+                <Button x:Name="BtnSearch"
+                    Width="70" Height="30" Margin="10"
+                    Content="Search" 
+                    Foreground="White" Background="RoyalBlue"
+                    Click="BtnSearch_Click"/>
+            </StackPanel>
+            <DataGrid x:Name="GrdData"
+                  Grid.Row="2" Grid.Column="0" Margin="20,10"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding}"
+                  SelectionUnit="FullRow" IsReadOnly="True"
+                  SelectedCellsChanged="GrdData_SelectedCellsChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding ItemCode}" Header="Code" Width="60" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding ItemName}" Header="Name" Width="150" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding BrandCode}" Header="Brand" Width="70" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding ICateCode}" Header="Category" Width="100" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding ItemDescription}" Header="Description" Width="1*" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <StackPanel Grid.Row="2" Grid.Column="0"
+                    Orientation="Horizontal" HorizontalAlignment="Center"/>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0"
+               Content="Operation"
+               FontSize="28" FontWeight="Bold"/>
+                <Canvas Grid.Row="1">
+                    <StackPanel x:Name="OpCanvas" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <!--<Rectangle Width="100" Height="100" Margin="5" Fill="SkyBlue"/>
+                        <Line Width="50" Height="10" Fill="Black"/>
+                        <Rectangle Width="100" Height="100" Margin="5" Fill="SkyBlue"/>-->
+                    </StackPanel>
+                </Canvas>
+            </Grid>
+        </Grid>
+        <Button x:Name="BtnAdd"
+                Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right"
+                Margin="150,15" Width="100"
+                Content="ADD" FontSize="15"
+                Foreground="White" Background="Orange"
+                Click="BtnAdd_Click"/>
+        <Button x:Name="BtnEdit"
+                Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right"
+                Margin="30,15" Width="100"
+                Content="Edit" FontSize="15"
+                Foreground="White" Background="Orangered"
+                Click="BtnEdit_Click"/>
+    </Grid>
+</Page>
