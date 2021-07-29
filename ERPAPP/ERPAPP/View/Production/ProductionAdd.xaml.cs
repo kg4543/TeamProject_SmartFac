@@ -61,7 +61,7 @@ namespace ERPAPP.View.Production
                 DataAcess.SetProductions(production);
 
                 //this.ShowMessageAsync("데이터 등록", "오더가 등록되었습니다.");
-                var result = await this.ShowMessageAsync("데이터 등록", "오더가 등록되었습니다.\n 추가 등록하시겠습니까?",
+                var result = await this.ShowMessageAsync("데이터 등록", "생산일정이 등록되었습니다.\n 추가 등록하시겠습니까?",
                                                     MessageDialogStyle.AffirmativeAndNegative, null);
                 if (result == MessageDialogResult.Affirmative)
                 {
@@ -90,8 +90,8 @@ namespace ERPAPP.View.Production
 
         private void DataLoad()
         {
-            var Brands = DataAcess.GetFactorys();
-            foreach (var item in Brands)
+            var factory = DataAcess.GetFactorys();
+            foreach (var item in factory)
                 CmbFactory.Items.Add(item.FactoryCode);
         }
 
@@ -121,9 +121,9 @@ namespace ERPAPP.View.Production
 
         private bool IsValid()
         {
-            /*if (string.IsNullOrEmpty(TxtCode.Text))
+            if (string.IsNullOrEmpty(TxtCode.Text))
             {
-                this.ShowMessageAsync("입력오류", "오더 코드를 입력해주세요.");
+                this.ShowMessageAsync("입력오류", "생산계획 코드를 입력해주세요.");
                 return false;
             }
             else if (DataAcess.GetOrders().Where(i => i.OrderCode.Trim().Equals(TxtCode.Text.Trim())).Count() > 0) //기본키 중복
@@ -131,37 +131,61 @@ namespace ERPAPP.View.Production
                 this.ShowMessageAsync("입력오류", "이미 등록된 오더 코드입니다.");
                 return false;
             }
-            if (string.IsNullOrEmpty(TxtPrice.Text))
+            if (string.IsNullOrEmpty(TxtOrder.Text))
             {
-                this.ShowMessageAsync("입력오류", "가격을 입력해주세요.");
+                this.ShowMessageAsync("입력오류", "오더를 입력해주세요.");
                 return false;
             }
-            if (DtpShipdate.SelectedDate == null)
+            if (DtpStartdate.SelectedDate == null)
             {
-                this.ShowMessageAsync("입력오류", "납기일을 입력해주세요.");
+                this.ShowMessageAsync("입력오류", "생산 시작 예정일을 입력해주세요.");
                 return false;
             }
-            if (CmbBrand.SelectedItem == null)
+            if (DtpEnddate.SelectedDate == null)
             {
-                this.ShowMessageAsync("입력오류", "브랜드 코드를 입력해주세요.");
+                this.ShowMessageAsync("입력오류", "생산 종료 예정일을 입력해주세요.");
                 return false;
             }
-            if (CmbItem.SelectedItem == null)
+            if (DtpEnddate.SelectedDate < DtpStartdate.SelectedDate)
             {
-                this.ShowMessageAsync("입력오류", "아이템 코드를 입력해주세요.");
+                this.ShowMessageAsync("입력오류", "종료 예정일이 시작 예정일보다 빠릅니다.");
                 return false;
             }
-            if (CmbDest.SelectedItem == null)
+            if (CmbFactory.SelectedItem == null)
             {
-                this.ShowMessageAsync("입력오류", "도착지를 입력해주세요.");
+                this.ShowMessageAsync("입력오류", "생산 공장을 입력해주세요.");
                 return false;
             }
-            if (NumQuantity.Value <= 0)
+            if (NumPlanQty.Value <= 0)
             {
-                this.ShowMessageAsync("입력오류", "금액을 다시 설정해주세요.");
+                this.ShowMessageAsync("입력오류", "수량이 0보다 작습니다.");
                 return false;
-            }*/
-            return false; //임시 false
+            }
+
+            // 오더 수량
+            var order = DataAcess.GetOrders().Where(i => i.OrderCode.Equals(TxtOrder.Text)).FirstOrDefault();
+            
+            // 해당 오더로 세운 생산 계획 수량
+            var prod = DataAcess.GetProductions().Where(i => i.OrderCode.Equals(TxtOrder.Text)).ToList();
+            int sum = 0;
+            foreach (var item in prod)
+            {
+                sum += item.PlanQuantity;
+            }
+
+            // 오더 수량이 생산 수량보다 넘을 경우
+            if (order.Quantity < sum + (int)NumPlanQty.Value)
+            {
+                this.ShowMessageAsync("입력오류", "오더 수량보다 계획 수량이 더 많습니다.");
+                return false;
+            }
+            if (order.ShipDate > DtpEnddate.SelectedDate)
+            {
+                this.ShowMessageAsync("입력오류", "선적일보다 생산 종료 예정일이 더 늦습니다.");
+                return false;
+            }
+
+            return true;
         }
     }
 }
