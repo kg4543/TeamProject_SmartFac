@@ -79,40 +79,40 @@
 
                 <TextBox x:Name="TxtCode" 
                          Grid.Row="0" Grid.Column="1"
-                         Width="240" Margin="0,5"
+                         Width="220" Margin="0,5"
                          HorizontalAlignment="Left"
                          FontSize="15" FontWeight="Bold" Background="LightGray"
                          IsReadOnly="True"/>
                 <ComboBox Name="CmbBrand"
                           Grid.Row="1" Grid.Column="1"
-                          Width="240" Margin="0,5"
+                          Width="220" Margin="0,5"
                           HorizontalAlignment="Left"
                           FontSize="15" FontWeight="Bold"
                           SelectionChanged="CmbBrand_SelectionChanged"/>
                 <ComboBox Name="CmbItem"
                           Grid.Row="2" Grid.Column="1"
-                          Width="240" Margin="0,5"
+                          Width="220" Margin="0,5"
                           HorizontalAlignment="Left"
                           FontSize="15" FontWeight="Bold"
                           SelectionChanged="CmbItem_SelectionChanged"/>
                 <DatePicker Name="DtpShipdate"
                             Grid.Row="3" Grid.Column="1"
-                            Width="240" Margin="0,5"
+                            Width="220" Margin="0,5"
                             HorizontalAlignment="Left"
                             FontSize="15" FontWeight="Bold"/>
                 <ComboBox Name="CmbDest"
                           Grid.Row="4" Grid.Column="1"
-                          Width="240" Margin="0,5"
+                          Width="220" Margin="0,5"
                           HorizontalAlignment="Left"
                           FontSize="15" FontWeight="Bold"/>
                 <mah:NumericUpDown Name="NumQuantity"
                                    Grid.Row="5" Grid.Column="1"
-                                   Width="240" Margin="0,5"
+                                   Width="220" Margin="0,5"
                                    HorizontalAlignment="Left"
                                    FontSize="15" FontWeight="Bold"/>
                 <TextBox Name="TxtPrice"
                          Grid.Row="6" Grid.Column="1"
-                         Width="240" Margin="0,5"
+                         Width="220" Margin="0,5"
                          HorizontalAlignment="Left"
                          FontSize="15" FontWeight="Bold"/>
 

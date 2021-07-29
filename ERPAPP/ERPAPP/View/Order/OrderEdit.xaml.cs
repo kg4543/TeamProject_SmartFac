@@ -46,7 +46,7 @@ namespace ERPAPP.View.Order
 
                 DataAcess.SetOrders(selectedOrder);
 
-                this.ShowMessageAsync("데이터 수정", "아이템 정보가 수정되었습니다.");
+                this.ShowMessageAsync("데이터 수정", "오더가 수정되었습니다.");
                 Close();
             }
         }
