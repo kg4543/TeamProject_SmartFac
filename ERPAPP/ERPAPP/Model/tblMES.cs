@@ -14,14 +14,16 @@ namespace ERPAPP.Model
     
     public partial class tblMES
     {
-        public int MESId { get; set; }
+        public int MESIdx { get; set; }
         public string ProductionCode { get; set; }
-        public int OpId { get; set; }
-        public Nullable<System.TimeSpan> WorkingTime { get; set; }
-        public Nullable<System.TimeSpan> PowerOnTime { get; set; }
-        public Nullable<bool> Defect { get; set; }
-        public Nullable<int> DefectQty { get; set; }
+        public int OpIdx { get; set; }
+        public string MachineCode { get; set; }
         public string IoTConnect { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<System.TimeSpan> StartTime { get; set; }
+        public Nullable<System.TimeSpan> EndTime { get; set; }
+        public Nullable<System.TimeSpan> WorkTime { get; set; }
+        public Nullable<bool> Defect { get; set; }
     
         public virtual tblProduction tblProduction { get; set; }
     }

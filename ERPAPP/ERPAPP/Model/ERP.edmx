@@ -132,16 +132,18 @@
         </EntityType>
         <EntityType Name="tblMES">
           <Key>
-            <PropertyRef Name="MESId" />
+            <PropertyRef Name="MESIdx" />
           </Key>
-          <Property Name="MESId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MESIdx" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProductionCode" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="OpId" Type="int" Nullable="false" />
-          <Property Name="WorkingTime" Type="time" Precision="7" />
-          <Property Name="PowerOnTime" Type="time" Precision="7" />
+          <Property Name="OpIdx" Type="int" Nullable="false" />
+          <Property Name="MachineCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="IoTConnect" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="date" />
+          <Property Name="StartTime" Type="time" Precision="7" />
+          <Property Name="EndTime" Type="time" Precision="7" />
+          <Property Name="WorkTime" Type="time" Precision="7" />
           <Property Name="Defect" Type="bit" />
-          <Property Name="DefectQty" Type="int" />
-          <Property Name="IoTConnect" Type="nchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblMRP">
           <Key>
@@ -163,9 +165,9 @@
         </EntityType>
         <EntityType Name="tblOperation">
           <Key>
-            <PropertyRef Name="OpId" />
+            <PropertyRef Name="OpIdx" />
           </Key>
-          <Property Name="OpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OpIdx" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OpName" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="PreOp" Type="int" />
           <Property Name="PostOp" Type="int" />
@@ -181,9 +183,9 @@
           <Property Name="OrderCode" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="BrandCode" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="ItemCode" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="Destination" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="ShipDate" Type="date" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="UnitPrice" Type="int" Nullable="false" />
           <Property Name="RegDate" Type="date" />
           <Property Name="RegID" Type="nvarchar" MaxLength="30" />
@@ -210,8 +212,8 @@
           <Property Name="FactoryCode" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="ItemCode" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="OrderCode" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="StartDate" Type="datetime" Nullable="false" />
-          <Property Name="EndDate" Type="datetime" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" />
           <Property Name="PlanQuantity" Type="int" Nullable="false" />
           <Property Name="FQuantity" Type="int" />
           <Property Name="RegDate" Type="date" />
@@ -724,16 +726,18 @@
         </EntityType>
         <EntityType Name="tblMES">
           <Key>
-            <PropertyRef Name="MESId" />
+            <PropertyRef Name="MESIdx" />
           </Key>
-          <Property Name="MESId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MESIdx" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProductionCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="OpId" Type="Int32" Nullable="false" />
-          <Property Name="WorkingTime" Type="Time" Precision="7" />
-          <Property Name="PowerOnTime" Type="Time" Precision="7" />
+          <Property Name="OpIdx" Type="Int32" Nullable="false" />
+          <Property Name="MachineCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IoTConnect" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="StartTime" Type="Time" Precision="7" />
+          <Property Name="EndTime" Type="Time" Precision="7" />
+          <Property Name="WorkTime" Type="Time" Precision="7" />
           <Property Name="Defect" Type="Boolean" />
-          <Property Name="DefectQty" Type="Int32" />
-          <Property Name="IoTConnect" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="tblProduction" Relationship="Self.FK_tblMES_tblProduction" FromRole="tblMES" ToRole="tblProduction" />
         </EntityType>
         <EntityType Name="tblMRP">
@@ -776,9 +780,9 @@
           <Property Name="OrderCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="BrandCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ItemCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="Destination" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ShipDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="UnitPrice" Type="Int32" Nullable="false" />
           <Property Name="RegDate" Type="DateTime" Precision="0" />
           <Property Name="RegID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
@@ -810,8 +814,8 @@
           <Property Name="FactoryCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ItemCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="OrderCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
           <Property Name="PlanQuantity" Type="Int32" Nullable="false" />
           <Property Name="FQuantity" Type="Int32" />
           <Property Name="RegDate" Type="DateTime" Precision="0" />
@@ -1331,14 +1335,16 @@
           <EntitySetMapping Name="tblMES">
             <EntityTypeMapping TypeName="ERPModel.tblMES">
               <MappingFragment StoreEntitySet="tblMES">
-                <ScalarProperty Name="MESId" ColumnName="MESId" />
+                <ScalarProperty Name="MESIdx" ColumnName="MESIdx" />
                 <ScalarProperty Name="ProductionCode" ColumnName="ProductionCode" />
-                <ScalarProperty Name="OpId" ColumnName="OpId" />
-                <ScalarProperty Name="WorkingTime" ColumnName="WorkingTime" />
-                <ScalarProperty Name="PowerOnTime" ColumnName="PowerOnTime" />
-                <ScalarProperty Name="Defect" ColumnName="Defect" />
-                <ScalarProperty Name="DefectQty" ColumnName="DefectQty" />
+                <ScalarProperty Name="OpIdx" ColumnName="OpIdx" />
+                <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
                 <ScalarProperty Name="IoTConnect" ColumnName="IoTConnect" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="WorkTime" ColumnName="WorkTime" />
+                <ScalarProperty Name="Defect" ColumnName="Defect" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1364,7 +1370,7 @@
           <EntitySetMapping Name="tblOperation">
             <EntityTypeMapping TypeName="ERPModel.tblOperation">
               <MappingFragment StoreEntitySet="tblOperation">
-                <ScalarProperty Name="OpIdx" ColumnName="OpId" />
+                <ScalarProperty Name="OpIdx" ColumnName="OpIdx" />
                 <ScalarProperty Name="OpName" ColumnName="OpName" />
                 <ScalarProperty Name="PreOp" ColumnName="PreOp" />
                 <ScalarProperty Name="PostOp" ColumnName="PostOp" />
@@ -1381,9 +1387,9 @@
                 <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
                 <ScalarProperty Name="BrandCode" ColumnName="BrandCode" />
                 <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="Destination" ColumnName="Destination" />
                 <ScalarProperty Name="ShipDate" ColumnName="ShipDate" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
                 <ScalarProperty Name="RegDate" ColumnName="RegDate" />
                 <ScalarProperty Name="RegID" ColumnName="RegID" />

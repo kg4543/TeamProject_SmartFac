@@ -182,83 +182,83 @@
     </ApplicationDefinition>
     <Compile Include="Helper\Common.cs" />
     <Compile Include="Logic\DataAcess.cs" />
-    <Compile Include="Model\Model1.Context.cs">
+    <Compile Include="Model\ERP.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+      <DependentUpon>ERP.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Model1.cs">
+    <Compile Include="Model\ERP.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Model1.Designer.cs">
+    <Compile Include="Model\ERP.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>ERP.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblBOM.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblBrand.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblDCate.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblFactory.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblICate.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblItem.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblLine.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblMachine.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblMaterial.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblMcCate.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblMES.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblMRP.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblOperation.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblOrder.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblPart.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblProduction.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblUser.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tblWorker.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Brand\BrandAdd.xaml.cs">
       <DependentUpon>BrandAdd.xaml</DependentUpon>
@@ -501,12 +501,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\Model1.edmx">
+    <EntityDeploy Include="Model\ERP.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>ERP.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <None Include="Model\ERP.edmx.diagram">
+      <DependentUpon>ERP.edmx</DependentUpon>
     </None>
     <None Include="NLog.config" />
     <None Include="packages.config" />
@@ -543,17 +543,16 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Model\Model1.Context.tt">
+    <Content Include="Model\ERP.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>ERP.edmx</DependentUpon>
+      <LastGenOutput>ERP.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\Model1.tt">
+    <Content Include="Model\ERP.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>ERP.edmx</DependentUpon>
+      <LastGenOutput>ERP.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

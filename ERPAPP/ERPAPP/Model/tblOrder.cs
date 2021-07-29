@@ -24,9 +24,9 @@ namespace ERPAPP.Model
         public string OrderCode { get; set; }
         public string BrandCode { get; set; }
         public string ItemCode { get; set; }
-        public int Quantity { get; set; }
         public string Destination { get; set; }
         public System.DateTime ShipDate { get; set; }
+        public int Quantity { get; set; }
         public int UnitPrice { get; set; }
         public Nullable<System.DateTime> RegDate { get; set; }
         public string RegID { get; set; }
