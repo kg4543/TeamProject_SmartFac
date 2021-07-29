@@ -103,7 +103,7 @@ namespace ERPAPP.View.Production
                     Common.SELECT_Production = GrdData.SelectedItem as tblProduction;
                     var selectedItem = Common.SELECT_Production;
 
-                    TxtCode.Text = selectedItem.OrderCode.ToString();
+                    TxtCode.Text = selectedItem.ProductionCode.ToString();
                     TxtFactory.Text = selectedItem.FactoryCode.ToString();
                     TxtOrder.Text = selectedItem.OrderCode.ToString();
                     TxtItem.Text = selectedItem.ItemCode.ToString();
