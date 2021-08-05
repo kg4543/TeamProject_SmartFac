@@ -52,7 +52,7 @@ def Sensing():
                 Work()
                 print("가공 완료")
                 GPIO.output(convey, 1)
-                time.sleep(2)
+                time.sleep(2.5)
 
     except KeyboardInterrupt:
         print("종료")
