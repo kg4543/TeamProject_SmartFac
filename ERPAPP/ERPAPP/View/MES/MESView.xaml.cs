@@ -84,7 +84,7 @@ namespace ERPAPP.View.MES
                     StartTime = DateTime.Parse((currentData["PRC_Start"])),
                     EndTime = DateTime.Parse(currentData["PRC_End"]),
                     WorkTime = float.Parse(currentData["PRC_Work"]),
-                    Defect = (currentData["PRC_Defect"] == "W" ? true : false)
+                    Defect = (currentData["PRC_Defect"] == "Sucess" ? true : false)
                 };
                 var re = DataAcess.SetMES(Process);
             }
