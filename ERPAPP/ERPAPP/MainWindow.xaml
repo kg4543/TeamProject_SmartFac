@@ -60,7 +60,8 @@
                     Grid.Column="5" Margin="10,15" 
                     Content="MES" FontSize="15"
                     Foreground="White" Background="Crimson" 
-                    IsEnabled="False"/>
+                    IsEnabled="False"
+                    Click="BtnMES_Click"/>
             <Button x:Name="BtnReport" 
                     Grid.Column="6" Margin="10,15" 
                     Content="Report" FontSize="15"

@@ -1,0 +1,86 @@
+﻿<Page x:Class="ERPAPP.View.MES.MESView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:ERPAPP.View.MES"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="530" d:DesignWidth="1200" 
+      Title="MESView" Background="White"
+      Loaded="Page_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0"
+               Content="MES"
+               FontSize="30" FontWeight="Bold"/>
+        <Label Grid.Row="0" Grid.Column="0"
+               Name="LblSchedule"
+               HorizontalAlignment="Right"
+               FontSize="20" FontWeight="Bold"/>
+        <Label Grid.Row="1" Grid.Column="0"
+               Content="TOTAL OEE = " HorizontalAlignment="Center"
+               FontSize="30" FontWeight="Bold" Foreground="Crimson"/>
+        <Grid Grid.Row="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical">
+                <Label Content="가용성" HorizontalAlignment="Center"
+                       FontSize="30" FontWeight="Bold"/>
+                <lvc:Gauge Uses360Mode="True" FromColor="Crimson" ToColor="red" 
+                   From="0" To="100" Value="75" Height="180" Margin="10">
+                    <lvc:Gauge.GaugeRenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="90"></RotateTransform>
+                            <ScaleTransform ScaleX="1"></ScaleTransform>
+                        </TransformGroup>
+                    </lvc:Gauge.GaugeRenderTransform>
+                </lvc:Gauge>
+                <Label Content="75%" HorizontalAlignment="Center"
+                       FontSize="25" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Vertical">
+                <Label Content="타겟 달성율" HorizontalAlignment="Center"
+                       FontSize="30" FontWeight="Bold"/>
+                <lvc:Gauge Uses360Mode="True" FromColor="SkyBlue" ToColor="DodgerBlue" 
+                   From="0" To="100" Value="75" Height="180" Margin="10">
+                    <lvc:Gauge.GaugeRenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="90"></RotateTransform>
+                            <ScaleTransform ScaleX="1"></ScaleTransform>
+                        </TransformGroup>
+                    </lvc:Gauge.GaugeRenderTransform>
+                </lvc:Gauge>
+                <Label Content="75%" HorizontalAlignment="Center"
+                       FontSize="25" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Orientation="Vertical">
+                <Label Content="양품률" HorizontalAlignment="Center"
+                       FontSize="30" FontWeight="Bold"/>
+                <lvc:Gauge Uses360Mode="True" FromColor="Green" ToColor="ForestGreen" 
+                   From="0" To="100" Value="75" Height="180" Margin="10">
+                    <lvc:Gauge.GaugeRenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="90"></RotateTransform>
+                            <ScaleTransform ScaleX="1"></ScaleTransform>
+                        </TransformGroup>
+                    </lvc:Gauge.GaugeRenderTransform>
+                </lvc:Gauge>
+                <Label Content="90%" HorizontalAlignment="Center"
+                       FontSize="25" FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="BtnOperation" Content="Operation" Margin="10" 
+                        FontSize="20" Background="YellowGreen" Foreground="White"/>
+            </StackPanel>
+    </Grid>
+</Page>

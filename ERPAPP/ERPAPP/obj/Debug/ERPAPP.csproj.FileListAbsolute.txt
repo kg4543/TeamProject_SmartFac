@@ -1,4 +1,3 @@
-D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\ERPAPP.csprojAssemblyReference.cache
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\ERPAPP_MarkupCompile.cache
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\MainWindow.g.cs
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\ERPAPP_MarkupCompile.lref
@@ -185,3 +184,18 @@ D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\OPS\OperationView.
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\OPS\OperationAdd.baml
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\OPS\OperationEdit.baml
 D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\OPS\OperationView.baml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\bin\Debug\LiveCharts.dll
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\bin\Debug\LiveCharts.pdb
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\bin\Debug\LiveCharts.xml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\MES\MESView.g.cs
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\MES\MESView.baml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\ERPAPP.csprojAssemblyReference.cache
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\bin\Debug\LiveCharts.Wpf.dll
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\bin\Debug\LiveCharts.Wpf.pdb
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\bin\Debug\LiveCharts.Wpf.xml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\MES\ProductionSearch.g.cs
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\obj\Debug\View\MES\ProductionSearch.baml
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\bin\Debug\M2Mqtt.Net.dll
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\bin\Debug\M2Mqtt.Net.pdb
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\bin\Debug\Newtonsoft.Json.dll
+D:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\bin\Debug\Newtonsoft.Json.xml

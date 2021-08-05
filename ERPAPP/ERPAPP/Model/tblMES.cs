@@ -20,9 +20,9 @@ namespace ERPAPP.Model
         public string MachineCode { get; set; }
         public string IoTConnect { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<System.TimeSpan> StartTime { get; set; }
-        public Nullable<System.TimeSpan> EndTime { get; set; }
-        public Nullable<System.TimeSpan> WorkTime { get; set; }
+        public Nullable<System.DateTime> StartTime { get; set; }
+        public Nullable<System.DateTime> EndTime { get; set; }
+        public Nullable<double> WorkTime { get; set; }
         public Nullable<bool> Defect { get; set; }
     
         public virtual tblProduction tblProduction { get; set; }

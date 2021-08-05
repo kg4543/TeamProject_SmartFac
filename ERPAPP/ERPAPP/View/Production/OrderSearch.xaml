@@ -42,17 +42,17 @@
                   ItemsSource="{Binding}"
                   SelectionUnit="FullRow" IsReadOnly="True"
                   SelectedCellsChanged="GrdData_SelectedCellsChanged">
-        <DataGrid.Columns>
-            <DataGridTextColumn Binding="{Binding OrderId}" Header="Idx" Width="45" IsReadOnly="True"/>
-            <DataGridTextColumn Binding="{Binding OrderCode}" Header="Code" Width="120" IsReadOnly="True"/>
-            <DataGridTextColumn Binding="{Binding BrandCode}" Header="Brand" Width="80" IsReadOnly="True"/>
-            <DataGridTextColumn Binding="{Binding ItemCode}" Header="Item" Width="80" IsReadOnly="True"/>
-            <DataGridTextColumn Binding="{Binding ShipDate, StringFormat=yyyy-MM-dd}" Header="Shipdate" Width="100" IsReadOnly="True"/>
-            <DataGridTextColumn Binding="{Binding Destination}" Header="Dest" Width="80" IsReadOnly="True"/>
-            <DataGridTextColumn Binding="{Binding Quantity}" Header="Q'ty" Width="80" IsReadOnly="True"/>
-            <DataGridTextColumn Binding="{Binding UnitPrice}" Header="Unit Price" Width="1*" IsReadOnly="True"/>
-        </DataGrid.Columns>
-    </DataGrid>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding OrderId}" Header="Idx" Width="45" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding OrderCode}" Header="Code" Width="120" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding BrandCode}" Header="Brand" Width="80" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding ItemCode}" Header="Item" Width="80" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding ShipDate, StringFormat=yyyy-MM-dd}" Header="Shipdate" Width="100" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Destination}" Header="Dest" Width="80" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Quantity}" Header="Q'ty" Width="80" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding UnitPrice}" Header="Unit Price" Width="1*" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="BtnOK"
                         Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" 
                         HorizontalAlignment="Right"

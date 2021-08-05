@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity.Migrations;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -233,6 +235,42 @@ namespace ERPAPP.Logic
             return list;
         }
 
+        internal static List<tblProduction> GetNowProduction()
+        {
+            var connString = ConfigurationManager.ConnectionStrings["ERPConnString"].ToString();
+            List<tblProduction> list = new List<tblProduction>();
+            var lastObj = new tblProduction();
+
+            using (var conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                var sqlQuery = $@"select * from tblProduction where StartDate < GETDATE() and EndDate > GETDATE()";
+
+                SqlCommand cmd = new SqlCommand(sqlQuery, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var tmp = new Model.tblProduction
+                    {
+                        ProductionId = (int)reader["ProductionId"],
+                        ProductionCode = reader["ProductionCode"].ToString(),
+                        FactoryCode = reader["FactoryCode"].ToString().Trim(),
+                        ItemCode = reader["ItemCode"].ToString(),
+                        OrderCode = reader["OrderCode"].ToString(),
+                        StartDate = (DateTime)reader["StartDate"],
+                        EndDate = (DateTime)reader["EndDate"],
+                        PlanQuantity = (int)reader["PlanQuantity"],
+                        FQuantity = (int)reader["FQuantity"]
+                    };
+                    list.Add(tmp);
+                    lastObj = tmp; // 마지막 값을 할당
+                }
+
+                return list;
+            }
+        }
+
         public static int SetProductions(tblProduction item)
         {
             using (var ctx = new ERPEntities())
@@ -259,6 +297,27 @@ namespace ERPAPP.Logic
             using (var ctx = new ERPEntities())
             {
                 ctx.tblOperation.AddOrUpdate(item);
+                return ctx.SaveChanges(); // commit
+            }
+        }
+
+        internal static List<tblMES> GetMES()
+        {
+            List<tblMES> list;
+
+            using (var ctx = new ERPEntities())
+            {
+                list = ctx.tblMES.ToList();
+            }
+
+            return list;
+        }
+
+        public static int SetMES(tblMES item)
+        {
+            using (var ctx = new ERPEntities())
+            {
+                ctx.tblMES.AddOrUpdate(item);
                 return ctx.SaveChanges(); // commit
             }
         }

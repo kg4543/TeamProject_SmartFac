@@ -50,7 +50,7 @@ namespace ERPAPP.View.Factory.Machine
                 };
                 DataAcess.SetMachines(machine);
 
-                var result = await this.ShowMessageAsync("데이터 등록", "직원정보가 등록되었습니다.\n 추가 등록하시겠습니까?",
+                var result = await this.ShowMessageAsync("데이터 등록", "기계정보가 등록되었습니다.\n 추가 등록하시겠습니까?",
                                                     MessageDialogStyle.AffirmativeAndNegative, null);
                 if (result == MessageDialogResult.Affirmative)
                 {

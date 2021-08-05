@@ -4,16 +4,10 @@ using ERPAPP.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ERPAPP.View.OPS
@@ -87,17 +81,26 @@ namespace ERPAPP.View.OPS
 
         private void GrdData_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            var selectedItem = GrdData.SelectedItem as tblItem;
-            var operations = DataAcess.GetOperations().Where(i => i.ItemCode.Equals(selectedItem.ItemCode)).ToList();
-            foreach (var item in operations)
-            {
-                Rectangle rec = new Rectangle();//사각형 생성
-                rec.Width = 200;
-                rec.Height = 100;
-                rec.Stroke = Brushes.SkyBlue;
-                this.OpCanvas.Children.Add(rec);
-            }
+            OpCanvas.Children.Clear();
 
+            if (GrdData.SelectedItem != null)
+            {
+                var selectedItem = GrdData.SelectedItem as tblItem;
+                var operations = DataAcess.GetOperations().Where(i => i.ItemCode.Trim().Equals(selectedItem.ItemCode.Trim()));
+                foreach (var item in operations)
+                {
+                    TextBlock opname = new TextBlock();
+                    opname.Text = operations.FirstOrDefault().OpIdx + ". " + operations.FirstOrDefault().OpName;
+                    
+                    Rectangle rec = new Rectangle();//사각형 생성
+                    rec.Width = 100;
+                    rec.Height = 100;
+                    rec.Stroke = Brushes.SkyBlue;
+
+                    this.OpCanvas.Children.Add(rec);
+                    this.OpCanvas.Children.Add(opname);
+                }
+            }
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)

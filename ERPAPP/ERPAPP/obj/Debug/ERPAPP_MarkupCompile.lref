@@ -21,6 +21,11 @@ FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\Category\ItemCategoryV
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\ItemEdit.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\ITEM\ItemMain.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\LoginView.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\MES\MESView.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\MES\ProductionSearch.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\OPS\OperationAdd.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\OPS\OperationEdit.xaml;;
+FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\OPS\OperationView.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Order\OrderAdd.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Order\OrderEdit.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Order\OrderView.xaml;;
@@ -28,7 +33,4 @@ FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Production\OrderSearch.xaml
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Production\ProductionAdd.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Production\ProductionEdit.xaml;;
 FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\Production\ProductionView.xaml;;
-FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\OPS\OperationAdd.xaml;;
-FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\OPS\OperationEdit.xaml;;
-FD:\GitRepository\MiniProject_ERP\ERPAPP\ERPAPP\View\OPS\OperationView.xaml;;
 

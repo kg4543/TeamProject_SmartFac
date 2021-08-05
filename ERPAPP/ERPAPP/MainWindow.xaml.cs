@@ -8,6 +8,9 @@ using ERPAPP.View.ITEM;
 using ERPAPP.View.Order;
 using ERPAPP.View.Factory;
 using ERPAPP.View.Production;
+using ERPAPP.View.MES;
+using ERPAPP.Logic;
+using System.Linq;
 
 namespace ERPAPP
 {
@@ -145,6 +148,27 @@ namespace ERPAPP
             {
                 Common.logger.Error($"예외발생 BtnAccount_Click : {ex}");
                 await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
+            }
+        }
+
+        private async void BtnMES_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataAcess.GetNowProduction().Count() == 0)
+            {
+                this.ShowMessageAsync("생산계획", "오늘자 생산계획이 없습니다.");
+            }
+            else
+            {
+                try
+                {
+                    Common.SELECT_Production = null;
+                    ActivePage.Content = new MESView();
+                }
+                catch (Exception ex)
+                {
+                    Common.logger.Error($"예외발생 BtnAccount_Click : {ex}");
+                    await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
+                }
             }
         }
     }

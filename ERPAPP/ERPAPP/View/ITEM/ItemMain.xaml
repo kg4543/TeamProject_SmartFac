@@ -58,7 +58,7 @@
                     <DataGridTextColumn Binding="{Binding ItemName}" Header="Name" Width="150" IsReadOnly="True"/>
                     <DataGridTextColumn Binding="{Binding BrandCode}" Header="Brand" Width="70" IsReadOnly="True"/>
                     <DataGridTextColumn Binding="{Binding ICateCode}" Header="Category" Width="100" IsReadOnly="True"/>
-                    <DataGridTextColumn Binding="{Binding ItemDescription}" Header="Description" Width="1*" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding ItemDescription}" Header="Description" Width="170" IsReadOnly="True"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
