@@ -566,8 +566,8 @@
   <ItemGroup>
     <Content Include="Model\ERP.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ERP.Context.cs</LastGenOutput>
       <DependentUpon>ERP.edmx</DependentUpon>
+      <LastGenOutput>ERP.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\ERP.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

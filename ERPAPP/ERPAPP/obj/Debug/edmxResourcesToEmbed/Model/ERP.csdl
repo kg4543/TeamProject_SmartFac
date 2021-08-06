@@ -152,13 +152,16 @@
     </Key>
     <Property Name="MESIdx" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ProductionCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ITEMCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="OpIdx" Type="Int32" Nullable="false" />
     <Property Name="MachineCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="IoTConnect" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Date" Type="DateTime" Precision="0" />
     <Property Name="StartTime" Type="DateTime" Precision="0" />
     <Property Name="EndTime" Type="DateTime" Precision="0" />
+    <Property Name="PrepareTime" Type="Double" />
     <Property Name="WorkTime" Type="Double" />
+    <Property Name="TotalTime" Type="Double" />
     <Property Name="Defect" Type="Boolean" />
     <NavigationProperty Name="tblProduction" Relationship="Self.FK_tblMES_tblProduction" FromRole="tblMES" ToRole="tblProduction" />
   </EntityType>

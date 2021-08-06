@@ -131,13 +131,16 @@
     </Key>
     <Property Name="MESIdx" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ProductionCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ITEMCode" Type="nvarchar" MaxLength="20" />
     <Property Name="OpIdx" Type="int" Nullable="false" />
     <Property Name="MachineCode" Type="nvarchar" MaxLength="10" />
     <Property Name="IoTConnect" Type="nvarchar" MaxLength="50" />
     <Property Name="Date" Type="date" />
     <Property Name="StartTime" Type="date" />
     <Property Name="EndTime" Type="date" />
+    <Property Name="PrepareTime" Type="float" />
     <Property Name="WorkTime" Type="float" />
+    <Property Name="TotalTime" Type="float" />
     <Property Name="Defect" Type="bit" />
   </EntityType>
   <EntityType Name="tblMRP">

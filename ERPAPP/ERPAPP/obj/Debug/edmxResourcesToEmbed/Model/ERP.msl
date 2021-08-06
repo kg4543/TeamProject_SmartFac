@@ -142,13 +142,16 @@
         <MappingFragment StoreEntitySet="tblMES">
           <ScalarProperty Name="MESIdx" ColumnName="MESIdx" />
           <ScalarProperty Name="ProductionCode" ColumnName="ProductionCode" />
+          <ScalarProperty Name="ITEMCode" ColumnName="ITEMCode" />
           <ScalarProperty Name="OpIdx" ColumnName="OpIdx" />
           <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
           <ScalarProperty Name="IoTConnect" ColumnName="IoTConnect" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="StartTime" ColumnName="StartTime" />
           <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="PrepareTime" ColumnName="PrepareTime" />
           <ScalarProperty Name="WorkTime" ColumnName="WorkTime" />
+          <ScalarProperty Name="TotalTime" ColumnName="TotalTime" />
           <ScalarProperty Name="Defect" ColumnName="Defect" />
         </MappingFragment>
       </EntityTypeMapping>
