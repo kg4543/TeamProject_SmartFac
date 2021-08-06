@@ -16,13 +16,16 @@ namespace ERPAPP.Model
     {
         public int MESIdx { get; set; }
         public string ProductionCode { get; set; }
+        public string ITEMCode { get; set; }
         public int OpIdx { get; set; }
         public string MachineCode { get; set; }
         public string IoTConnect { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
         public Nullable<System.DateTime> StartTime { get; set; }
         public Nullable<System.DateTime> EndTime { get; set; }
+        public Nullable<double> PrepareTime { get; set; }
         public Nullable<double> WorkTime { get; set; }
+        public Nullable<double> TotalTime { get; set; }
         public Nullable<bool> Defect { get; set; }
     
         public virtual tblProduction tblProduction { get; set; }

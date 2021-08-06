@@ -179,7 +179,8 @@ namespace ERPAPP.View.Production
                 this.ShowMessageAsync("입력오류", "오더 수량보다 계획 수량이 더 많습니다.");
                 return false;
             }
-            if (order.ShipDate > DtpEnddate.SelectedDate)
+            //선적일보다 더 늦게 플랜이 세워지는 경우
+            if (order.ShipDate < DtpEnddate.SelectedDate)
             {
                 this.ShowMessageAsync("입력오류", "선적일보다 생산 종료 예정일이 더 늦습니다.");
                 return false;

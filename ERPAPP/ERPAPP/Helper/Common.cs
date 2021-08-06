@@ -28,8 +28,11 @@ namespace ERPAPP.Helper
         public static tblFactory SELECT_Factory;
 
         internal static tblWorker SELECT_Worker;
+
         internal static tblBrand SELECT_Brand;
+
         internal static tblMachine SELECT_Machine;
+
         internal static tblProduction SELECT_Production;
 
         public static async Task<MessageDialogResult> ShowMessageAsync(

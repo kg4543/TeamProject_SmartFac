@@ -136,13 +136,16 @@
           </Key>
           <Property Name="MESIdx" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProductionCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ITEMCode" Type="nvarchar" MaxLength="20" />
           <Property Name="OpIdx" Type="int" Nullable="false" />
           <Property Name="MachineCode" Type="nvarchar" MaxLength="10" />
           <Property Name="IoTConnect" Type="nvarchar" MaxLength="50" />
           <Property Name="Date" Type="date" />
           <Property Name="StartTime" Type="date" />
           <Property Name="EndTime" Type="date" />
+          <Property Name="PrepareTime" Type="float" />
           <Property Name="WorkTime" Type="float" />
+          <Property Name="TotalTime" Type="float" />
           <Property Name="Defect" Type="bit" />
         </EntityType>
         <EntityType Name="tblMRP">
@@ -699,13 +702,16 @@
           </Key>
           <Property Name="MESIdx" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProductionCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ITEMCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="OpIdx" Type="Int32" Nullable="false" />
           <Property Name="MachineCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="IoTConnect" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Date" Type="DateTime" Precision="0" />
           <Property Name="StartTime" Type="DateTime" Precision="0" />
           <Property Name="EndTime" Type="DateTime" Precision="0" />
+          <Property Name="PrepareTime" Type="Double" />
           <Property Name="WorkTime" Type="Double" />
+          <Property Name="TotalTime" Type="Double" />
           <Property Name="Defect" Type="Boolean" />
           <NavigationProperty Name="tblProduction" Relationship="Self.FK_tblMES_tblProduction" FromRole="tblMES" ToRole="tblProduction" />
         </EntityType>
@@ -1265,13 +1271,16 @@
               <MappingFragment StoreEntitySet="tblMES">
                 <ScalarProperty Name="MESIdx" ColumnName="MESIdx" />
                 <ScalarProperty Name="ProductionCode" ColumnName="ProductionCode" />
+                <ScalarProperty Name="ITEMCode" ColumnName="ITEMCode" />
                 <ScalarProperty Name="OpIdx" ColumnName="OpIdx" />
                 <ScalarProperty Name="MachineCode" ColumnName="MachineCode" />
                 <ScalarProperty Name="IoTConnect" ColumnName="IoTConnect" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="StartTime" ColumnName="StartTime" />
                 <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="PrepareTime" ColumnName="PrepareTime" />
                 <ScalarProperty Name="WorkTime" ColumnName="WorkTime" />
+                <ScalarProperty Name="TotalTime" ColumnName="TotalTime" />
                 <ScalarProperty Name="Defect" ColumnName="Defect" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a1d6c29251c1475597747b322f48e033" Name="Diagram1">
-        <EntityTypeShape EntityType="ERPModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+      <Diagram DiagramId="31fd3316ebee4f4c944b1f39a2b324e2" Name="Diagram1">
+        <EntityTypeShape EntityType="ERPModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblBOM" Width="1.5" PointX="7.5" PointY="16.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblBrand" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERPModel.tblDCate" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.tblDCate" Width="1.5" PointX="9.75" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblFactory" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblICate" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblItem" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
@@ -16,13 +16,13 @@
         <EntityTypeShape EntityType="ERPModel.tblMachine" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblMaterial" Width="1.5" PointX="5.25" PointY="17.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblMcCate" Width="1.5" PointX="5.25" PointY="25.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERPModel.tblMES" Width="1.5" PointX="9.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERPModel.tblMRP" Width="1.5" PointX="9.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.tblMES" Width="1.5" PointX="9.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.tblMRP" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblOperation" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblOrder" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblPart" Width="1.5" PointX="5.25" PointY="21.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblProduction" Width="1.5" PointX="7.5" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERPModel.tblUser" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPModel.tblUser" Width="1.5" PointX="11.75" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ERPModel.tblWorker" Width="1.5" PointX="7.5" PointY="20.625" IsExpanded="true" />
         <AssociationConnector Association="ERPModel.FK_tblBOM_tblItem" ManuallyRouted="false" />
         <AssociationConnector Association="ERPModel.FK_tblBOM_tblMaterial" ManuallyRouted="false" />
