@@ -29,6 +29,8 @@ client2 = mqtt.Client(dev_id)
 client2.connect(broker_address)
 print('MQTT Client connected')
 
+global end
+
 def Sensing():
     try:
         while True:
@@ -59,8 +61,10 @@ def Sensing():
         End()
 
 def Work():
+        global end
         start = time.time()
         startTime = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        prepareTime = round(start - end,2)
         num = random.randrange(2,4)
         for i in range(num):
             cycles.start(5)
@@ -70,10 +74,10 @@ def Work():
         end = time.time()
         endTime = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         workTime = round(end - start,2)
-        send_data(startTime, endTime, workTime)
+        send_data(startTime, endTime, workTime, prepareTime)
         #cycles.stop()
 
-def send_data(startTime, endTime, workTime):
+def send_data(startTime, endTime, workTime, prepareTime):
     
     currtime = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     #json data gen
@@ -83,7 +87,9 @@ def send_data(startTime, endTime, workTime):
     raw_data['PRC_Start'] = startTime
     raw_data['PRC_End'] = endTime
     raw_data['PRC_Work'] = workTime
-    raw_data['PRC_Defect'] = "Work"
+    raw_data['PRC_Prepare'] = prepareTime
+    raw_data['PRC_Total'] = workTime + prepareTime
+    raw_data['PRC_Defect'] = "Sucess"
 
     pub_data = json.dumps(raw_data, ensure_ascii=False, indent='\t')
     print(pub_data)
@@ -96,5 +102,6 @@ def End():
     GPIO.cleanup()
 
 if(__name__=='__main__'):
+    end = time.time()
     GPIO.output(convey, 1)
     Sensing()
