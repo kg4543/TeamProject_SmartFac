@@ -45,11 +45,12 @@
                     Foreground="White" Background="DodgerBlue" 
                     IsEnabled="False"
                     Click="BtnProduction_Click"/>
-            <Button x:Name="BtnMRP" 
+            <Button x:Name="BtnOp" 
                     Grid.Column="3" Margin="10,15"
-                    Content="Material" FontSize="15"
+                    Content="Operation" FontSize="15"
                     Foreground="White" Background="OrangeRed" 
-                    IsEnabled="False"/>
+                    IsEnabled="False"
+                    Click="BtnOp_Click"/>
             <Button x:Name="BtnFactory" 
                     Grid.Column="4" Margin="10,15" 
                     Content="Factory" FontSize="15"
@@ -58,7 +59,7 @@
                     Click="BtnFactory_Click"/>
             <Button x:Name="BtnMES" 
                     Grid.Column="5" Margin="10,15" 
-                    Content="MES" FontSize="15"
+                    Content="OEE" FontSize="15"
                     Foreground="White" Background="Crimson" 
                     IsEnabled="False"
                     Click="BtnMES_Click"/>

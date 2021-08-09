@@ -60,8 +60,8 @@ namespace ERPAPP.View.MES
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             SelectProduction();
-            InitConnectMqttBroker();
             initDataLoad();
+            InitConnectMqttBroker();
         }
 
         MqttClient client;
@@ -119,7 +119,7 @@ namespace ERPAPP.View.MES
                 }
                 else
                 {
-                    fail -= 1;
+                    fail += 1;
                 }
             }
             catch (Exception ex)
@@ -158,17 +158,25 @@ namespace ERPAPP.View.MES
         {
             // 현재 생산
             prodProcess = DataAcess.GetMES().Where(i => i.ProductionCode.Equals(Common.SELECT_Production.ProductionCode));
-
-            if (prodProcess.FirstOrDefault() != null)
+            
+            // Total CycleTime
+            cycleTime = DataAcess.GetOperations().Where(i => i.ItemCode.Equals(Common.SELECT_Production.ItemCode.Trim())).Sum(i => i.CycleTime);
+            
+            if (cycleTime == 0)
+            {
+                Common.ShowMessageAsync("아이템정보", "공정정보가 없습니다.");
+                NavigationService.Navigate(null);
+            }
+            else if (prodProcess.FirstOrDefault() != null)
             {
                 // 생산 아이템
-                prodItem = DataAcess.GetItems().Where(i => i.ItemCode.Equals(prodProcess.FirstOrDefault().ITEMCode)).FirstOrDefault();
+                prodItem = DataAcess.GetItems().Where(i => i.ItemCode.Equals(prodProcess.FirstOrDefault().ITEMCode.Trim())).FirstOrDefault();
 
                 // 생산 수량
                 planQty = DataAcess.GetProductions().Where(i => i.ProductionCode.Equals(prodProcess.FirstOrDefault().ProductionCode)).FirstOrDefault().PlanQuantity;
 
                 // Total CycleTime
-                cycleTime = DataAcess.GetOperations().Where(i => i.ItemCode.Equals(prodItem.ItemCode)).Sum(i => i.CycleTime);
+                //cycleTime = DataAcess.GetOperations().Where(i => i.ItemCode.Equals(prodItem.ItemCode)).Sum(i => i.CycleTime);
 
                 // 이전 전체 작업 시간
                 totalTime = (double)prodProcess.Sum(i => i.TotalTime);
@@ -198,6 +206,9 @@ namespace ERPAPP.View.MES
         {
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
             {
+                // 이전 전체 작업 시간
+                totalTime = (double)prodProcess.Sum(i => i.TotalTime);
+
                 // 타겟 달성율
                 lblTarQty.Content = $"목표 수량 : {planQty} 개";
                 lblRealQty.Content = $"생산 수량 : {prodQty} 개";

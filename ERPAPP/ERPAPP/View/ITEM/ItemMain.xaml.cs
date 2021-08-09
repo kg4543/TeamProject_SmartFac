@@ -187,7 +187,7 @@ namespace ERPAPP.View.ITEM
             }
         }
 
-        private async void BtnBOM_Click(object sender, RoutedEventArgs e)
+        /*private async void BtnBOM_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -198,19 +198,6 @@ namespace ERPAPP.View.ITEM
                 Common.logger.Error($"예외발생 BtnAccount_Click : {ex}");
                 await Common.ShowMessageAsync("예외", $"예외발생 : {ex}");
             }
-        }
-
-        private async void BtnOps_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                NavigationService.Navigate(new OperationView());
-            }
-            catch (Exception ex)
-            {
-                Common.logger.Error($"예외발생 BtnAccount_Click : {ex}");
-                await Common.ShowMessageAsync("예외", $"예외발생 : {ex}");
-            }
-        }
+        }*/
     }
 }
