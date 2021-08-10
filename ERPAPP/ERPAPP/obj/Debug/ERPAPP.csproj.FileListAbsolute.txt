@@ -400,3 +400,5 @@ D:\GitRepository\TeamProject_SmartFac\ERPAPP\ERPAPP\obj\Debug\ERPAPP.csproj.Core
 D:\GitRepository\TeamProject_SmartFac\ERPAPP\ERPAPP\obj\Debug\ERPAPP.csproj.CopyComplete
 D:\GitRepository\TeamProject_SmartFac\ERPAPP\ERPAPP\obj\Debug\ERPAPP.exe
 D:\GitRepository\TeamProject_SmartFac\ERPAPP\ERPAPP\obj\Debug\ERPAPP.pdb
+D:\GitRepository\TeamProject_SmartFac\ERPAPP\ERPAPP\obj\Debug\View\AGV\AGVView.g.cs
+D:\GitRepository\TeamProject_SmartFac\ERPAPP\ERPAPP\obj\Debug\View\AGV\AGVView.baml

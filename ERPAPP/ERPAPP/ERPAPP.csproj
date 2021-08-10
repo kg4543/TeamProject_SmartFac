@@ -266,6 +266,9 @@
     <Compile Include="Model\tblWorker.cs">
       <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\AGV\AGVView.xaml.cs">
+      <DependentUpon>AGVView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Brand\BrandAdd.xaml.cs">
       <DependentUpon>BrandAdd.xaml</DependentUpon>
     </Compile>
@@ -374,6 +377,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AGV\AGVView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Brand\BrandAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

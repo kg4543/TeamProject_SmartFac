@@ -12,6 +12,7 @@ using ERPAPP.View.MES;
 using ERPAPP.Logic;
 using System.Linq;
 using ERPAPP.View.OPS;
+using ERPAPP.View.AGV;
 
 namespace ERPAPP
 {
@@ -37,7 +38,7 @@ namespace ERPAPP
             if(Common.LOGINED_USER != null)
             {
                 BtnLogin.Content = "LogOut";
-                BtnReport.IsEnabled = true;
+                BtnAGV.IsEnabled = true;
 
                 if (Common.LOGINED_USER.RItem == true)
                     BtnItem.IsEnabled = true;
@@ -71,7 +72,7 @@ namespace ERPAPP
                     Common.LOGINED_USER = null;
                     ActivePage.Content = null;
 
-                    BtnReport.IsEnabled = false;
+                    BtnAGV.IsEnabled = false;
                     BtnItem.IsEnabled = false;
                     BtnOrder.IsEnabled = false;
                     BtnProduction.IsEnabled = false;
@@ -184,6 +185,14 @@ namespace ERPAPP
                     await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
                 }
             }
+        }
+
+        private void BtnAGV_Click(object sender, RoutedEventArgs e)
+        {
+            AGVView agv = new AGVView();
+            agv.Owner = this;
+            this.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            agv.Show();
         }
     }
 }
