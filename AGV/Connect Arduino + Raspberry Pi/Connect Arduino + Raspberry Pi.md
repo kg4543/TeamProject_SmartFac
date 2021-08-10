@@ -37,7 +37,7 @@ upgrade는 라즈베리파이에 설치된 패키지들의 버젼을 최신버�
 
 아두이노 IDE가 생성이 완료 후, 그림과 같이 아두이노의 usb 포트를 라즈베리에 연결해주면 됩니다.
 
-<img src="https://user-images.githubusercontent.com/77951853/128822047-707ec639-c6a4-4232-8880-18bb93061d90.jpg" alt="KakaoTalk_20210810_144453559" style="zoom:50%;" />
+<img src="https://user-images.githubusercontent.com/77951853/128822047-707ec639-c6a4-4232-8880-18bb93061d90.jpg" alt="KakaoTalk_20210810_144453559" style="zoom:40%;" />
 
 
 
