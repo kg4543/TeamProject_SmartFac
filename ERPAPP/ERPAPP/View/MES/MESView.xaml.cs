@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Threading;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace ERPAPP.View.MES
 {
@@ -112,6 +113,9 @@ namespace ERPAPP.View.MES
                 //공정 시간
                 workTime += (double)Process.WorkTime;
 
+                //전체 시간
+                totalTime += (double)Process.TotalTime;
+
                 // 양품률
                 if ((bool)Process.Defect)
                 {
@@ -120,6 +124,11 @@ namespace ERPAPP.View.MES
                 else
                 {
                     fail += 1;
+                }
+                if (sucess == planQty)
+                {
+                    Common.ShowMessageAsync("생산완료", "목표수량을 달성하였습니다.");
+                    NavigationService.Navigate(null);
                 }
             }
             catch (Exception ex)
@@ -177,15 +186,15 @@ namespace ERPAPP.View.MES
 
                 // Total CycleTime
                 //cycleTime = DataAcess.GetOperations().Where(i => i.ItemCode.Equals(prodItem.ItemCode)).Sum(i => i.CycleTime);
+                
+                // 생산 수량
+                prodQty = prodProcess.Count();
 
                 // 이전 전체 작업 시간
                 totalTime = (double)prodProcess.Sum(i => i.TotalTime);
 
                 // 이전 전체 작업 시간
                 workTime = (double)prodProcess.Sum(i => i.WorkTime);
-
-                // 생산 수량
-                prodQty = prodProcess.Count();
 
                 // 양품 수
                 sucess = prodProcess.Where(i => i.Defect.Equals(true)).Count();
@@ -206,9 +215,6 @@ namespace ERPAPP.View.MES
         {
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
             {
-                // 이전 전체 작업 시간
-                totalTime = (double)prodProcess.Sum(i => i.TotalTime);
-
                 // 타겟 달성율
                 lblTarQty.Content = $"목표 수량 : {planQty} 개";
                 lblRealQty.Content = $"생산 수량 : {prodQty} 개";
@@ -217,7 +223,7 @@ namespace ERPAPP.View.MES
                 // 가용성
                 lblTtlTime.Content = $"전체 시간 : {(totalTime / 60).ToString("#.##")} 분";
                 lblAvlTime.Content = $"공정 시간 : {(workTime / 60).ToString("#.##")} 분";
-                lvcAvail.Value = Math.Round((double)workTime / ((double)totalTime * prodQty) * 100);
+                lvcAvail.Value = Math.Round((double)workTime / ((double)totalTime) * 100);
 
                 // 양품률
                 lblSuc.Content = $"양품 수량 : {sucess} 개";
