@@ -63,12 +63,12 @@
                     Foreground="White" Background="Crimson" 
                     IsEnabled="False"
                     Click="BtnMES_Click"/>
-            <Button x:Name="BtnAGV" 
+            <Button x:Name="BtnReport" 
                     Grid.Column="6" Margin="10,15" 
-                    Content="AGV" FontSize="15"
+                    Content="Report" FontSize="15"
                     Foreground="White" Background="BlueViolet" 
                     IsEnabled="False"
-                    Click="BtnAGV_Click"/>
+                    Click="BtnReport_Click"/>
             <Button x:Name="BtnLogin" 
                     Grid.Column="7" Margin="10,15" 
                     Content="Login" FontSize="15"

@@ -209,6 +209,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ERP.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Report.cs" />
     <Compile Include="Model\sysdiagrams.cs">
       <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
@@ -365,6 +366,9 @@
     <Compile Include="View\Production\ProductionView.xaml.cs">
       <DependentUpon>ProductionView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Report\ReportView.xaml.cs">
+      <DependentUpon>ReportView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -506,6 +510,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Production\ProductionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Report\ReportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

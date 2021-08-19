@@ -13,6 +13,7 @@ using ERPAPP.Logic;
 using System.Linq;
 using ERPAPP.View.OPS;
 using ERPAPP.View.AGV;
+using ERPAPP.View.Report;
 
 namespace ERPAPP
 {
@@ -38,7 +39,7 @@ namespace ERPAPP
             if(Common.LOGINED_USER != null)
             {
                 BtnLogin.Content = "LogOut";
-                BtnAGV.IsEnabled = true;
+                BtnReport.IsEnabled = true;
 
                 if (Common.LOGINED_USER.RItem == true)
                     BtnItem.IsEnabled = true;
@@ -72,7 +73,7 @@ namespace ERPAPP
                     Common.LOGINED_USER = null;
                     ActivePage.Content = null;
 
-                    BtnAGV.IsEnabled = false;
+                    BtnReport.IsEnabled = false;
                     BtnItem.IsEnabled = false;
                     BtnOrder.IsEnabled = false;
                     BtnProduction.IsEnabled = false;
@@ -187,12 +188,17 @@ namespace ERPAPP
             }
         }
 
-        private void BtnAGV_Click(object sender, RoutedEventArgs e)
+        private async void BtnReport_Click(object sender, RoutedEventArgs e)
         {
-            AGVView agv = new AGVView();
-            agv.Owner = this;
-            this.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-            agv.Show();
+            try
+            {
+                ActivePage.Content = new ReportView();
+            }
+            catch (Exception ex)
+            {
+                Common.logger.Error($"예외발생 BtnAccount_Click : {ex}");
+                await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
+            }
         }
     }
 }
