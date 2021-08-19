@@ -81,25 +81,12 @@ namespace ERPAPP.View.OPS
 
         private void GrdData_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            OpCanvas.Children.Clear();
-
             if (GrdData.SelectedItem != null)
             {
                 var selectedItem = GrdData.SelectedItem as tblItem;
                 var operations = DataAcess.GetOperations().Where(i => i.ItemCode.Trim().Equals(selectedItem.ItemCode.Trim()));
-                foreach (var item in operations)
-                {
-                    TextBlock opname = new TextBlock();
-                    opname.Text = operations.FirstOrDefault().OpIdx + ". " + operations.FirstOrDefault().OpName;
-                    
-                    Rectangle rec = new Rectangle();//사각형 생성
-                    rec.Width = 100;
-                    rec.Height = 100;
-                    rec.Stroke = Brushes.SkyBlue;
-
-                    this.OpCanvas.Children.Add(rec);
-                    this.OpCanvas.Children.Add(opname);
-                }
+                GrdOp.DataContext = operations;
+                lblTime.Content = $"Total CycleTime : {operations.Sum(i => i.CycleTime)} 초";
             }
         }
 
