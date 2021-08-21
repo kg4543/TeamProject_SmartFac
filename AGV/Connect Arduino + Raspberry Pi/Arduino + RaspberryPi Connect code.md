@@ -56,31 +56,31 @@ while True:
         val = val.encode('utf-8')
         ser.write(val)
         print("Let's Go")
-        time.sleep(1)
+        time.sleep(0.01)
         
     elif val == '2':
         val = val.encode('utf-8')
         ser.write(val)
         print("Stop")
-        time.sleep(1)
+        time.sleep(0.01)
         
     elif val == '3':
         val = val.encode('utf-8')
         ser.write(val)
         print("Turn Right")
-        time.sleep(1)
+        time.sleep(0.01)
         
     elif val == '4':
         val = val.encode('utf-8')
         ser.write(val)
         print("Turn Left")
-        time.sleep(1)
+        time.sleep(0.01)
         
     elif val == '5':
         val = val.encode('utf-8')
         ser.write(val)
         print("BackWard")
-        time.sleep(1)
+        time.sleep(0.01)
         
 ```
 
@@ -198,12 +198,10 @@ void GO_BACK() {
 
 // 부드럽게 속도 줄이는 함수
 void RELEASE_ALL() {
-  delay(5000); //5초 대기
   motor_1.run(RELEASE);
   motor_2.run(RELEASE);
   motor_3.run(RELEASE);
   motor_4.run(RELEASE);
-  delay(5000);
 }
 ```
 
