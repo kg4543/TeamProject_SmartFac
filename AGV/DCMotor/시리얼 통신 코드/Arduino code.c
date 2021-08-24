@@ -30,7 +30,7 @@ void setup() {
 }
 
 void loop() {
-  int input;
+  char input;
 
   while(Serial.available()) //serial값이 있을때 while문 실행
   {
