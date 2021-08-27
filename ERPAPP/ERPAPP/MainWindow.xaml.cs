@@ -11,6 +11,9 @@ using ERPAPP.View.Production;
 using ERPAPP.View.MES;
 using ERPAPP.Logic;
 using System.Linq;
+using ERPAPP.View.OPS;
+using ERPAPP.View.AGV;
+using ERPAPP.View.Report;
 
 namespace ERPAPP
 {
@@ -45,7 +48,7 @@ namespace ERPAPP
                 if (Common.LOGINED_USER.RProduction == true)
                     BtnProduction.IsEnabled = true;
                 if (Common.LOGINED_USER.RMaterial == true)
-                    BtnMRP.IsEnabled = true;
+                    BtnOp.IsEnabled = true;
                 if (Common.LOGINED_USER.RFactory == true)
                     BtnFactory.IsEnabled = true;
                 if (Common.LOGINED_USER.RMES == true)
@@ -74,7 +77,7 @@ namespace ERPAPP
                     BtnItem.IsEnabled = false;
                     BtnOrder.IsEnabled = false;
                     BtnProduction.IsEnabled = false;
-                    BtnMRP.IsEnabled = false;
+                    BtnOp.IsEnabled = false;
                     BtnFactory.IsEnabled = false;
                     BtnMES.IsEnabled = false;
                 }
@@ -151,6 +154,19 @@ namespace ERPAPP
             }
         }
 
+        private async void BtnOp_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ActivePage.Content = new OperationView();
+            }
+            catch (Exception ex)
+            {
+                Common.logger.Error($"예외발생 BtnAccount_Click : {ex}");
+                await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
+            }
+        }
+
         private async void BtnMES_Click(object sender, RoutedEventArgs e)
         {
             if (DataAcess.GetNowProduction().Count() == 0)
@@ -169,6 +185,19 @@ namespace ERPAPP
                     Common.logger.Error($"예외발생 BtnAccount_Click : {ex}");
                     await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
                 }
+            }
+        }
+
+        private async void BtnReport_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ActivePage.Content = new ReportView();
+            }
+            catch (Exception ex)
+            {
+                Common.logger.Error($"예외발생 BtnAccount_Click : {ex}");
+                await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
             }
         }
     }

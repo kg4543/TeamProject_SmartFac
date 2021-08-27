@@ -1,0 +1,14 @@
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\bin\Debug\netstandard2.0\AGVControl.deps.json
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\bin\Debug\netstandard2.0\AGVControl.dll
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\bin\Debug\netstandard2.0\ref\AGVControl.dll
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\bin\Debug\netstandard2.0\AGVControl.pdb
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\obj\Debug\netstandard2.0\AGVControl.csprojAssemblyReference.cache
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\obj\Debug\netstandard2.0\AGVControl.AssemblyInfoInputs.cache
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\obj\Debug\netstandard2.0\AGVControl.AssemblyInfo.cs
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\obj\Debug\netstandard2.0\AGVControl.csproj.CoreCompileInputs.cache
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\obj\Debug\netstandard2.0\AGVControl.dll
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\obj\Debug\netstandard2.0\ref\AGVControl.dll
+C:\Users\PKNU\source\repos\AGVControl\AGVControl\obj\Debug\netstandard2.0\AGVControl.pdb

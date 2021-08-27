@@ -74,30 +74,31 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition />
+                    <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="0"
                Content="Operation"
                FontSize="28" FontWeight="Bold"/>
-                <Canvas Grid.Row="1">
-                    <StackPanel x:Name="OpCanvas" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <!--<Rectangle Width="100" Height="100" Margin="5" Fill="SkyBlue"/>
-                        <Line Width="50" Height="10" Fill="Black"/>
-                        <Rectangle Width="100" Height="100" Margin="5" Fill="SkyBlue"/>-->
-                    </StackPanel>
-                </Canvas>
+                <DataGrid x:Name="GrdOp"
+                  Grid.Row="1" Grid.Column="0" Margin="10"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding}"
+                  SelectionUnit="FullRow" IsReadOnly="True"
+                  SelectedCellsChanged="GrdData_SelectedCellsChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding OpName}" Header="Name" Width="150" IsReadOnly="True"/>
+                        <DataGridTextColumn Binding="{Binding PreOp}" Header="Pre" Width="70" IsReadOnly="True"/>
+                        <DataGridTextColumn Binding="{Binding PostOp}" Header="Post" Width="70" IsReadOnly="True"/>
+                        <DataGridTextColumn Binding="{Binding CycleTime}" Header="CycleTime" Width="120" IsReadOnly="True"/>
+                        <DataGridTextColumn Binding="{Binding McateCode}" Header="Machine" Width="100" IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label x:Name="lblTime"
+                       Grid.Row="2"
+                       FontSize="20" FontWeight="Bold"
+                       Margin="10"
+                       Content="Total Cycle Time : "/>
             </Grid>
         </Grid>
-        <Button x:Name="BtnAdd"
-                Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right"
-                Margin="150,15" Width="100"
-                Content="ADD" FontSize="15"
-                Foreground="White" Background="Orange"
-                Click="BtnAdd_Click"/>
-        <Button x:Name="BtnEdit"
-                Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right"
-                Margin="30,15" Width="100"
-                Content="Edit" FontSize="15"
-                Foreground="White" Background="Orangered"
-                Click="BtnEdit_Click"/>
     </Grid>
 </Page>

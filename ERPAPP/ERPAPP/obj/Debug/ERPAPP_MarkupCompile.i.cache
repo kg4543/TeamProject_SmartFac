@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\GitRepository\TeamProject_SmartFac\ERPAPP\ERPAPP\App.xaml
-33-970454724
+35-1601762281
 21973791098
-62-1670237924
+651393517318
 65-1264346904
-MainWindow.xaml;View\Brand\BrandAdd.xaml;View\Brand\BrandEdit.xaml;View\Brand\BrandView.xaml;View\Factory\FactoryAdd.xaml;View\Factory\FactoryEdit.xaml;View\Factory\FactoryView.xaml;View\Factory\Machine\MachineAdd.xaml;View\Factory\Machine\MachineEdit.xaml;View\Factory\Machine\MachineView.xaml;View\Factory\Worker\WorkerAdd.xaml;View\Factory\Worker\WorkerEdit.xaml;View\Factory\Worker\WorkerView.xaml;View\ITEM\BOM\BOMView.xaml;View\ITEM\Category\ICateAdd.xaml;View\ITEM\Category\ICateEdit.xaml;View\ITEM\ItemAdd.xaml;View\ITEM\Category\ItemCategoryView.xaml;View\ITEM\ItemEdit.xaml;View\ITEM\ItemMain.xaml;View\LoginView.xaml;View\MES\MESView.xaml;View\MES\ProductionSearch.xaml;View\OPS\OperationAdd.xaml;View\OPS\OperationEdit.xaml;View\OPS\OperationView.xaml;View\Order\OrderAdd.xaml;View\Order\OrderEdit.xaml;View\Order\OrderView.xaml;View\Production\OrderSearch.xaml;View\Production\ProductionAdd.xaml;View\Production\ProductionEdit.xaml;View\Production\ProductionView.xaml;
+MainWindow.xaml;View\AGV\AGVView.xaml;View\Brand\BrandAdd.xaml;View\Brand\BrandEdit.xaml;View\Brand\BrandView.xaml;View\Factory\FactoryAdd.xaml;View\Factory\FactoryEdit.xaml;View\Factory\FactoryView.xaml;View\Factory\Machine\MachineAdd.xaml;View\Factory\Machine\MachineEdit.xaml;View\Factory\Machine\MachineView.xaml;View\Factory\Worker\WorkerAdd.xaml;View\Factory\Worker\WorkerEdit.xaml;View\Factory\Worker\WorkerView.xaml;View\ITEM\BOM\BOMView.xaml;View\ITEM\Category\ICateAdd.xaml;View\ITEM\Category\ICateEdit.xaml;View\ITEM\ItemAdd.xaml;View\ITEM\Category\ItemCategoryView.xaml;View\ITEM\ItemEdit.xaml;View\ITEM\ItemMain.xaml;View\LoginView.xaml;View\MES\MESView.xaml;View\MES\ProductionSearch.xaml;View\OPS\OperationAdd.xaml;View\OPS\OperationEdit.xaml;View\OPS\OperationView.xaml;View\Order\OrderAdd.xaml;View\Order\OrderEdit.xaml;View\Order\OrderView.xaml;View\Production\OrderSearch.xaml;View\Production\ProductionAdd.xaml;View\Production\ProductionEdit.xaml;View\Production\ProductionView.xaml;View\Report\ReportView.xaml;
 
 True
 

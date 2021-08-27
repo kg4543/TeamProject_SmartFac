@@ -26,6 +26,35 @@ namespace ERPAPP.Logic
             return list;
         }
 
+        internal static List<tblReport> GetReport(string production)
+        {
+            var connString = ConfigurationManager.ConnectionStrings["ERPConnString"].ToString();
+            List<tblReport> list = new List<tblReport>();
+            var lastObj = new tblReport();
+
+            using (var conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                var sqlQuery = $@" select Date,COUNT(*) as '전체 수량' from tblMES where ProductionCode = '{production}' group by Date";
+
+                SqlCommand cmd = new SqlCommand(sqlQuery, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var tmp = new Model.tblReport
+                    {
+                        Date = DateTime.Parse(reader["Date"].ToString()),
+                        Quantity = (int)reader["전체 수량"]
+                    };
+                    list.Add(tmp);
+                    lastObj = tmp; // 마지막 값을 할당
+                }
+
+                return list;
+            }
+        }
+
         /*public static int SetUsers(tblUser item)
         {
             using (var ctx = new ERPEntities())

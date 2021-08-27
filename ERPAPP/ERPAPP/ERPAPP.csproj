@@ -209,6 +209,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ERP.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Report.cs" />
     <Compile Include="Model\sysdiagrams.cs">
       <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
@@ -265,6 +266,9 @@
     </Compile>
     <Compile Include="Model\tblWorker.cs">
       <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\AGV\AGVView.xaml.cs">
+      <DependentUpon>AGVView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Brand\BrandAdd.xaml.cs">
       <DependentUpon>BrandAdd.xaml</DependentUpon>
@@ -362,6 +366,9 @@
     <Compile Include="View\Production\ProductionView.xaml.cs">
       <DependentUpon>ProductionView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Report\ReportView.xaml.cs">
+      <DependentUpon>ReportView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -374,6 +381,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AGV\AGVView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Brand\BrandAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -499,6 +510,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Production\ProductionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Report\ReportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
