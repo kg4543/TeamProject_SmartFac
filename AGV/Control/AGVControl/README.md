@@ -4,7 +4,7 @@
 
 ## 1. UI
 
-* 1. GridView를 활용한 (전/후/좌/우) Button
+1. GridView를 활용한 (전/후/좌/우) Button
 ```C#
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -61,7 +61,7 @@
 
 ## 2. Logic
 
-* 1. MQTT 데이터 전달 
+1. MQTT 데이터 전달 
 ```C#
 private static async Task SendData(string server, string command)
         {
