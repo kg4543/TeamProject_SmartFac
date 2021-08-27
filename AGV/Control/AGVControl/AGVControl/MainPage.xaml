@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AGVControl.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Start!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"
+                   x:Name="LblStart"/>
+        </Frame>
+        <Entry x:Name="TxtServer"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BtnGo" Text="▲" 
+                    Grid.Row="0" Grid.Column="1"
+                    FontSize="20" Margin="5"
+                    Background="skyblue" TextColor="White"
+                    Clicked="BtnGo_Clicked"/>
+            <Button x:Name="BtnStop" Text="■" 
+                    Grid.Row="1" Grid.Column="1"
+                    FontSize="20" Margin="5"
+                    Background="skyblue" TextColor="White"
+                    Clicked="BtnStop_Clicked"/>
+            <Button x:Name="BtnLefg" Text="◀" 
+                    Grid.Row="1" Grid.Column="0"
+                    FontSize="20" Margin="5"
+                    Background="skyblue" TextColor="White"
+                    Clicked="BtnLefg_Clicked"/>
+            <Button x:Name="BtnRight" Text="▶" 
+                    Grid.Row="1" Grid.Column="2"
+                    FontSize="20" Margin="5"
+                    Background="skyblue" TextColor="White"
+                    Clicked="BtnRight_Clicked"/>
+            <Button x:Name="BtnBack" Text="▼" 
+                    Grid.Row="2" Grid.Column="1"
+                    FontSize="20" Margin="5"
+                    Background="skyblue" TextColor="White"
+                    Clicked="BtnBack_Clicked"/>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Btnone" Text="1" 
+                    Grid.Row="0" Grid.Column="0"
+                    FontSize="20" Margin="5"
+                    Background="LightSeaGreen" TextColor="White"
+                    Clicked="Btnone_Clicked"/>
+            <Button x:Name="Btntwo" Text="2" 
+                    Grid.Row="0" Grid.Column="1"
+                    FontSize="20" Margin="5"
+                    Background="YellowGreen" TextColor="White"
+                    Clicked="Btntwo_Clicked"/>
+            <Button x:Name="Btnthree" Text="3" 
+                    Grid.Row="1" Grid.Column="0"
+                    FontSize="20" Margin="5"
+                    Background="OrangeRed" TextColor="White"
+                    Clicked="Btnthree_Clicked"/>
+            <Button x:Name="Btnfore" Text="4" 
+                    Grid.Row="1" Grid.Column="1"
+                    FontSize="20" Margin="5"
+                    Background="Crimson" TextColor="White"
+                    Clicked="Btnfore_Clicked"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
