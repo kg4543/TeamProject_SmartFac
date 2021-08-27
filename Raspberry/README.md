@@ -1,5 +1,7 @@
 # 가상공정 라인
 
+<kbd>[![OEE](/Capture/OEEMonitoring.gif "OEE")](https://github.com/kg4543/TeamProject_SmartFac/blob/main/Raspberry/Total.py)</kbd> </br>
+
 ## RaspberryPi IoT 제어
 
 - 물체 인식 후 컨베이어 제어 및 공정 실행
