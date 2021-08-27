@@ -224,3 +224,227 @@ private void CmbItem_SelectionChanged(object sender, SelectionChangedEventArgs e
 }
 ```
 
+# OEE
+
+<kbd>[![OEE](/Capture/OEE.PNG "OEE")](https://github.com/kg4543/TeamProject_SmartFac/tree/main/ERPAPP/ERPAPP/View/MES)</kbd> </br>
+(Click the Image)
+
+- 현재 날짜에 생산계획이 있는 리스트 조회
+```C#
+internal static List<tblProduction> GetNowProduction()
+{
+    var connString = ConfigurationManager.ConnectionStrings["ERPConnString"].ToString();
+    List<tblProduction> list = new List<tblProduction>();
+    var lastObj = new tblProduction();
+
+    using (var conn = new SqlConnection(connString))
+    {
+        conn.Open();
+        var sqlQuery = $@"select * from tblProduction where StartDate < GETDATE() and EndDate > GETDATE()";
+
+        SqlCommand cmd = new SqlCommand(sqlQuery, conn);
+        SqlDataReader reader = cmd.ExecuteReader();
+
+        while (reader.Read())
+        {
+            var tmp = new Model.tblProduction
+            {
+                ProductionId = (int)reader["ProductionId"],
+                ProductionCode = reader["ProductionCode"].ToString(),
+                FactoryCode = reader["FactoryCode"].ToString().Trim(),
+                ItemCode = reader["ItemCode"].ToString(),
+                OrderCode = reader["OrderCode"].ToString(),
+                StartDate = (DateTime)reader["StartDate"],
+                EndDate = (DateTime)reader["EndDate"],
+                PlanQuantity = (int)reader["PlanQuantity"],
+                FQuantity = (int)reader["FQuantity"]
+            };
+            list.Add(tmp);
+            lastObj = tmp; // 마지막 값을 할당
+        }
+
+        return list;
+    }
+}
+```
+
+- M2Mqtt 라이브러리를 활용한 데이터 수신
+```C#
+ MqttClient client;
+
+private void InitConnectMqttBroker()
+{
+    var brokerAddress = IPAddress.Parse("210.119.12.92");
+    client = new MqttClient(brokerAddress);
+    client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
+    client.Connect("Monitor");
+    client.Subscribe(new string[] { "factory1/machine1/data/" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+}
+
+Dictionary<string, string> currentData = new Dictionary<string, string>();
+
+private void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
+{
+    var message = Encoding.UTF8.GetString(e.Message);
+    currentData = JsonConvert.DeserializeObject<Dictionary<string, string>>(message);
+    UpdateData(currentData);
+    ShowData();
+}
+```
+
+- DB에 수신받은 데이터를 저장
+```C#
+private void UpdateData(Dictionary<string, string> currentData)
+{
+    try
+    {
+        var Process = new Model.tblMES()
+        {
+            ProductionCode = Common.SELECT_Production.ProductionCode,
+            ITEMCode = Common.SELECT_Production.ItemCode,
+            OpIdx = int.Parse(GetProcess(currentData["DEV_ID"], "OpIdx")),
+            MachineCode = GetProcess(currentData["DEV_ID"], "MachineCode"),
+            IoTConnect = currentData["DEV_ID"],
+            Date = DateTime.Now,
+            StartTime = DateTime.Parse((currentData["PRC_Start"])),
+            EndTime = DateTime.Parse(currentData["PRC_End"]),
+            PrepareTime = float.Parse(currentData["PRC_Prepare"]),
+            WorkTime = float.Parse(currentData["PRC_Work"]),
+            TotalTime = float.Parse(currentData["PRC_Total"]),
+            Defect = (currentData["PRC_Defect"] == "Sucess" ? true : false)
+        };
+        var re = DataAcess.SetMES(Process);
+
+        //생산 수량
+        prodQty += 1;
+
+        //공정 시간
+        workTime += (double)Process.WorkTime;
+
+        //전체 시간
+        totalTime += (double)Process.TotalTime;
+
+        // 양품률
+        if ((bool)Process.Defect)
+        {
+            sucess += 1;
+        }
+        else
+        {
+            fail += 1;
+        }
+        if (sucess == planQty)
+        {
+            Common.ShowMessageAsync("생산완료", "목표수량을 달성하였습니다.");
+            NavigationService.Navigate(null);
+        }
+    }
+    catch (Exception ex)
+    {
+        Common.logger.Error($"데이터 업데이트 에러 : {ex}");
+        throw ex;
+    }
+}
+```
+
+- LiveChart를 활용한 종합 데이터 로드 
+```C#
+private void ShowData()
+{
+    Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
+    {
+        // 타겟 달성율
+        lblTarQty.Content = $"목표 수량 : {planQty} 개";
+        lblRealQty.Content = $"생산 수량 : {prodQty} 개";
+        lvcPerf.Value = Math.Round((double)workTime / ((double)cycleTime * prodQty) * 100);
+
+        // 가용성
+        lblTtlTime.Content = $"전체 시간 : {(totalTime / 60).ToString("#.##")} 분";
+        lblAvlTime.Content = $"공정 시간 : {(workTime / 60).ToString("#.##")} 분";
+        lvcAvail.Value = Math.Round((double)workTime / ((double)totalTime) * 100);
+
+        // 양품률
+        lblSuc.Content = $"양품 수량 : {sucess} 개";
+        lblDef.Content = $"불량 수량 : {fail} 개";
+        lvcDef.Value = Math.Round((double)sucess / (double)prodQty * 100);
+
+        lblOEE.Content = $"OEE = {(((lvcPerf.Value/100) * (lvcAvail.Value/100) * (lvcDef.Value/100)) * 100).ToString("#.##")} %";
+    }));            
+}
+```
+
+
+# REPORT
+
+<kbd>[![Report](/Capture/Report.PNG "Report")](https://github.com/kg4543/TeamProject_SmartFac/tree/main/ERPAPP/ERPAPP/View/Report)</kbd> </br>
+(Click the Image)
+
+- GroupBy를 활용하여 데이터 조회
+```C#
+internal static List<tblReport> GetReport(string production)
+{
+    var connString = ConfigurationManager.ConnectionStrings["ERPConnString"].ToString();
+    List<tblReport> list = new List<tblReport>();
+    var lastObj = new tblReport();
+
+    using (var conn = new SqlConnection(connString))
+    {
+        conn.Open();
+        var sqlQuery = $@" select Date,COUNT(*) as '전체 수량' from tblMES where ProductionCode = '{production}' group by Date";
+
+        SqlCommand cmd = new SqlCommand(sqlQuery, conn);
+        SqlDataReader reader = cmd.ExecuteReader();
+
+        while (reader.Read())
+        {
+            var tmp = new Model.tblReport
+            {
+                Date = DateTime.Parse(reader["Date"].ToString()),
+                Quantity = (int)reader["전체 수량"]
+            };
+            list.Add(tmp);
+            lastObj = tmp; // 마지막 값을 할당
+        }
+
+        return list;
+    }
+}
+```
+
+- LiveChart를 활용하여 생산수량 데이터 로드
+```C#
+private void LoadData()
+{
+    var production = Common.SELECT_Production.ProductionCode.ToString();
+    var list = DataAcess.GetReport(production);
+    DisplayChart(list);
+}
+
+private void DisplayChart(IEnumerable<tblReport> list)
+{
+    string[] dates = list.Select(a => a.Date.ToString("yy-MM-dd")).ToArray();
+    var quantity = list.Select(a => a.Quantity).ToArray();
+
+    //범례 위치 설정
+    chart.LegendLocation = LiveCharts.LegendLocation.Top;
+
+    chart.AxisX.Clear();
+    chart.AxisY.Clear();
+
+    //세로 눈금 값 설정
+    chart.AxisY.Add(new LiveCharts.Wpf.Axis { MinValue = 0, MaxValue = 50 });
+
+    //가로 눈금 값 설정
+    chart.AxisX.Add(new LiveCharts.Wpf.Axis { Labels = dates });
+
+    //모든 항목 지우기
+    chart.Series.Clear();
+
+    chart.Series.Add(new LiveCharts.Wpf.LineSeries()
+    {
+        Title = "생산수량",
+        Stroke = new SolidColorBrush(Colors.Green),
+        Values = new LiveCharts.ChartValues<int>(quantity)
+    });
+}    
+```
