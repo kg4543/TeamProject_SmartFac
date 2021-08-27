@@ -24,7 +24,7 @@
 ### 4. 구현 (2021-08-07-15 ~ 2021-08-27)
 * [ERP(자원관리) 및 OEE(설비효율) 모니터링](https://github.com/kg4543/TeamProject_SmartFac/tree/main/ERPAPP)
 * [가상 공정](https://github.com/kg4543/TeamProject_SmartFac/tree/main/Raspberry) 
-* AGV
+* [AGV](https://github.com/kg4543/TeamProject_SmartFac/tree/main/AGV)
 * [AGV Control APP](https://github.com/kg4543/TeamProject_SmartFac/tree/main/AGV/Control/AGVControl)
 
 ### 5. Test (2021-08-20 ~ 2021-08-31)
