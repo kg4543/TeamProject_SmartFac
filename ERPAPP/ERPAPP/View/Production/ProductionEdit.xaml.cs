@@ -1,6 +1,5 @@
 ﻿using ERPAPP.Helper;
 using ERPAPP.Logic;
-using ERPAPP.Model;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
