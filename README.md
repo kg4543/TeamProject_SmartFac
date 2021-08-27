@@ -33,6 +33,7 @@
 <kbd>[![ERP](/Capture/ERP.gif "ERP")](https://github.com/kg4543/MiniProject_ERP/tree/main/ERPAPP/ERPAPP)</kbd> </br>
 
 #### 2. 가상 공정 및 OEE(설비효율) 모니터링
+<kbd>[![OEE](/Capture/OEEMonitoring.gif "OEE")](https://github.com/kg4543/TeamProject_SmartFac/blob/main/Raspberry/Total.py)</kbd> </br>
 
 #### 3. AGV
 
