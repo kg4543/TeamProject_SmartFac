@@ -100,7 +100,7 @@ namespace ERPAPP.View.Production
         {
             if (TxtItem.Text != string.Empty)
             {
-                var selectedItem = DataAcess.GetItems().Where(i => i.ItemCode.Equals(TxtItem.Text)).FirstOrDefault();
+                var selectedItem = DataAcess.GetItems().Where(i => i.ItemCode.Equals(TxtItem.Text.Trim())).FirstOrDefault();
 
                 if (selectedItem.ItemImage != null)
                 {
