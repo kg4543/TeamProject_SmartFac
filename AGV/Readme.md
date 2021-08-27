@@ -10,6 +10,8 @@
 ### 1. 레일에 물건 두고 오기
 
 
+https://user-images.githubusercontent.com/77951853/131116774-ef14bb22-1d84-49db-912b-ffa519685ace.mp4
+
 
 
 
