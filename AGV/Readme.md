@@ -8,26 +8,19 @@
 ## 키보드를 이용해서 AGV 원격 제어
 
 ### 1. 레일에 물건 두고 오기
-
-
-https://user-images.githubusercontent.com/77951853/131116774-ef14bb22-1d84-49db-912b-ffa519685ace.mp4
-
-
+![AGV물건두고오기](https://user-images.githubusercontent.com/77951853/131205331-6fbec7f7-7184-4bf4-ae1c-a8f39d0002b0.gif)
 
 
 ### 2. AGV 충전소 가는길
-
-
-
+![AGV 충전소 가는길](https://user-images.githubusercontent.com/77951853/131206380-59d6a02d-5621-468a-8ae0-be22638721ac.gif)
 
 
 ### 3. 충전소에서 물건 가지러가기
-
-
-
+![충전소에서 물건가지러가기](https://user-images.githubusercontent.com/77951853/131204904-acc49be3-6ac1-42b1-9128-78657df61e43.gif)
 
 
 ###  추가로 좀 더 부드럽게 진행
+![AGV 더 부드럽게 충전소 가는길](https://user-images.githubusercontent.com/77951853/131206414-c7bbbb09-a3c9-466a-b0c3-28348c5bb1d8.gif)
 
 
 
