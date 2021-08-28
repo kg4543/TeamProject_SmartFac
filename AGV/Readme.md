@@ -19,9 +19,9 @@
 ![충전소에서 물건가지러가기](https://user-images.githubusercontent.com/77951853/131204904-acc49be3-6ac1-42b1-9128-78657df61e43.gif)
 
 
-###  추가로 좀 더 부드럽게 진행
+### + 추가로 좀 더 부드럽게 진행
 ![AGV 더 부드럽게 충전소 가는길](https://user-images.githubusercontent.com/77951853/131206414-c7bbbb09-a3c9-466a-b0c3-28348c5bb1d8.gif)
 
 
 
-[AGV 원격 제어 코드]
+[AGV 원격 제어 코드](https://github.com/kg4543/TeamProject_SmartFac/blob/main/AGV/DCMotor/4%EC%B1%84%EB%84%90%20DC%EB%AA%A8%ED%84%B0%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C/4%EC%B1%84%EB%84%90%20DC%EB%AA%A8%ED%84%B0%20%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C.md)
