@@ -29,6 +29,6 @@
 ---
 ### 모바일 앱으로 AGV 컨트롤하기
 
+![AGV 컨트롤 출력](https://user-images.githubusercontent.com/77951853/131242926-0df7f3a9-381f-473c-bfb3-23b9776b40c8.gif)
+
 ![AGV 앱 컨트롤](https://user-images.githubusercontent.com/77951853/131239649-e6ded256-ae78-4acf-ba7e-3e8ab1263149.gif)
-
-
