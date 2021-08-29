@@ -1,7 +1,11 @@
 ## 라즈베리랑 아두이노 같이 쓴이유 
-1. 디바이스간 통신을 구현하고 싶었고,
-2. 제어부(연산 및 통신)와 구동부(모터 구동)를 구분하고 싶어서이고,
+1. 디바이스간 통신을 구현하고 싶었습니다.
+2. 이후 라즈베리에 다른 모듈을 연결하여도 사용할 수 있게 제어부(연산 및 통신)와 구동부(모터 구동)를 구분하고 싶었습니다.
 3. 라즈베리파이가 구동부와 제어부를 모두 컨트롤하면, 전력 문제가 발생할 것으로 예상되어서 입니다.
+
+---
+## AGV 제어 코드
+[AGV 원격 제어 코드](https://github.com/kg4543/TeamProject_SmartFac/blob/main/AGV/DCMotor/4%EC%B1%84%EB%84%90%20DC%EB%AA%A8%ED%84%B0%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C/4%EC%B1%84%EB%84%90%20DC%EB%AA%A8%ED%84%B0%20%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C.md)
 
 ---
 
@@ -22,6 +26,9 @@
 ### + 추가로 좀 더 부드럽게 진행
 ![AGV 더 부드럽게 충전소 가는길](https://user-images.githubusercontent.com/77951853/131206414-c7bbbb09-a3c9-466a-b0c3-28348c5bb1d8.gif)
 
+---
+### 모바일 앱으로 AGV 컨트롤하기
+
+![AGV 앱 컨트롤](https://user-images.githubusercontent.com/77951853/131239649-e6ded256-ae78-4acf-ba7e-3e8ab1263149.gif)
 
 
-[AGV 원격 제어 코드](https://github.com/kg4543/TeamProject_SmartFac/blob/main/AGV/DCMotor/4%EC%B1%84%EB%84%90%20DC%EB%AA%A8%ED%84%B0%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C/4%EC%B1%84%EB%84%90%20DC%EB%AA%A8%ED%84%B0%20%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C.md)
