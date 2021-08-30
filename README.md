@@ -35,13 +35,8 @@
 #### 2. 가상 공정 및 OEE(설비효율) 모니터링
 <kbd>[![OEE](/Capture/OEEMonitoring.gif "OEE")](https://github.com/kg4543/TeamProject_SmartFac/blob/main/Raspberry/Total.py)</kbd> </br>
 
-#### 3. AGV
+#### 3. AGV + AGV Control App
 ![AGV 더 부드럽게 충전소 가는길](https://user-images.githubusercontent.com/77951853/131206414-c7bbbb09-a3c9-466a-b0c3-28348c5bb1d8.gif)
-
-
-#### 4. AGV Control APP
-
-![AGV 컨트롤 출력](https://user-images.githubusercontent.com/77951853/131242926-0df7f3a9-381f-473c-bfb3-23b9776b40c8.gif)
 
 ![AGV 앱 컨트롤](https://user-images.githubusercontent.com/77951853/131239649-e6ded256-ae78-4acf-ba7e-3e8ab1263149.gif)
 
